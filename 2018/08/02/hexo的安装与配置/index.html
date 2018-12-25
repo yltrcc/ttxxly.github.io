@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>hexo的安装与配置 | Darklovy | Know more,Do more,Be more.</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="">
+    <meta name="description" content="本文主要介绍在 github pages 和 Coding pages 上搭建 Hexo 博客以及相关配置优化等.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="hexo的安装与配置">
+<meta property="og:url" content="https://www.ttxxly.top/2018/08/02/hexo的安装与配置/index.html">
+<meta property="og:site_name" content="Darklovy">
+<meta property="og:description" content="本文主要介绍在 github pages 和 Coding pages 上搭建 Hexo 博客以及相关配置优化等.">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2018-12-25T07:27:58.308Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="hexo的安装与配置">
+<meta name="twitter:description" content="本文主要介绍在 github pages 和 Coding pages 上搭建 Hexo 博客以及相关配置优化等.">
+    
+        <link rel="alternate" type="application/atom+xml" title="Darklovy" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide">
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Darklovy</h5>
+          <a href="mailto:634206017@qq.com" title="634206017@qq.com" class="mail">634206017@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/">
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives">
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags">
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories">
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/yscoder" target="_blank">
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://www.weibo.com/ysweb" target="_blank">
+                <i class="icon icon-lg icon-weibo"></i>
+                Weibo
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/custom">
+                <i class="icon icon-lg icon-link"></i>
+                测试
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">hexo的安装与配置</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">hexo的安装与配置</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2018-08-02T15:18:20.000Z" itemprop="datePublished" class="page-time">
+  2018-08-02
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#安装Hexo"><span class="post-toc-number">1.</span> <span class="post-toc-text">安装Hexo</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#Node-js、GIt安装"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">Node.js、GIt安装</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#安装hexo"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">安装hexo</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#安装主题"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">安装主题</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#注册-Github-并创建Pages"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">注册 Github 并创建Pages</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#部署到-github"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">部署到 github</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#自定义域名访问"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">自定义域名访问</span></a></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#配置与优化"><span class="post-toc-number">2.</span> <span class="post-toc-text">配置与优化</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#添加标签页面"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">添加标签页面</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#添加分类页面"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">添加分类页面</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#添加自定义页面"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">添加自定义页面</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#文章末尾追加版权信息"><span class="post-toc-number">2.4.</span> <span class="post-toc-text">文章末尾追加版权信息</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#开启打赏功能"><span class="post-toc-number">2.5.</span> <span class="post-toc-text">开启打赏功能</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#友情链接"><span class="post-toc-number">2.6.</span> <span class="post-toc-text">友情链接</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#自定义字体"><span class="post-toc-number">2.7.</span> <span class="post-toc-text">自定义字体</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#自定义图标和侧栏头像"><span class="post-toc-number">2.8.</span> <span class="post-toc-text">自定义图标和侧栏头像</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#添加RSS订阅"><span class="post-toc-number">2.9.</span> <span class="post-toc-text">添加RSS订阅</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#MathJax支持"><span class="post-toc-number">2.9.1.</span> <span class="post-toc-text">MathJax支持</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#错误解答"><span class="post-toc-number">3.</span> <span class="post-toc-text">错误解答</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#关于网站图标不更新问题"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">关于网站图标不更新问题</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-hexo的安装与配置" class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">hexo的安装与配置</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2018-08-02 23:18:20" datetime="2018-08-02T15:18:20.000Z" itemprop="datePublished">2018-08-02</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style="display:none">
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <p><em>本文主要介绍在 <code>github pages</code> 和 <code>Coding pages</code> 上搭建 <code>Hexo</code> 博客以及相关配置优化等.</em></p>
+<a id="more"></a>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">安装流程：</span><br><span class="line">	1. 安装Node.js</span><br><span class="line">	2. 安装Git → 安装Hexo</span><br><span class="line">	3. 安装主题 </span><br><span class="line">	4. 本地测试运行</span><br><span class="line">	5. 在github与coding上创建pages仓库</span><br><span class="line">	6. 部署到远程仓库中</span><br><span class="line">	7. 自定义域名访问</span><br><span class="line">配置与优化</span><br><span class="line">	1. 添加标签页面</span><br><span class="line">	2. 添加分类页面</span><br><span class="line">	3. 添加自定义页面</span><br><span class="line">	4. 文章末尾追加版权信息</span><br><span class="line">	5. 开启打赏功能</span><br><span class="line">	6. 友情链接</span><br><span class="line">	7. 自定义字体</span><br><span class="line">	8. 自定义图标和侧栏头像</span><br><span class="line">	9. 添加 Rss 订阅</span><br><span class="line">	10. MathJax支持</span><br><span class="line">错误解决</span><br><span class="line">	1. 关于网站图标不更新问题</span><br></pre></td></tr></table></figure>
+<h4 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装<code>Hexo</code></h4><h5 id="Node-js、GIt安装"><a href="#Node-js、GIt安装" class="headerlink" title="Node.js、GIt安装"></a><code>Node.js</code>、<code>GIt</code>安装</h5><ul>
+<li>参考 <a href="https://hexo.io/zh-cn/docs/index.html" target="_blank" rel="noopener">https://hexo.io/zh-cn/docs/index.html</a><h5 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h5></li>
+</ul>
+<p>打开 <code>git bash</code> 输入以下命令</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
+<p>安装 <code>Hexo</code> 完成后，请执行下列命令，请特别的注意看注释。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">hexo init &lt;folder&gt;  #folder指我们要安装的博客根目录 </span><br><span class="line">				  #hexo init blog 指的是在当前文件夹下新建blog目录作为博客的根目录</span><br><span class="line">cd &lt;folder&gt;</span><br><span class="line">npm install         #安装所有的依赖包</span><br></pre></td></tr></table></figure>
+<h5 id="安装主题"><a href="#安装主题" class="headerlink" title="安装主题"></a>安装主题</h5><ul>
+<li>将主题文件拷贝至站点目录的 <code>themes</code> 目录下</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/iissnan/hexo-theme-next themes/next</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>修改配置文件<br>打开 <strong>站点配置文件</strong>， Ctrl +F 搜索 <code>theme</code> 字段，并将其值更改为 next<br>如果显示的是繁体中文，那么在<strong>站点配置文件</strong>中设置 <code>language: zh-CN</code></p>
+</li>
+<li><p>本地预览</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo g # 等同于hexo generate，生成静态文件</span><br><span class="line">hexo s # 等同于hexo server，在本地服务器运行</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>打开浏览器输入 <a href="http://localhost:4000" target="_blank" rel="noopener">http://localhost:4000</a>  能够访问说明部署成功。</p>
+</li>
+</ul>
+<h5 id="注册-Github-并创建Pages"><a href="#注册-Github-并创建Pages" class="headerlink" title="注册 Github 并创建Pages"></a>注册 <code>Github</code> 并创建Pages</h5><ol>
+<li><p>在 <a href="https://github.com/" target="_blank" rel="noopener">https://github.com/</a> 上面注册一个账号</p>
+</li>
+<li><p>新建仓库，仓库名为<code>你账号用户名.github.io</code></p>
+</li>
+<li><p>设置 SSH 远程连接</p>
+<ul>
+<li>设置Git的user name和email：(如果是第一次的话)</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name &quot;ttxxly&quot;</span><br><span class="line">git config --global user.email &quot;ttxxly@gmail.com&quot;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>生成密钥</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;humingx@yeah.net&quot;</span><br></pre></td></tr></table></figure>
+<p>连续3个回车。如果不需要密码的话。<br>最后得到了两个文件：<code>id_rsa</code>和<code>id_rsa.pub</code>。复制 <code>id_rsa.pub</code>内容到github上。</p>
+</li>
+</ol>
+<h5 id="部署到-github"><a href="#部署到-github" class="headerlink" title="部署到 github"></a>部署到 <code>github</code></h5><p>在 博客的配置文件（不是主题配置文件） <code>_config.yml</code> 中 末尾添加</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Deployment</span></span><br><span class="line"><span class="comment">## Docs: https://hexo.io/docs/deployment.html</span></span><br><span class="line"><span class="attr">deploy:</span></span><br><span class="line"><span class="attr">  type:</span> <span class="string">git</span></span><br><span class="line"><span class="attr">  repo:</span></span><br><span class="line"><span class="attr">    github:</span> <span class="string">git@github.com:ttxxly/ttxxly.github.io.git,master</span></span><br><span class="line"><span class="attr">    coding:</span> <span class="string">git@git.coding.net:ttxxly/ttxxly.coding.me.git,master</span></span><br></pre></td></tr></table></figure>
+<p>再然后打开 <code>Git bash</code> 输入 <code>hexo d</code> 就是可以提交内容到GitHub上，然后就可以通过仓库名<code>ttxxly.github.io</code>来访问。</p>
+<h5 id="自定义域名访问"><a href="#自定义域名访问" class="headerlink" title="自定义域名访问"></a>自定义域名访问</h5><ol>
+<li>在 <code>blog\source</code>目录下新建 <code>CNAME</code>文件</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#### 在 CNAME 文件 中 填写自定义域名, 格式如下</span><br><span class="line">ttxxly.top</span><br></pre></td></tr></table></figure>
+<h4 id="配置与优化"><a href="#配置与优化" class="headerlink" title="配置与优化"></a>配置与优化</h4><h5 id="添加标签页面"><a href="#添加标签页面" class="headerlink" title="添加标签页面"></a>添加标签页面</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line">必看！！！！</span><br><span class="line">	确认站点配置文件_config.yml中有： tag_dir： tags （有注释的去掉注释）</span><br><span class="line">	确认主题配置文件_config.yml中有： tags: /tags</span><br><span class="line">*/</span><br><span class="line">hexo new page "tags"</span><br></pre></td></tr></table></figure>
+<p>编辑站点中 <code>source/tags/index.md</code> 文件：</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">title:</span> <span class="string">tags</span></span><br><span class="line"><span class="attr">date:</span> <span class="number">2017</span><span class="bullet">-3</span><span class="bullet">-16</span> <span class="number">14</span><span class="string">:08:51</span></span><br><span class="line"><span class="attr">type:</span> <span class="string">"tags"</span></span><br></pre></td></tr></table></figure>
+<p>如果站点启用多说或者Disqus，会在默认页面添加评论，关闭评论那么还需要添加:</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">comments：</span> <span class="literal">false</span></span><br></pre></td></tr></table></figure>
+<h5 id="添加分类页面"><a href="#添加分类页面" class="headerlink" title="添加分类页面"></a>添加分类页面</h5><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">/*</span></span><br><span class="line"><span class="string">确认站点配置文件里有</span> <span class="attr">category_dir:</span> <span class="string">categories</span></span><br><span class="line"><span class="string">确认主题配置文件里有</span> <span class="attr">categories:</span> <span class="string">/categories</span></span><br><span class="line"><span class="string">*/</span></span><br><span class="line"><span class="string">hexo</span> <span class="string">new</span> <span class="string">page</span> <span class="string">"categories"</span></span><br></pre></td></tr></table></figure>
+<p>编辑站点的 <code>source/categories/index.md</code> 文件：</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">title:</span> <span class="string">categories</span></span><br><span class="line"><span class="attr">date:</span> <span class="number">2015</span><span class="bullet">-10</span><span class="bullet">-20</span> <span class="number">06</span><span class="string">:49:50</span></span><br><span class="line"><span class="attr">type:</span> <span class="string">"categories"</span></span><br></pre></td></tr></table></figure>
+<p>如果站点启用多说或者Disqus，会在默认页面添加评论，关闭评论那么还需要添加:</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">comments：</span> <span class="literal">false</span></span><br></pre></td></tr></table></figure>
+<h5 id="添加自定义页面"><a href="#添加自定义页面" class="headerlink" title="添加自定义页面"></a>添加自定义页面</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new page "title"</span><br></pre></td></tr></table></figure>
+<ul>
+<li>如果你不想在该页面显示评论，那么我们需要打开 <code>blog\source\logs\index.md</code> 在date的 <strong>下一行</strong>添加 <code>comments: false</code>(注意冒号后面有一个空格)</li>
+<li>找到 <code>\next\_config.yml</code> 下的 <code>menu</code> ， 把 <code>title</code> 加进去。</li>
+<li>然后在下面 <code>menu_icons</code> 中加入你想让其显示的图标<a href="http://fontawesome.io/icons/" target="_blank" rel="noopener">图标传送</a></li>
+<li>在 <code>/themes/hexo-theme-next/languages/zh-Hans.yml</code> 文件中（这里默认你使用的是简体中文，若是其他语言更改相应的yml就行），在 <code>memu</code> 下加一句即可：</li>
+</ul>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">title:</span> <span class="string">标题</span></span><br></pre></td></tr></table></figure>
+<h5 id="文章末尾追加版权信息"><a href="#文章末尾追加版权信息" class="headerlink" title="文章末尾追加版权信息"></a>文章末尾追加版权信息</h5><p>打开 <code>themes/next/layout/_macro/reward.swig</code> ，在最上面添加如下代码：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">align</span>=<span class="string">"center"</span>&gt;</span></span><br><span class="line"> &#123;% if not is_index %&#125;</span><br><span class="line">   <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">""</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">span</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">b</span>&gt;</span>本文地址：<span class="tag">&lt;/<span class="name">b</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"&#123;&#123; url_for(page.path) &#125;&#125;"</span> <span class="attr">title</span>=<span class="string">"&#123;&#123; page.title &#125;&#125;"</span>&gt;</span>&#123;&#123; url_for(page.path) &#125;&#125;<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">br</span>/&gt;</span><span class="tag">&lt;<span class="name">b</span>&gt;</span>转载请注明出处，谢谢！<span class="tag">&lt;/<span class="name">b</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"> &#123;% endif %&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h5 id="开启打赏功能"><a href="#开启打赏功能" class="headerlink" title="开启打赏功能"></a>开启打赏功能</h5><p>在 <code>主题配置文件</code> 中：</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">reward_comment:</span> <span class="string">坚持原创技术分享，您的支持将鼓励我继续创作！</span></span><br><span class="line"><span class="attr">wechatpay:</span> <span class="string">/images/wechat-reward.png</span></span><br><span class="line"><span class="attr">alipay:</span> <span class="string">/images/alipay-reward.jpg</span></span><br></pre></td></tr></table></figure>
+<h5 id="友情链接"><a href="#友情链接" class="headerlink" title="友情链接"></a>友情链接</h5><p>在 <code>主题配置文件</code> 中</p>
+<p>实例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># title</span><br><span class="line">links_title: Links</span><br><span class="line">links:</span><br><span class="line">  MacTalk: http://macshuo.com/</span><br><span class="line">  Title: http://example.com/</span><br></pre></td></tr></table></figure>
+<h5 id="自定义字体"><a href="#自定义字体" class="headerlink" title="自定义字体"></a>自定义字体</h5><p><a href="http://theme-next.iissnan.com/theme-settings.html#fonts-customization" target="_blank" rel="noopener">http://theme-next.iissnan.com/theme-settings.html#fonts-customization</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">font:</span><br><span class="line">  enable: true</span><br><span class="line"></span><br><span class="line">  # 外链字体库地址，例如 //fonts.googleapis.com (默认值)</span><br><span class="line">  host:</span><br><span class="line"></span><br><span class="line">  # 全局字体，应用在 body 元素上</span><br><span class="line">  global:</span><br><span class="line">    external: true</span><br><span class="line">    family: Monda</span><br><span class="line"></span><br><span class="line">  # 标题字体 (h1, h2, h3, h4, h5, h6)</span><br><span class="line">  headings:</span><br><span class="line">    external: true</span><br><span class="line">    family: Roboto Slab</span><br><span class="line"></span><br><span class="line">  # 文章字体</span><br><span class="line">  posts:</span><br><span class="line">    external: true</span><br><span class="line">    family:</span><br><span class="line"></span><br><span class="line">  # Logo 字体</span><br><span class="line">  logo:</span><br><span class="line">    external: true</span><br><span class="line">    family: Lobster Two</span><br><span class="line">    size: 24</span><br><span class="line"></span><br><span class="line">  # 代码字体，应用于 code 以及代码块</span><br><span class="line">  codes:</span><br><span class="line">    external: true</span><br><span class="line">    family: PT Mono</span><br></pre></td></tr></table></figure>
+<p><a href="http://theme-next.iissnan.com/faqs.html#custom-font" title="官方文档：自定义字体" target="_blank" rel="noopener">官方文档：自定义字体</a></p>
+<p>在 <code>source/css/_variables/custom.styl</code> 文件中</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">// 标题，修改成你期望的字体族</span><br><span class="line">$font-family-headings = Georgia, sans</span><br><span class="line"></span><br><span class="line">// 修改成你期望的字体族 如果不生效 请在同目录下的 base.style 下 修改成你期望的字体族</span><br><span class="line">$font-family-base = &quot;Microsoft YaHei&quot;, Verdana, sans-serif</span><br><span class="line"></span><br><span class="line">// 代码字体</span><br><span class="line">$code-font-family = &quot;Input Mono&quot;, &quot;PT Mono&quot;, Consolas, Monaco, Menlo, monospace</span><br><span class="line"></span><br><span class="line">// 正文字体的大小</span><br><span class="line">$font-size-base = 16px</span><br><span class="line"></span><br><span class="line">// 代码字体的大小</span><br><span class="line">$code-font-size = 13px</span><br></pre></td></tr></table></figure>
+<p><em>注：上面的那种方式是更改首选字体，下面的方式会覆盖上面的那一种方式</em></p>
+<h5 id="自定义图标和侧栏头像"><a href="#自定义图标和侧栏头像" class="headerlink" title="自定义图标和侧栏头像"></a>自定义图标和侧栏头像</h5><p>图标：在 <code>source</code> 目录下，放图标文件，命名为 <code>favicon.ico</code><br>侧栏头像： 编辑 <strong>站点配置文件</strong> <code>_config.yml</code> ，新增字段 <code>avatar</code>，值设置成头像的链接地址。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">其中，头像的链接地址可以是：</span><br><span class="line"></span><br><span class="line">完整的互联网 URL，例如：https://avatars1.githubusercontent.com/u/32269?v=3&amp;s=460</span><br><span class="line">站点内的地址，例如：</span><br><span class="line"></span><br><span class="line">/uploads/avatar.jpg 需要将你的头像图片放置在 站点的 source/uploads/（可能需要新建uploads目录）</span><br><span class="line">/images/avatar.jpg 需要将你的头像图片放置在 主题的 source/images/ 目录下。</span><br></pre></td></tr></table></figure>
+<h5 id="添加RSS订阅"><a href="#添加RSS订阅" class="headerlink" title="添加RSS订阅"></a>添加RSS订阅</h5><p>安装订阅插件：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-generator-feed</span><br></pre></td></tr></table></figure>
+<p>编辑网站根目录下的 _config.yml，添加以下代码开启</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"># RSS订阅支持</span><br><span class="line">plugin:</span><br><span class="line">- hexo-generator-feed</span><br><span class="line"></span><br><span class="line"># Feed Atom</span><br><span class="line">feed:</span><br><span class="line">type: atom</span><br><span class="line">path: atom.xml</span><br><span class="line">limit: 20</span><br></pre></td></tr></table></figure>
+<p>将订阅添加到菜单栏中</p>
+<ul>
+<li>找到 <code>\next\_config.yml</code> 下的 <code>menu</code> ， 把 <code>rss</code> 加进去。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">menu:</span><br><span class="line">  home: /</span><br><span class="line">  rss:</span><br></pre></td></tr></table></figure>
+<ul>
+<li>然后在下面 <code>menu_icons</code> 中加入你想让其显示的图标<a href="http://fontawesome.io/icons/" target="_blank" rel="noopener">图标传送</a></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">menu_icons:</span><br><span class="line">  logs: th-list</span><br><span class="line">  projects: ra</span><br><span class="line">  rss: rss</span><br></pre></td></tr></table></figure>
+<ul>
+<li>在 <code>/themes/hexo-theme-next/languages/zh-Hans.yml</code> 文件中（这里默认你使用的是简体中文，若是其他语言更改相应的yml就行），在 <code>memu</code> 下加一句即可：</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">menu:</span><br><span class="line">  home: 首页</span><br><span class="line">  archives: 归档</span><br><span class="line">  categories: 分类</span><br><span class="line">  tags: 标签</span><br><span class="line">  about: 关于</span><br><span class="line">  search: 搜索</span><br><span class="line">  schedule: 日程表</span><br><span class="line">  sitemap: 站点地图</span><br><span class="line">  commonweal: 公益404</span><br><span class="line">  logs: 日志</span><br><span class="line">  projects: 项目</span><br><span class="line">  rss: 订阅</span><br></pre></td></tr></table></figure>
+<h6 id="MathJax支持"><a href="#MathJax支持" class="headerlink" title="MathJax支持"></a>MathJax支持</h6><p><a href="https://github.com/hexojs/hexo-math" target="_blank" rel="noopener">https://github.com/hexojs/hexo-math</a></p>
+<h4 id="错误解答"><a href="#错误解答" class="headerlink" title="错误解答"></a>错误解答</h4><h5 id="关于网站图标不更新问题"><a href="#关于网站图标不更新问题" class="headerlink" title="关于网站图标不更新问题"></a>关于网站图标不更新问题</h5><p>可以查看下GitHub网站上图标是否更新，因为git提交时忽略大小写的，可能文件没有更新，先将图标文件删除，在重新上传就可以了。</p>
+<p>感兴趣的话可以点击下面的链接，关注我的微信公众号和我的知识星球。</p>
+<blockquote>
+<p><a href="https://www.ttxxly.top/images/qrcode_darklovy.jpg">https://www.ttxxly.top/images/qrcode_darklovy.jpg</a></p>
+<p><a href="https://www.ttxxly.top/images/qrcode_ttxxly123.jpg">https://www.ttxxly.top/images/qrcode_ttxxly123.jpg</a></p>
+<p><a href="https://www.ttxxly.top/images/ZSXQ_darklovy.png">https://www.ttxxly.top/images/ZSXQ_darklovy.png</a></p>
+</blockquote>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2018-12-25T07:27:58.308Z" itemprop="dateUpdated">2018-12-25 15:27:58</time>
+</span><br>
+
+
+        
+        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2018/08/02/hexo的安装与配置/" target="_blank" rel="external">https://www.ttxxly.top/2018/08/02/hexo的安装与配置/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="https://www.ttxxly.top">
+            <img src="/img/avatar.jpg" alt="Darklovy">
+            Darklovy
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://www.ttxxly.top/2018/08/02/hexo的安装与配置/&title=《hexo的安装与配置》 — Darklovy&pic=https://www.ttxxly.top/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://www.ttxxly.top/2018/08/02/hexo的安装与配置/&title=《hexo的安装与配置》 — Darklovy&source=本文主要介绍在 github pages 和 Coding pages 上搭建 Hexo 博客以及相关配置优化等." data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://www.ttxxly.top/2018/08/02/hexo的安装与配置/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《hexo的安装与配置》 — Darklovy&url=https://www.ttxxly.top/2018/08/02/hexo的安装与配置/&via=https://www.ttxxly.top" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://www.ttxxly.top/2018/08/02/hexo的安装与配置/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2018/08/05/Java-简介/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">Java 简介</h4>
+      </a>
+    </div>
+  
+
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢大爷~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/wechat.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check" data-wechat="/img/wechat.jpg" data-alipay="/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style="display:none">
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style="display:none">
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>Darklovy &copy; 2015 - 2018</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://www.ttxxly.top/2018/08/02/hexo的安装与配置/&title=《hexo的安装与配置》 — Darklovy&pic=https://www.ttxxly.top/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://www.ttxxly.top/2018/08/02/hexo的安装与配置/&title=《hexo的安装与配置》 — Darklovy&source=本文主要介绍在 github pages 和 Coding pages 上搭建 Hexo 博客以及相关配置优化等." data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://www.ttxxly.top/2018/08/02/hexo的安装与配置/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《hexo的安装与配置》 — Darklovy&url=https://www.ttxxly.top/2018/08/02/hexo的安装与配置/&via=https://www.ttxxly.top" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://www.ttxxly.top/2018/08/02/hexo的安装与配置/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACLUlEQVR42u3aQU7DMBAFUO5/6SCxQioN/48Dap3nVdUSx8+LwTPjj494HF/j8fP3bx7/JnnqfJ6LBwYGxtsyjtPRLuJ8Qclbnn3z7CkMDIz7MJIge764ds4koBfzYGBgYMRTJ0/lwR0DAwNjFnDzw1+e6GJgYGAkjDy9bF+cp6x5aMbAwLgbY6Ux8Nef/6m/gYGB8cKMoxxtGe6qsP7LsxgYGFszVsr6eZrahtf20gYGBsY9Ge1VrTzdzc949UZjYGBszWinO1/crBiXL67YGgwMjC0Ys2RydjRMgvWQioGBsTVjVghbeVk7T7JaDAyMvRnt5YnZ5bCrjoZPn8XAwNia0Rb98+JafuVrpdyGgYFxH0aSxLaXIWbJcNtMxcDAuAMjP+rlvyaNzJVQi4GBcU9GPlEemttrGW0x7of/GBgYGFsz2mCX9xza5HYW0DEwMPZm5MX3PCy2Rbdkhjq4Y2BgbMRoA9ws4VzZ42iFGBgYWzPakDcr5bfFu7b9gIGBsTdjdoBbuYoxS1zPNw4DA+MOjDzYte3J2TWLuhWBgYGxNWN2vGuT3mEYjdNgDAyMvRlHOdqkND/2LaXQGBgYWzPykQfE6DLEckqMgYFxN8YsyK6H4JUyXHRyxMDA2I7RBtBZ63EWyqNkGwMDA2MESLYgaZRGh04MDAyMsug/uyjWznlxwMXAwHh5xuyCRXsEbEtydScWAwNjU0Yb8maF+6QNkLQNZluAgYHxtoxPYd9gvrdZ2MEAAAAASUVORK5CYII=" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '死鬼去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

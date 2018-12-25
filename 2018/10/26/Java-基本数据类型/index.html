@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>Java 基本数据类型 | Darklovy | Know more,Do more,Be more.</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="Java">
+    <meta name="description" content="在 Java 中有 8 种基本数据类型来存储数值、字符和布尔值。 12345数值型：    整数类型：byte、short、int、long    浮点类型：float、double字符型：char布尔型：boolean 整数类型整数类型用来存储整数数值，即没有小数部分的数值。可以是正数，也可以是负数。整数数据在Java 程序中有 3 种表示方式，分别为 十进制、八进制和十六进制。 十进制十进制的">
+<meta name="keywords" content="Java">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java 基本数据类型">
+<meta property="og:url" content="https://www.ttxxly.top/2018/10/26/Java-基本数据类型/index.html">
+<meta property="og:site_name" content="Darklovy">
+<meta property="og:description" content="在 Java 中有 8 种基本数据类型来存储数值、字符和布尔值。 12345数值型：    整数类型：byte、short、int、long    浮点类型：float、double字符型：char布尔型：boolean 整数类型整数类型用来存储整数数值，即没有小数部分的数值。可以是正数，也可以是负数。整数数据在Java 程序中有 3 种表示方式，分别为 十进制、八进制和十六进制。 十进制十进制的">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2018-12-25T07:27:58.293Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Java 基本数据类型">
+<meta name="twitter:description" content="在 Java 中有 8 种基本数据类型来存储数值、字符和布尔值。 12345数值型：    整数类型：byte、short、int、long    浮点类型：float、double字符型：char布尔型：boolean 整数类型整数类型用来存储整数数值，即没有小数部分的数值。可以是正数，也可以是负数。整数数据在Java 程序中有 3 种表示方式，分别为 十进制、八进制和十六进制。 十进制十进制的">
+    
+        <link rel="alternate" type="application/atom+xml" title="Darklovy" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide">
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Darklovy</h5>
+          <a href="mailto:634206017@qq.com" title="634206017@qq.com" class="mail">634206017@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/">
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives">
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags">
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories">
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/yscoder" target="_blank">
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://www.weibo.com/ysweb" target="_blank">
+                <i class="icon icon-lg icon-weibo"></i>
+                Weibo
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/custom">
+                <i class="icon icon-lg icon-link"></i>
+                测试
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Java 基本数据类型</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">Java 基本数据类型</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2018-10-26T12:04:43.000Z" itemprop="datePublished" class="page-time">
+  2018-10-26
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#整数类型"><span class="post-toc-number">1.</span> <span class="post-toc-text">整数类型</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#十进制"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">十进制</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#八进制"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">八进制</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#十六进制"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">十六进制</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#定义-int-型变量，示例代码如下："><span class="post-toc-number">1.4.</span> <span class="post-toc-text">定义 int 型变量，示例代码如下：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#运算操作，输出和"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">运算操作，输出和</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#浮点类型"><span class="post-toc-number">2.</span> <span class="post-toc-text">浮点类型</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#定义浮点类型变量，示例代码如下："><span class="post-toc-number">2.1.</span> <span class="post-toc-text">定义浮点类型变量，示例代码如下：</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#字符类型"><span class="post-toc-number">3.</span> <span class="post-toc-text">字符类型</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#char-型"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">char 型</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#转义字符"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">转义字符</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#布尔类型"><span class="post-toc-number">4.</span> <span class="post-toc-text">布尔类型</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-Java-基本数据类型" class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">Java 基本数据类型</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2018-10-26 20:04:43" datetime="2018-10-26T12:04:43.000Z" itemprop="datePublished">2018-10-26</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style="display:none">
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <p>在 Java 中有 8 种基本数据类型来存储数值、字符和布尔值。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">数值型：</span><br><span class="line">    整数类型：<span class="keyword">byte</span>、<span class="keyword">short</span>、<span class="keyword">int</span>、<span class="keyword">long</span></span><br><span class="line">    浮点类型：<span class="keyword">float</span>、<span class="keyword">double</span></span><br><span class="line">字符型：<span class="keyword">char</span></span><br><span class="line">布尔型：<span class="keyword">boolean</span></span><br></pre></td></tr></table></figure>
+<h3 id="整数类型"><a href="#整数类型" class="headerlink" title="整数类型"></a>整数类型</h3><p>整数类型用来存储整数数值，即没有小数部分的数值。可以是正数，也可以是负数。整数数据在<br>Java 程序中有 3 种表示方式，分别为 十进制、八进制和十六进制。</p>
+<h4 id="十进制"><a href="#十进制" class="headerlink" title="十进制"></a>十进制</h4><p>十进制的表现形式是最常见的，如 120、0、-127.</p>
+<p><em>注意：不能以 0 作为十进制数的开头（0 除外）</em></p>
+<h4 id="八进制"><a href="#八进制" class="headerlink" title="八进制"></a>八进制</h4><p>如 0123（转换成十进制就是 83）、-0123（转换成十进制是 -83）。</p>
+<p><em>注意：八进制必须以 0 开头</em></p>
+<h4 id="十六进制"><a href="#十六进制" class="headerlink" title="十六进制"></a>十六进制</h4><p>如 0x25（转换成十进制数是 37）、0Xb1e（转换成十进制是 45086）</p>
+<p><em>注意： 十六进制必须以 0X 或 0x 开头</em></p>
+<p>整型数据根据它所占内存大小的不同，可分为 byte、short、int、long 4种类型，他们具有不同的取值范围，如下表所示。</p>
+<table>
+<thead>
+<tr>
+<th>数据类型</th>
+<th>内存空间（8位=1字节）</th>
+<th>取值范围</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>byte</td>
+<td>8位</td>
+<td>-128～127</td>
+</tr>
+<tr>
+<td>short</td>
+<td>16位</td>
+<td>-32768～32767</td>
+</tr>
+<tr>
+<td>int</td>
+<td>32位</td>
+<td>-2147483648～2147483647</td>
+</tr>
+<tr>
+<td>long</td>
+<td>64位</td>
+<td>-9223372036854775808～9223372036854775807</td>
+</tr>
+</tbody>
+</table>
+<p>下面以 int 型变量为例讲解整型变量的定义。</p>
+<h4 id="定义-int-型变量，示例代码如下："><a href="#定义-int-型变量，示例代码如下：" class="headerlink" title="定义 int 型变量，示例代码如下："></a>定义 int 型变量，示例代码如下：</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> x; <span class="comment">//定义 int 型变量 x</span></span><br><span class="line"><span class="keyword">int</span> x,y;<span class="comment">//定义 int 型变量 x、y</span></span><br><span class="line"><span class="keyword">int</span> x = <span class="number">450</span>, y = -<span class="number">463</span>; <span class="comment">//定义 int 型变量 x、y 并赋初值</span></span><br></pre></td></tr></table></figure>
+<p><em>注意1：定义以上 4 种类型变量时，需要注意变量的取值范围，超出相应范围就会出错。</em><br><em>注意2: 对于 long 型数值，若赋的初值大于 int 型的最大值或小于 int 型的最小值，则需要在数值后加 L 或 l，表示该值是长整型，如 <code>long num = 2147483650L</code>。</em></p>
+<h4 id="运算操作，输出和"><a href="#运算操作，输出和" class="headerlink" title="运算操作，输出和"></a>运算操作，输出和</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Number</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">byte</span> mybyte = <span class="number">124</span>;</span><br><span class="line">        <span class="keyword">short</span> myshort = <span class="number">32564</span>;</span><br><span class="line">        <span class="keyword">int</span> myint = <span class="number">45784612</span>;</span><br><span class="line">        <span class="keyword">long</span> mylong = <span class="number">4678951</span>;</span><br><span class="line">        <span class="keyword">long</span> result = mybyte + myshort + myint + mylong;</span><br><span class="line">        System.out.println(<span class="string">"结果为："</span>+ result);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">程序运行结果为：</span><br><span class="line"></span><br><span class="line">结果为：<span class="number">92606751</span></span><br></pre></td></tr></table></figure>
+<h3 id="浮点类型"><a href="#浮点类型" class="headerlink" title="浮点类型"></a>浮点类型</h3><p>浮点类型表示有小数部分的数字。Java 语言中浮点类型可分为单精度浮点类型（float）和双精度浮点型（double），它们具有不同的取值范围，如下表所示。</p>
+<table>
+<thead>
+<tr>
+<th>数据类型</th>
+<th>内存空间（8位=1字节）</th>
+<th>取值范围</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>float</td>
+<td>32位</td>
+<td>1.4E-45～3.4028235E38</td>
+</tr>
+<tr>
+<td>double</td>
+<td>64位</td>
+<td>4.9E-324～1.797693234862315E308</td>
+</tr>
+</tbody>
+</table>
+<p>在默认情况下，小数都被看作是 double 型，若使用 float 型小数，则需要在小数后面加上F或f。</p>
+<h4 id="定义浮点类型变量，示例代码如下："><a href="#定义浮点类型变量，示例代码如下：" class="headerlink" title="定义浮点类型变量，示例代码如下："></a>定义浮点类型变量，示例代码如下：</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">float</span> f1 = <span class="number">13.23f</span>;</span><br><span class="line"><span class="keyword">double</span> d1 = <span class="number">354.12</span>d;</span><br><span class="line"><span class="keyword">double</span> d2 = <span class="number">23456.2345</span>;</span><br></pre></td></tr></table></figure>
+<h3 id="字符类型"><a href="#字符类型" class="headerlink" title="字符类型"></a>字符类型</h3><h4 id="char-型"><a href="#char-型" class="headerlink" title="char 型"></a>char 型</h4><p>字符类型（char）用于存储单个字符，占用 16 位（两个字节）的内存空间。在定义字符型变量时，要以单引号表示，如 <code>&#39;s&#39;</code> 表示一个字符，而 <code>&quot;s&quot;</code>则表示一个字符串。</p>
+<p>使用 <code>char</code> 关键字可定义字符变量，下面举例说明。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span> x = <span class="string">'a'</span>;</span><br><span class="line"></span><br><span class="line">注意：字符 a 在 unicode 表中的排序位置是 <span class="number">97</span> ，所以上面的语句等同于：</span><br><span class="line"><span class="keyword">char</span> x = <span class="number">97</span>;</span><br></pre></td></tr></table></figure>
+<p>同 c 和 C++ 语言一样，Java 语言也可以把字符作为整数对待。由于unicode 编码采用无符号编码，可以存储 65536 个字符（0x0000 ～ 0xffff），所以 Java 中的字符几乎可以处理所有国家的语言文字。</p>
+<p><strong>在控制台输出 unicode 表中的字符以及在表中字符对应的位置</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">gess</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">char</span> word = <span class="string">'d'</span>, word2 = <span class="string">'@'</span>;</span><br><span class="line">        <span class="keyword">int</span> p = <span class="number">23045</span>, p2 = <span class="number">45213</span>;</span><br><span class="line">        System.out.println(<span class="string">"d 在 unicode 表中的顺序位置是："</span>+(<span class="keyword">int</span>)word);</span><br><span class="line">        System.out.println(<span class="string">"@ 在 unicode 表中的顺序位置是："</span>+(<span class="keyword">int</span>)word2);</span><br><span class="line">        System.out.println(<span class="string">"unicode 表中的第 23045 位是："</span>+(<span class="keyword">char</span>)p);</span><br><span class="line">        System.out.println(<span class="string">"unicode 表中的第 45213 位是："</span>+(<span class="keyword">char</span>)p2);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">输出结果为：</span><br><span class="line">d 在 unicode 表中的顺序位置是：<span class="number">100</span></span><br><span class="line">@ 在 unicode 表中的顺序位置是：<span class="number">64</span></span><br><span class="line">unicode 表中的第 <span class="number">23045</span> 位是：娅</span><br><span class="line">unicode 表中的第 <span class="number">45213</span> 位是： ?</span><br></pre></td></tr></table></figure>
+<h4 id="转义字符"><a href="#转义字符" class="headerlink" title="转义字符"></a>转义字符</h4><p>转义字符是一种特殊的字符变量，它以反斜杠 <code>&quot;\&quot;</code> 开头，后跟一个或多个字符。转义字符具有特殊的含义，不同于字符原有的意义，故称 “转义”。Java 中的转义字符如下表所示：</p>
+<table>
+<thead>
+<tr>
+<th>转义字符</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>\ddd</td>
+<td>1～3位八进制数所表示的字符，如\123</td>
+</tr>
+<tr>
+<td>\uxxxx</td>
+<td>4 位十六进制数所表示的字符，如 \u0052</td>
+</tr>
+<tr>
+<td>\’</td>
+<td>单引号字符</td>
+</tr>
+<tr>
+<td>\</td>
+<td>反斜杠字符</td>
+</tr>
+<tr>
+<td>\t</td>
+<td>垂直制表符，将光标移动下一个制表符的位置</td>
+</tr>
+<tr>
+<td>\r</td>
+<td>回车</td>
+</tr>
+<tr>
+<td>\n</td>
+<td>换行</td>
+</tr>
+<tr>
+<td>\b</td>
+<td>退格</td>
+</tr>
+<tr>
+<td>\f</td>
+<td>换页</td>
+</tr>
+</tbody>
+</table>
+<p>将转义字符赋值给字符变量时，与字符常量值一样需要使用单引号。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span> c1 = <span class="string">'\\'</span>;</span><br><span class="line"><span class="keyword">char</span> char1 = <span class="string">"\u2605"</span>;</span><br><span class="line">System.out.println(c1);</span><br><span class="line">System.out.println(char1);</span><br></pre></td></tr></table></figure>
+<h3 id="布尔类型"><a href="#布尔类型" class="headerlink" title="布尔类型"></a>布尔类型</h3><p>布尔类型又称逻辑类型，通过关键值 boolean 来定义布尔类型变量。只有 true 和 false 两个值，它们分别代表布尔逻辑中的 真 和 假。</p>
+<p>布尔类型不能与整数类型进行转换。布尔类型通常被用在流程控制中作为判断条件。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">boolean</span> b;</span><br><span class="line"><span class="keyword">boolean</span> b1,b2;</span><br><span class="line"><span class="keyword">boolean</span> b = <span class="keyword">true</span>;</span><br></pre></td></tr></table></figure>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2018-12-25T07:27:58.293Z" itemprop="dateUpdated">2018-12-25 15:27:58</time>
+</span><br>
+
+
+        
+        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2018/10/26/Java-基本数据类型/" target="_blank" rel="external">https://www.ttxxly.top/2018/10/26/Java-基本数据类型/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="https://www.ttxxly.top">
+            <img src="/img/avatar.jpg" alt="Darklovy">
+            Darklovy
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://www.ttxxly.top/2018/10/26/Java-基本数据类型/&title=《Java 基本数据类型》 — Darklovy&pic=https://www.ttxxly.top/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://www.ttxxly.top/2018/10/26/Java-基本数据类型/&title=《Java 基本数据类型》 — Darklovy&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://www.ttxxly.top/2018/10/26/Java-基本数据类型/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Java 基本数据类型》 — Darklovy&url=https://www.ttxxly.top/2018/10/26/Java-基本数据类型/&via=https://www.ttxxly.top" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://www.ttxxly.top/2018/10/26/Java-基本数据类型/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2018/10/28/Python-简介/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">Python 简介</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2018/10/20/Java-面试题系列篇-编程大题/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Java 面试题系列篇-编程大题</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢大爷~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/wechat.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check" data-wechat="/img/wechat.jpg" data-alipay="/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style="display:none">
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style="display:none">
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>Darklovy &copy; 2015 - 2018</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://www.ttxxly.top/2018/10/26/Java-基本数据类型/&title=《Java 基本数据类型》 — Darklovy&pic=https://www.ttxxly.top/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://www.ttxxly.top/2018/10/26/Java-基本数据类型/&title=《Java 基本数据类型》 — Darklovy&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://www.ttxxly.top/2018/10/26/Java-基本数据类型/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Java 基本数据类型》 — Darklovy&url=https://www.ttxxly.top/2018/10/26/Java-基本数据类型/&via=https://www.ttxxly.top" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://www.ttxxly.top/2018/10/26/Java-基本数据类型/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACKUlEQVR42u3awY7DIAxF0f7/T2e2lSrS+2w6UsxlVaVT4GQkC9u8Xnhcb+P9yeov+W8/P69m3jBkyJDxWMZ1O8hiZHmyufuZV3uTIUPGOYz7hdNQuAq7JCjXwroMGTJkrBg81JItypAhQ0afwbfFXwFfV4YMGTJIEtsPkeTbn+fiMmTIeCAjTUr/8/NP+hsyZMh4FONqjBqSHBDjnciQIWM0Y9cm0uekqEeOpzJkyDiBkRa2ePBNk89aa6FYn5MhQ8ajGLvKYbsOgryBusTIkCFjHINfgEiDYNoq4C3SL50NGTJkHMC458ULNF4ZCfEyZMg4h5Gmjjwo75onqBfKkCHjGAZJVklw5C0BXoALAq4MGTJGMHgboB9MebmNNBtQ7VCGDBmDGKg1CEppnRk6JTkZMmTMZvAjYBooeQszXQv9H2TIkDGO0WlJphcv+pfMvpTbZMiQMZRRC6xp8lljk4arDBkyzmHUrnPxRLSW1hazcBkyZIxm9NNU3gbgR8kvL0KGDBmjGWnCuQvJNxeQZMiQMZRRC3nX7UgvgdXWkiFDxjkMviTZaO36RXpFAzUyZciQMYhxhaN2RYP8tnPJQ4YMGbMZfPDiWv+Ql7Y8ZciQcQIjDbLphlJS+lyGDBnnMDqBLy29dY56y5llyJAhoxEc+40HxJYhQ4YMfG2idnCsfStDhozTGGlBv98S4KEZtVFlyJAxmlFLHWsXKTqHy1ZnQ4YMGU9l/AEZpVvRL7M1ggAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '死鬼去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

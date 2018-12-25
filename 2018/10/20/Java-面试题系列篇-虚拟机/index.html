@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>Java 面试题系列篇-虚拟机 | Darklovy | Know more,Do more,Be more.</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="Java">
+    <meta name="description" content="虚拟机 （JVM）【JVM】你知道哪些或者你们线上使⽤什么GC策略？它有什么优势，适⽤于什么场景？https://blog.csdn.net/chenleixing/article/details/46706039/ 【JVM】Java类加载器包括⼏种？它们之间的⽗⼦关系是怎么样的？双亲委派机制是什么意思？有什么好处？启动Bootstrap类加载、扩展Extension类加载、系统System类加">
+<meta name="keywords" content="Java">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java 面试题系列篇-虚拟机">
+<meta property="og:url" content="https://www.ttxxly.top/2018/10/20/Java-面试题系列篇-虚拟机/index.html">
+<meta property="og:site_name" content="Darklovy">
+<meta property="og:description" content="虚拟机 （JVM）【JVM】你知道哪些或者你们线上使⽤什么GC策略？它有什么优势，适⽤于什么场景？https://blog.csdn.net/chenleixing/article/details/46706039/ 【JVM】Java类加载器包括⼏种？它们之间的⽗⼦关系是怎么样的？双亲委派机制是什么意思？有什么好处？启动Bootstrap类加载、扩展Extension类加载、系统System类加">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2018-12-25T07:27:58.305Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Java 面试题系列篇-虚拟机">
+<meta name="twitter:description" content="虚拟机 （JVM）【JVM】你知道哪些或者你们线上使⽤什么GC策略？它有什么优势，适⽤于什么场景？https://blog.csdn.net/chenleixing/article/details/46706039/ 【JVM】Java类加载器包括⼏种？它们之间的⽗⼦关系是怎么样的？双亲委派机制是什么意思？有什么好处？启动Bootstrap类加载、扩展Extension类加载、系统System类加">
+    
+        <link rel="alternate" type="application/atom+xml" title="Darklovy" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide">
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Darklovy</h5>
+          <a href="mailto:634206017@qq.com" title="634206017@qq.com" class="mail">634206017@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/">
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives">
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags">
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories">
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/yscoder" target="_blank">
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://www.weibo.com/ysweb" target="_blank">
+                <i class="icon icon-lg icon-weibo"></i>
+                Weibo
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/custom">
+                <i class="icon icon-lg icon-link"></i>
+                测试
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Java 面试题系列篇-虚拟机</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">Java 面试题系列篇-虚拟机</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2018-10-20T10:15:37.000Z" itemprop="datePublished" class="page-time">
+  2018-10-20
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#虚拟机-（JVM）"><span class="post-toc-number">1.</span> <span class="post-toc-text">虚拟机 （JVM）</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#【JVM】你知道哪些或者你们线上使⽤什么GC策略？它有什么优势，适⽤于什么场景？"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">【JVM】你知道哪些或者你们线上使⽤什么GC策略？它有什么优势，适⽤于什么场景？</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#【JVM】Java类加载器包括⼏种？它们之间的⽗⼦关系是怎么样的？双亲委派机制是什么意思？有什么好处？"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">【JVM】Java类加载器包括⼏种？它们之间的⽗⼦关系是怎么样的？双亲委派机制是什么意思？有什么好处？</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#【JVM】如何⾃定义⼀个类加载器？你使⽤过哪些或者你在什么场景下需要⼀个⾃定义的类加载器吗？"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">【JVM】如何⾃定义⼀个类加载器？你使⽤过哪些或者你在什么场景下需要⼀个⾃定义的类加载器吗？</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#【JVM】jstack-是⼲什么的-jstat-呢？如果线上程序周期性地出现卡顿，你怀疑可-能是-GC-导致的，你会怎么来排查这个问题？线程⽇志⼀般你会看其中的什么-部分？"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">【JVM】jstack 是⼲什么的? jstat 呢？如果线上程序周期性地出现卡顿，你怀疑可 能是 GC 导致的，你会怎么来排查这个问题？线程⽇志⼀般你会看其中的什么 部分？</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#【JVM】StackOverflow异常有没有遇到过？⼀般你猜测会在什么情况下被触发？如何指定⼀个线程的堆栈⼤⼩？⼀般你们写多少？"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">【JVM】StackOverflow异常有没有遇到过？⼀般你猜测会在什么情况下被触发？如何指定⼀个线程的堆栈⼤⼩？⼀般你们写多少？</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#什么是垃圾回收？"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">什么是垃圾回收？</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#用一个例子解释垃圾回收？"><span class="post-toc-number">1.7.</span> <span class="post-toc-text">用一个例子解释垃圾回收？</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#什么时候运行垃圾回收？"><span class="post-toc-number">1.8.</span> <span class="post-toc-text">什么时候运行垃圾回收？</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#垃圾回收的最佳做法？"><span class="post-toc-number">1.9.</span> <span class="post-toc-text">垃圾回收的最佳做法？</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Java-中会存在内存泄漏吗，请简单描述。"><span class="post-toc-number">1.10.</span> <span class="post-toc-text">Java 中会存在内存泄漏吗，请简单描述。</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#GC是什么？为什么要有GC？"><span class="post-toc-number">1.11.</span> <span class="post-toc-text">GC是什么？为什么要有GC？</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-Java-面试题系列篇-虚拟机" class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">Java 面试题系列篇-虚拟机</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2018-10-20 18:15:37" datetime="2018-10-20T10:15:37.000Z" itemprop="datePublished">2018-10-20</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style="display:none">
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h2 id="虚拟机-（JVM）"><a href="#虚拟机-（JVM）" class="headerlink" title="虚拟机 （JVM）"></a>虚拟机 （JVM）</h2><h3 id="【JVM】你知道哪些或者你们线上使⽤什么GC策略？它有什么优势，适⽤于什么场景？"><a href="#【JVM】你知道哪些或者你们线上使⽤什么GC策略？它有什么优势，适⽤于什么场景？" class="headerlink" title="【JVM】你知道哪些或者你们线上使⽤什么GC策略？它有什么优势，适⽤于什么场景？"></a>【JVM】<strong>你知道哪些或者你们线上使⽤什么GC策略？它有什么优势，适⽤于什么场景？</strong></h3><p><a href="https://blog.csdn.net/chenleixing/article/details/46706039/" target="_blank" rel="noopener">https://blog.csdn.net/chenleixing/article/details/46706039/</a></p>
+<h3 id="【JVM】Java类加载器包括⼏种？它们之间的⽗⼦关系是怎么样的？双亲委派机制是什么意思？有什么好处？"><a href="#【JVM】Java类加载器包括⼏种？它们之间的⽗⼦关系是怎么样的？双亲委派机制是什么意思？有什么好处？" class="headerlink" title="【JVM】Java类加载器包括⼏种？它们之间的⽗⼦关系是怎么样的？双亲委派机制是什么意思？有什么好处？"></a>【JVM】<strong>Java类加载器包括⼏种？它们之间的⽗⼦关系是怎么样的？双亲委派机制是什么意思？有什么好处？</strong></h3><p>启动Bootstrap类加载、扩展Extension类加载、系统System类加载。</p>
+<p>父子关系如下：</p>
+<p>启动类加载器 ，由C++ 实现，没有父类；</p>
+<p>扩展类加载器，由Java语言实现，父类加载器为null；</p>
+<p>系统类加载器，由Java语言实现，父类加载器为扩展类加载器；</p>
+<p>自定义类加载器，父类加载器肯定为AppClassLoader。</p>
+<p>双亲委派机制：类加载器收到类加载请求，自己不加载，向上委托给父类加载，父类加载不了，再自己加载。</p>
+<p>优势避免Java核心API篡改。</p>
+<p><a href="https://blog.csdn.net/javazejian/article/details/73413292/" target="_blank" rel="noopener">https://blog.csdn.net/javazejian/article/details/73413292/</a></p>
+<h3 id="【JVM】如何⾃定义⼀个类加载器？你使⽤过哪些或者你在什么场景下需要⼀个⾃定义的类加载器吗？"><a href="#【JVM】如何⾃定义⼀个类加载器？你使⽤过哪些或者你在什么场景下需要⼀个⾃定义的类加载器吗？" class="headerlink" title="【JVM】如何⾃定义⼀个类加载器？你使⽤过哪些或者你在什么场景下需要⼀个⾃定义的类加载器吗？"></a>【JVM】<strong>如何⾃定义⼀个类加载器？你使⽤过哪些或者你在什么场景下需要⼀个⾃定义的类加载器吗？</strong></h3><p>自定义类加载的意义：</p>
+<p>加载特定路径的class文件</p>
+<p>加载一个加密的网络class文件</p>
+<p>热部署加载class文件</p>
+<h3 id="【JVM】jstack-是⼲什么的-jstat-呢？如果线上程序周期性地出现卡顿，你怀疑可-能是-GC-导致的，你会怎么来排查这个问题？线程⽇志⼀般你会看其中的什么-部分？"><a href="#【JVM】jstack-是⼲什么的-jstat-呢？如果线上程序周期性地出现卡顿，你怀疑可-能是-GC-导致的，你会怎么来排查这个问题？线程⽇志⼀般你会看其中的什么-部分？" class="headerlink" title="【JVM】jstack 是⼲什么的? jstat 呢？如果线上程序周期性地出现卡顿，你怀疑可 能是 GC 导致的，你会怎么来排查这个问题？线程⽇志⼀般你会看其中的什么 部分？"></a>【JVM】<strong>jstack 是⼲什么的? jstat 呢？如果线上程序周期性地出现卡顿，你怀疑可 能是 GC 导致的，你会怎么来排查这个问题？线程⽇志⼀般你会看其中的什么 部分？</strong></h3><p>jstack 用来查询 Java 进程的堆栈信息。</p>
+<p>jvisualvm 监控内存泄露，跟踪垃圾回收、执行时内存、cpu分析、线程分析。</p>
+<p>详见Java jvisualvm简要说明，可参考 线上FullGC频繁的排查。</p>
+<p>Java jvisualvm简要说明</p>
+<p><a href="https://blog.csdn.net/a19881029/article/details/8432368/" target="_blank" rel="noopener">https://blog.csdn.net/a19881029/article/details/8432368/</a></p>
+<p>线上FullGC频繁的排查</p>
+<p><a href="https://blog.csdn.net/wilsonpeng3/article/details/70064336/" target="_blank" rel="noopener">https://blog.csdn.net/wilsonpeng3/article/details/70064336/</a></p>
+<h3 id="【JVM】StackOverflow异常有没有遇到过？⼀般你猜测会在什么情况下被触发？如何指定⼀个线程的堆栈⼤⼩？⼀般你们写多少？"><a href="#【JVM】StackOverflow异常有没有遇到过？⼀般你猜测会在什么情况下被触发？如何指定⼀个线程的堆栈⼤⼩？⼀般你们写多少？" class="headerlink" title="【JVM】StackOverflow异常有没有遇到过？⼀般你猜测会在什么情况下被触发？如何指定⼀个线程的堆栈⼤⼩？⼀般你们写多少？"></a>【JVM】<strong>StackOverflow异常有没有遇到过？⼀般你猜测会在什么情况下被触发？如何指定⼀个线程的堆栈⼤⼩？⼀般你们写多少？</strong></h3><p>栈内存溢出，一般由栈内存的局部变量过爆了，导致内存溢出。出现在递归方法，参数个数过多，递归过深，递归没有出口。</p>
+<h3 id="什么是垃圾回收？"><a href="#什么是垃圾回收？" class="headerlink" title="什么是垃圾回收？"></a>什么是垃圾回收？</h3><p>垃圾回收是Java中自动内存管理的另一种叫法。垃圾回收的目的是为程序保持尽可能多的可用堆（heap）。 JVM会删除堆上不再需要从堆引用的对象。</p>
+<h3 id="用一个例子解释垃圾回收？"><a href="#用一个例子解释垃圾回收？" class="headerlink" title="用一个例子解释垃圾回收？"></a>用一个例子解释垃圾回收？</h3><p>比方说，下面这个方法就会从函数调用。</p>
+<p>void method(){</p>
+<p>​    Calendar calendar = new GregorianCalendar(2000,10,30);</p>
+<p>​    System.out.println(calendar);</p>
+<p>}</p>
+<p>通过函数第一行代码中参考变量calendar，在堆上创建了GregorianCalendar类的一个对象。</p>
+<p>函数结束执行后，引用变量calendar不再有效。因此，在方法中没有创建引用到对象。</p>
+<p>JVM认识到这一点，会从堆中删除对象。这就是所谓的垃圾回收。</p>
+<h3 id="什么时候运行垃圾回收？"><a href="#什么时候运行垃圾回收？" class="headerlink" title="什么时候运行垃圾回收？"></a>什么时候运行垃圾回收？</h3><p>垃圾回收在JVM突发奇想和心血来潮时运行（没有那么糟糕）。运行垃圾收集的可能情况是：</p>
+<p>堆可用内存不足</p>
+<p>CPU空闲</p>
+<h3 id="垃圾回收的最佳做法？"><a href="#垃圾回收的最佳做法？" class="headerlink" title="垃圾回收的最佳做法？"></a>垃圾回收的最佳做法？</h3><p>用编程的方式，我们可以要求（记住这只是一个请求——不是一个命令）JVM通过调用System.gc()方法来运行垃圾回收。</p>
+<p>当内存已满，且堆上没有对象可用于垃圾回收时，JVM可能会抛出OutOfMemoryException。</p>
+<p>对象在被垃圾回收从堆上删除之前，会运行finalize()方法。我们建议不要用finalize()方法写任何代码。</p>
+<h3 id="Java-中会存在内存泄漏吗，请简单描述。"><a href="#Java-中会存在内存泄漏吗，请简单描述。" class="headerlink" title="Java 中会存在内存泄漏吗，请简单描述。"></a>Java 中会存在内存泄漏吗，请简单描述。</h3><p>答：理论上Java因为有垃圾回收机制（GC）不会存在内存泄露问题（这也是Java被广泛使用于服务器端编程的一个重要原因）；然而在实际开发中，可能会存在无用但可达的对象，这些对象不能被GC回收，因此也会导致内存泄露的发生。例如Hibernate的Session（一级缓存）中的对象属于持久态，垃圾回收器是不会回收这些对象的，然而这些对象中可能存在无用的垃圾对象，如果不及时关闭（close）或清空（flush）一级缓存就可能导致内存泄露。下面例子中的代码也会导致内存泄露。</p>
+<p>import java.util.Arrays;</p>
+<p>import java.util.EmptyStackException;</p>
+<p>public class MyStack<t> {</t></p>
+<p>​    private T[] elements;</p>
+<p>​    private int size = 0;</p>
+<p>​    private static final int INIT_CAPACITY = 16;</p>
+<p>​    public MyStack() {</p>
+<p>​        elements = (T[]) new Object[INIT_CAPACITY];</p>
+<p>​    }</p>
+<p>​    public void push(T elem) {</p>
+<p>​        ensureCapacity();</p>
+<p>​        elements[size++] = elem;</p>
+<p>​    }</p>
+<p>​    public T pop() {</p>
+<p>​        if(size == 0) </p>
+<p>​            throw new EmptyStackException();</p>
+<p>​        return elements[–size];</p>
+<p>​    }</p>
+<p>​    private void ensureCapacity() {</p>
+<p>​        if(elements.length == size) {</p>
+<p>​            elements = Arrays.copyOf(elements, 2 * size + 1);</p>
+<p>​        }</p>
+<p>​    }</p>
+<p>}</p>
+<p>上面的代码实现了一个栈（先进后出（FILO））结构，乍看之下似乎没有什么明显的问题，它甚至可以通过你编写的各种单元测试。然而其中的pop方法却存在内存泄露的问题，当我们用pop方法弹出栈中的对象时，该对象不会被当作垃圾回收，即使使用栈的程序不再引用这些对象，因为栈内部维护着对这些对象的过期引用（obsolete reference）。在支持垃圾回收的语言中，内存泄露是很隐蔽的，这种内存泄露其实就是无意识的对象保持。如果一个对象引用被无意识的保留起来了，那么垃圾回收器不会处理这个对象，也不会处理该对象引用的其他对象，即使这样的对象只有少数几个，也可能会导致很多的对象被排除在垃圾回收之外，从而对性能造成重大影响，极端情况下会引发Disk Paging（物理内存与硬盘的虚拟内存交换数据），甚至造成OutOfMemoryError。</p>
+<h3 id="GC是什么？为什么要有GC？"><a href="#GC是什么？为什么要有GC？" class="headerlink" title="GC是什么？为什么要有GC？"></a>GC是什么？为什么要有GC？</h3><p>答：GC是垃圾收集的意思，内存处理是编程人员容易出现问题的地方，忘记或者错误的内存回收会导致程序或系统的不稳定甚至崩溃，Java提供的GC功能可以自动监测对象是否超过作用域从而达到自动回收内存的目的，Java语言没有提供释放已分配内存的显示操作方法。Java程序员不用担心内存管理，因为垃圾收集器会自动进行管理。要请求垃圾收集，可以调用下面的方法之一：System.gc() 或Runtime.getRuntime().gc() ，但JVM可以屏蔽掉显示的垃圾回收调用。<br>垃圾回收可以有效的防止内存泄露，有效的使用可以使用的内存。垃圾回收器通常是作为一个单独的低优先级的线程运行，不可预知的情况下对内存堆中已经死亡的或者长时间没有使用的对象进行清除和回收，程序员不能实时的调用垃圾回收器对某个对象或所有对象进行垃圾回收。在Java诞生初期，垃圾回收是Java最大的亮点之一，因为服务器端的编程需要有效的防止内存泄露问题，然而时过境迁，如今Java的垃圾回收机制已经成为被诟病的东西。移动智能终端用户通常觉得iOS的系统比Android系统有更好的用户体验，其中一个深层次的原因就在于Android系统中垃圾回收的不可预知性。</p>
+<p>补充：垃圾回收机制有很多种，包括：分代复制垃圾回收、标记垃圾回收、增量垃圾回收等方式。标准的Java进程既有栈又有堆。栈保存了原始型局部变量，堆保存了要创建的对象。Java平台对堆内存回收和再利用的基本算法被称为标记和清除，但是Java对其进行了改进，采用“分代式垃圾收集”。这种方法会跟Java对象的生命周期将堆内存划分为不同的区域，在垃圾收集过程中，可能会将对象移动到不同区域： </p>
+<ul>
+<li>伊甸园（Eden）：这是对象最初诞生的区域，并且对大多数对象来说，这里是它们唯一存在过的区域。 </li>
+<li>幸存者乐园（Survivor）：从伊甸园幸存下来的对象会被挪到这里。 </li>
+<li>终身颐养园（Tenured）：这是足够老的幸存对象的归宿。年轻代收集（Minor-GC）过程是不会触及这个地方的。当年轻代收集不能把对象放进终身颐养园时，就会触发一次完全收集（Major-GC），这里可能还会牵扯到压缩，以便为大对象腾出足够的空间。</li>
+</ul>
+<p>与垃圾回收相关的JVM参数：</p>
+<p>-Xms / -Xmx — 堆的初始大小 / 堆的最大大小</p>
+<p>-Xmn — 堆中年轻代的大小</p>
+<p>-XX:-DisableExplicitGC — 让System.gc()不产生任何作用</p>
+<p>-XX:+PrintGCDetails — 打印GC的细节</p>
+<p>-XX:+PrintGCDateStamps — 打印GC操作的时间戳</p>
+<p>-XX:NewSize / XX:MaxNewSize — 设置新生代大小/新生代最大大小</p>
+<p>-XX:NewRatio — 可以设置老生代和新生代的比例</p>
+<p>-XX:PrintTenuringDistribution — 设置每次新生代GC后输出幸存者乐园中对象年龄的分布</p>
+<p>-XX:InitialTenuringThreshold / -XX:MaxTenuringThreshold：设置老年代阀值的初始值和最大值</p>
+<p>-XX:TargetSurvivorRatio：设置幸存区的目标使用率</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2018-12-25T07:27:58.305Z" itemprop="dateUpdated">2018-12-25 15:27:58</time>
+</span><br>
+
+
+        
+        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2018/10/20/Java-面试题系列篇-虚拟机/" target="_blank" rel="external">https://www.ttxxly.top/2018/10/20/Java-面试题系列篇-虚拟机/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="https://www.ttxxly.top">
+            <img src="/img/avatar.jpg" alt="Darklovy">
+            Darklovy
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://www.ttxxly.top/2018/10/20/Java-面试题系列篇-虚拟机/&title=《Java 面试题系列篇-虚拟机》 — Darklovy&pic=https://www.ttxxly.top/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://www.ttxxly.top/2018/10/20/Java-面试题系列篇-虚拟机/&title=《Java 面试题系列篇-虚拟机》 — Darklovy&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://www.ttxxly.top/2018/10/20/Java-面试题系列篇-虚拟机/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Java 面试题系列篇-虚拟机》 — Darklovy&url=https://www.ttxxly.top/2018/10/20/Java-面试题系列篇-虚拟机/&via=https://www.ttxxly.top" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://www.ttxxly.top/2018/10/20/Java-面试题系列篇-虚拟机/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2018/10/20/Java-面试题系列篇-编程大题/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">Java 面试题系列篇-编程大题</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2018/10/20/Java-面试题系列篇-SpringMVC-框架/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Java 面试题系列篇-SpringMVC 框架</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢大爷~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/wechat.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check" data-wechat="/img/wechat.jpg" data-alipay="/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style="display:none">
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style="display:none">
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>Darklovy &copy; 2015 - 2018</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://www.ttxxly.top/2018/10/20/Java-面试题系列篇-虚拟机/&title=《Java 面试题系列篇-虚拟机》 — Darklovy&pic=https://www.ttxxly.top/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://www.ttxxly.top/2018/10/20/Java-面试题系列篇-虚拟机/&title=《Java 面试题系列篇-虚拟机》 — Darklovy&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://www.ttxxly.top/2018/10/20/Java-面试题系列篇-虚拟机/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Java 面试题系列篇-虚拟机》 — Darklovy&url=https://www.ttxxly.top/2018/10/20/Java-面试题系列篇-虚拟机/&via=https://www.ttxxly.top" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://www.ttxxly.top/2018/10/20/Java-面试题系列篇-虚拟机/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACtklEQVR42u3aQW4bMRAEQP//0wmQU4JYUvcMKetQexJWCy2LBshxD7++4uvXnyt/8u/r0S/8/8zzd+VjqC88PDy80dAfXclQHj35iPf8XckUJ2PGw8PDu82b/Vy7cCfTlExusXng4eHh/Shv9vys4N48j4eHh/dpvGTz2IQap8aDh4eHd5uXFLV5ANEW3LON4XDWgoeHhxfz2gbYJ3y+2N/Dw8PDW3TV20MAswh4dtQgGi0eHh7eBd4+Wk2K41nT61RrDQ8PD+8sLz9Etalj22dm0cM3n/Hw8PAu8DYZRt7umpXL7bfF9oCHh4e34OULbnJEYFYWt6FD3pDDw8PDu8HbLOVtYNEOdFOUf+13Kjw8PLxgnYyq79EhgzbayGEvJhoPDw/vGq8tiGfLetTmX5Ts9Uzj4eHhHeK1C3F7GGu2YbQxLh4eHt5tXl6kzuLUdunPI90X2xgeHh7eNd6+QZXfnwW+w2nCw8PDu8abxbWnhpJvAAcOXeHh4eGtebOYIPl2U0zPNpv60BUeHh7eUd4+Wm1baO3xgjb+wMPDwzvFy4Pa/H4+r8XxqVHUi4eHh/ceXt7ynxXW+dBn4UjBwMPDw7vGu3dQoH1XEo487O/h4eHhXeO1S/+sudXeH7bZ8PDw8C7w8tbUrAXVxg2b51/Eynh4eHiHeLOhR520cspaQLT94OHh4b2F1zao2te37f98g/nmMx4eHt4F3qajlJfUNyYrnz48PDy8s7xNYNoW1vujA23si4eHh3eD957jWXWivDjEcKCYxsPDwwt4yYs3QcPmaMKBvxIeHh7eNd5sUc6X7NkRgXYfe7gx4OHh4f0QbxMr5JvELJ7Aw8PD+2TeLNidMWZbyz/38fDw8K7x2jAiPwSwj3dXY8PDw8O7wGv/yZ+1rzaFcjuJq/4eHh4e3rMnfwMo+5xxmxBsCQAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '死鬼去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

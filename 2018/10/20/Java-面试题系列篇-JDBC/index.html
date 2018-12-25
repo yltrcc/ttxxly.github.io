@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>Java 面试题系列篇-JDBC | Darklovy | Know more,Do more,Be more.</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="Java">
+    <meta name="description" content="JDBC阐述JDBC操作数据库的步骤。答：下面的代码以连接本机的Oracle数据库为例，演示JDBC操作数据库的步骤。 加载驱动。 ​    Class.forName(“oracle.jdbc.driver.OracleDriver”); 创建连接。 ​    Connection con = DriverManager.getConnection(“jdbc:oracle:thin:@loca">
+<meta name="keywords" content="Java">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java 面试题系列篇-JDBC">
+<meta property="og:url" content="https://www.ttxxly.top/2018/10/20/Java-面试题系列篇-JDBC/index.html">
+<meta property="og:site_name" content="Darklovy">
+<meta property="og:description" content="JDBC阐述JDBC操作数据库的步骤。答：下面的代码以连接本机的Oracle数据库为例，演示JDBC操作数据库的步骤。 加载驱动。 ​    Class.forName(“oracle.jdbc.driver.OracleDriver”); 创建连接。 ​    Connection con = DriverManager.getConnection(“jdbc:oracle:thin:@loca">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2018-12-25T07:27:58.296Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Java 面试题系列篇-JDBC">
+<meta name="twitter:description" content="JDBC阐述JDBC操作数据库的步骤。答：下面的代码以连接本机的Oracle数据库为例，演示JDBC操作数据库的步骤。 加载驱动。 ​    Class.forName(“oracle.jdbc.driver.OracleDriver”); 创建连接。 ​    Connection con = DriverManager.getConnection(“jdbc:oracle:thin:@loca">
+    
+        <link rel="alternate" type="application/atom+xml" title="Darklovy" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide">
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Darklovy</h5>
+          <a href="mailto:634206017@qq.com" title="634206017@qq.com" class="mail">634206017@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/">
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives">
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags">
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories">
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/yscoder" target="_blank">
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://www.weibo.com/ysweb" target="_blank">
+                <i class="icon icon-lg icon-weibo"></i>
+                Weibo
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/custom">
+                <i class="icon icon-lg icon-link"></i>
+                测试
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Java 面试题系列篇-JDBC</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">Java 面试题系列篇-JDBC</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2018-10-20T10:12:41.000Z" itemprop="datePublished" class="page-time">
+  2018-10-20
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#JDBC"><span class="post-toc-number">1.</span> <span class="post-toc-text">JDBC</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#阐述JDBC操作数据库的步骤。"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">阐述JDBC操作数据库的步骤。</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Statement和PreparedStatement有什么区别？哪个性能更好？"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">Statement和PreparedStatement有什么区别？哪个性能更好？</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#使用JDBC操作数据库时，如何提升读取数据的性能？如何提升更新数据的性能？"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">使用JDBC操作数据库时，如何提升读取数据的性能？如何提升更新数据的性能？</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#在进行数据库编程时，连接池有什么作用？"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">在进行数据库编程时，连接池有什么作用？</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#什么是DAO模式？"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">什么是DAO模式？</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#事务的ACID是指什么？"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">事务的ACID是指什么？</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#JDBC中如何进行事务处理？"><span class="post-toc-number">1.7.</span> <span class="post-toc-text">JDBC中如何进行事务处理？</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#JDBC能否处理Blob和Clob？"><span class="post-toc-number">1.8.</span> <span class="post-toc-text">JDBC能否处理Blob和Clob？</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-Java-面试题系列篇-JDBC" class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">Java 面试题系列篇-JDBC</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2018-10-20 18:12:41" datetime="2018-10-20T10:12:41.000Z" itemprop="datePublished">2018-10-20</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style="display:none">
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h2 id="JDBC"><a href="#JDBC" class="headerlink" title="JDBC"></a>JDBC</h2><h3 id="阐述JDBC操作数据库的步骤。"><a href="#阐述JDBC操作数据库的步骤。" class="headerlink" title="阐述JDBC操作数据库的步骤。"></a>阐述JDBC操作数据库的步骤。</h3><p>答：下面的代码以连接本机的Oracle数据库为例，演示JDBC操作数据库的步骤。</p>
+<p>加载驱动。</p>
+<p>​    Class.forName(“oracle.jdbc.driver.OracleDriver”);</p>
+<p>创建连接。</p>
+<p>​    Connection con = DriverManager.getConnection(“jdbc:oracle:thin:@localhost:1521:orcl”, “scott”, “tiger”);</p>
+<p>创建语句。</p>
+<p>​    PreparedStatement ps = con.prepareStatement(“select * from emp where sal between ? and ?”);</p>
+<p>​    ps.setInt(1, 1000);</p>
+<p>​    ps.setInt(2, 3000);</p>
+<p>执行语句。</p>
+<p>​    ResultSet rs = ps.executeQuery();</p>
+<p>处理结果。</p>
+<p>​    while(rs.next()) {</p>
+<p>​        System.out.println(rs.getInt(“empno”) + “ - “ + rs.getString(“ename”));</p>
+<p>​    }</p>
+<p>关闭资源。</p>
+<p>​    finally {</p>
+<p>​        if(con != null) {</p>
+<p>​            try {</p>
+<p>​                con.close();</p>
+<p>​            } catch (SQLException e) {</p>
+<p>​                e.printStackTrace();</p>
+<p>​            }</p>
+<p>​        }</p>
+<p>​    }</p>
+<p>提示：关闭外部资源的顺序应该和打开的顺序相反，也就是说先关闭ResultSet、再关闭Statement、在关闭Connection。上面的代码只关闭了Connection（连接），虽然通常情况下在关闭连接时，连接上创建的语句和打开的游标也会关闭，但不能保证总是如此，因此应该按照刚才说的顺序分别关闭。此外，第一步加载驱动在JDBC 4.0中是可以省略的（自动从类路径中加载驱动），但是我们建议保留。</p>
+<h3 id="Statement和PreparedStatement有什么区别？哪个性能更好？"><a href="#Statement和PreparedStatement有什么区别？哪个性能更好？" class="headerlink" title="Statement和PreparedStatement有什么区别？哪个性能更好？"></a>Statement和PreparedStatement有什么区别？哪个性能更好？</h3><p> 答：与Statement相比，①PreparedStatement接口代表预编译的语句，它主要的优势在于可以减少SQL的编译错误并增加SQL的安全性（减少SQL注射攻击的可能性）；②PreparedStatement中的SQL语句是可以带参数的，避免了用字符串连接拼接SQL语句的麻烦和不安全；③当批量处理SQL或频繁执行相同的查询时，PreparedStatement有明显的性能上的优势，由于数据库可以将编译优化后的SQL语句缓存起来，下次执行相同结构的语句时就会很快（不用再次编译和生成执行计划）。</p>
+<p>补充：为了提供对存储过程的调用，JDBC API中还提供了CallableStatement接口。存储过程（Stored Procedure）是数据库中一组为了完成特定功能的SQL语句的集合，经编译后存储在数据库中，用户通过指定存储过程的名字并给出参数（如果该存储过程带有参数）来执行它。虽然调用存储过程会在网络开销、安全性、性能上获得很多好处，但是存在如果底层数据库发生迁移时就会有很多麻烦，因为每种数据库的存储过程在书写上存在不少的差别。</p>
+<h3 id="使用JDBC操作数据库时，如何提升读取数据的性能？如何提升更新数据的性能？"><a href="#使用JDBC操作数据库时，如何提升读取数据的性能？如何提升更新数据的性能？" class="headerlink" title="使用JDBC操作数据库时，如何提升读取数据的性能？如何提升更新数据的性能？"></a>使用JDBC操作数据库时，如何提升读取数据的性能？如何提升更新数据的性能？</h3><p>答：要提升读取数据的性能，可以指定通过结果集（ResultSet）对象的setFetchSize()方法指定每次抓取的记录数（典型的空间换时间策略）；要提升更新数据的性能可以使用PreparedStatement语句构建批处理，将若干SQL语句置于一个批处理中执行。</p>
+<h3 id="在进行数据库编程时，连接池有什么作用？"><a href="#在进行数据库编程时，连接池有什么作用？" class="headerlink" title="在进行数据库编程时，连接池有什么作用？"></a>在进行数据库编程时，连接池有什么作用？</h3><p> 答：由于创建连接和释放连接都有很大的开销（尤其是数据库服务器不在本地时，每次建立连接都需要进行TCP的三次握手，释放连接需要进行TCP四次握手，造成的开销是不可忽视的），为了提升系统访问数据库的性能，可以事先创建若干连接置于连接池中，需要时直接从连接池获取，使用结束时归还连接池而不必关闭连接，从而避免频繁创建和释放连接所造成的开销，这是典型的用空间换取时间的策略（浪费了空间存储连接，但节省了创建和释放连接的时间）。池化技术在Java开发中是很常见的，在使用线程时创建线程池的道理与此相同。基于Java的开源数据库连接池主要有：C3P0、Proxool、DBCP、BoneCP、Druid等。</p>
+<p>补充：在计算机系统中时间和空间是不可调和的矛盾，理解这一点对设计满足性能要求的算法是至关重要的。大型网站性能优化的一个关键就是使用缓存，而缓存跟上面讲的连接池道理非常类似，也是使用空间换时间的策略。可以将热点数据置于缓存中，当用户查询这些数据时可以直接从缓存中得到，这无论如何也快过去数据库中查询。当然，缓存的置换策略等也会对系统性能产生重要影响，对于这个问题的讨论已经超出了这里要阐述的范围。</p>
+<h3 id="什么是DAO模式？"><a href="#什么是DAO模式？" class="headerlink" title="什么是DAO模式？"></a>什么是DAO模式？</h3><p> 答：DAO（Data Access Object）顾名思义是一个为数据库或其他持久化机制提供了抽象接口的对象，在不暴露底层持久化方案实现细节的前提下提供了各种数据访问操作。在实际的开发中，应该将所有对数据源的访问操作进行抽象化后封装在一个公共API中。用程序设计语言来说，就是建立一个接口，接口中定义了此应用程序中将会用到的所有事务方法。在这个应用程序中，当需要和数据源进行交互的时候则使用这个接口，并且编写一个单独的类来实现这个接口，在逻辑上该类对应一个特定的数据存储。DAO模式实际上包含了两个模式，一是Data Accessor（数据访问器），二是Data Object（数据对象），前者要解决如何访问数据的问题，而后者要解决的是如何用对象封装数据。</p>
+<h3 id="事务的ACID是指什么？"><a href="#事务的ACID是指什么？" class="headerlink" title="事务的ACID是指什么？"></a>事务的ACID是指什么？</h3><p>答： </p>
+<ul>
+<li>原子性(Atomic)：事务中各项操作，要么全做要么全不做，任何一项操作的失败都会导致整个事务的失败； </li>
+<li>一致性(Consistent)：事务结束后系统状态是一致的； </li>
+<li>隔离性(Isolated)：并发执行的事务彼此无法看到对方的中间状态； </li>
+<li>持久性(Durable)：事务完成后所做的改动都会被持久化，即使发生灾难性的失败。通过日志和同步备份可以在故障发生后重建数据。</li>
+</ul>
+<p>补充：关于事务，在面试中被问到的概率是很高的，可以问的问题也是很多的。首先需要知道的是，只有存在并发数据访问时才需要事务。当多个事务访问同一数据时，可能会存在5类问题，包括3类数据读取问题（脏读、不可重复读和幻读）和2类数据更新问题（第1类丢失更新和第2类丢失更新）。</p>
+<p>脏读（Dirty Read）：A事务读取B事务尚未提交的数据并在此基础上操作，而B事务执行回滚，那么A读取到的数据就是脏数据。</p>
+<table>
+<thead>
+<tr>
+<th>时间</th>
+<th>转账事务A</th>
+<th>取款事务B</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>T1</td>
+<td></td>
+<td>开始事务</td>
+</tr>
+<tr>
+<td>T2</td>
+<td>开始事务</td>
+<td></td>
+</tr>
+<tr>
+<td>T3</td>
+<td></td>
+<td>查询账户余额为1000元</td>
+</tr>
+<tr>
+<td>T4</td>
+<td></td>
+<td>取出500元余额修改为500元</td>
+</tr>
+<tr>
+<td>T5</td>
+<td>查询账户余额为500元（脏读）</td>
+<td></td>
+</tr>
+<tr>
+<td>T6</td>
+<td></td>
+<td>撤销事务余额恢复为1000元</td>
+</tr>
+<tr>
+<td>T7</td>
+<td>汇入100元把余额修改为600元</td>
+<td></td>
+</tr>
+<tr>
+<td>T8</td>
+<td>提交事务</td>
+</tr>
+</tbody>
+</table>
+<p>不可重复读（Unrepeatable Read）：事务A重新读取前面读取过的数据，发现该数据已经被另一个已提交的事务B修改过了。</p>
+<table>
+<thead>
+<tr>
+<th>时间</th>
+<th>转账事务A</th>
+<th>取款事务B</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>T1</td>
+<td></td>
+<td>开始事务</td>
+</tr>
+<tr>
+<td>T2</td>
+<td>开始事务</td>
+<td></td>
+</tr>
+<tr>
+<td>T3</td>
+<td></td>
+<td>查询账户余额为1000元</td>
+</tr>
+<tr>
+<td>T4</td>
+<td>查询账户余额为1000元</td>
+<td></td>
+</tr>
+<tr>
+<td>T5</td>
+<td></td>
+<td>取出100元修改余额为900元</td>
+</tr>
+<tr>
+<td>T6</td>
+<td></td>
+<td>提交事务</td>
+</tr>
+<tr>
+<td>T7</td>
+<td>查询账户余额为900元（不可重复读）</td>
+</tr>
+</tbody>
+</table>
+<p>幻读（Phantom Read）：事务A重新执行一个查询，返回一系列符合查询条件的行，发现其中插入了被事务B提交的行。</p>
+<table>
+<thead>
+<tr>
+<th>时间</th>
+<th>统计金额事务A</th>
+<th>转账事务B</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>T1</td>
+<td></td>
+<td>开始事务</td>
+</tr>
+<tr>
+<td>T2</td>
+<td>开始事务</td>
+<td></td>
+</tr>
+<tr>
+<td>T3</td>
+<td>统计总存款为10000元</td>
+<td></td>
+</tr>
+<tr>
+<td>T4</td>
+<td></td>
+<td>新增一个存款账户存入100元</td>
+</tr>
+<tr>
+<td>T5</td>
+<td></td>
+<td>提交事务</td>
+</tr>
+<tr>
+<td>T6</td>
+<td>再次统计总存款为10100元（幻读）</td>
+</tr>
+</tbody>
+</table>
+<p>第1类丢失更新：事务A撤销时，把已经提交的事务B的更新数据覆盖了。</p>
+<table>
+<thead>
+<tr>
+<th>时间</th>
+<th>取款事务A</th>
+<th>转账事务B</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>T1</td>
+<td>开始事务</td>
+<td></td>
+</tr>
+<tr>
+<td>T2</td>
+<td></td>
+<td>开始事务</td>
+</tr>
+<tr>
+<td>T3</td>
+<td>查询账户余额为1000元</td>
+<td></td>
+</tr>
+<tr>
+<td>T4</td>
+<td></td>
+<td>查询账户余额为1000元</td>
+</tr>
+<tr>
+<td>T5</td>
+<td></td>
+<td>汇入100元修改余额为1100元</td>
+</tr>
+<tr>
+<td>T6</td>
+<td></td>
+<td>提交事务</td>
+</tr>
+<tr>
+<td>T7</td>
+<td>取出100元将余额修改为900元</td>
+<td></td>
+</tr>
+<tr>
+<td>T8</td>
+<td>撤销事务</td>
+<td></td>
+</tr>
+<tr>
+<td>T9</td>
+<td>余额恢复为1000元（丢失更新）</td>
+</tr>
+</tbody>
+</table>
+<p>第2类丢失更新：事务A覆盖事务B已经提交的数据，造成事务B所做的操作丢失。</p>
+<table>
+<thead>
+<tr>
+<th>时间</th>
+<th>转账事务A</th>
+<th>取款事务B</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>T1</td>
+<td></td>
+<td>开始事务</td>
+</tr>
+<tr>
+<td>T2</td>
+<td>开始事务</td>
+<td></td>
+</tr>
+<tr>
+<td>T3</td>
+<td></td>
+<td>查询账户余额为1000元</td>
+</tr>
+<tr>
+<td>T4</td>
+<td>查询账户余额为1000元</td>
+<td></td>
+</tr>
+<tr>
+<td>T5</td>
+<td></td>
+<td>取出100元将余额修改为900元</td>
+</tr>
+<tr>
+<td>T6</td>
+<td></td>
+<td>提交事务</td>
+</tr>
+<tr>
+<td>T7</td>
+<td>汇入100元将余额修改为1100元</td>
+<td></td>
+</tr>
+<tr>
+<td>T8</td>
+<td>提交事务</td>
+<td></td>
+</tr>
+<tr>
+<td>T9</td>
+<td>查询账户余额为1100元（丢失更新）</td>
+</tr>
+</tbody>
+</table>
+<p>数据并发访问所产生的问题，在有些场景下可能是允许的，但是有些场景下可能就是致命的，数据库通常会通过锁机制来解决数据并发访问问题，按锁定对象不同可以分为表级锁和行级锁；按并发事务锁定关系可以分为共享锁和独占锁，具体的内容大家可以自行查阅资料进行了解。<br>直接使用锁是非常麻烦的，为此数据库为用户提供了自动锁机制，只要用户指定会话的事务隔离级别，数据库就会通过分析SQL语句然后为事务访问的资源加上合适的锁，此外，数据库还会维护这些锁通过各种手段提高系统的性能，这些对用户来说都是透明的（就是说你不用理解，事实上我确实也不知道）。ANSI/ISO SQL 92标准定义了4个等级的事务隔离级别，如下表所示：</p>
+<table>
+<thead>
+<tr>
+<th>隔离级别</th>
+<th>脏读</th>
+<th>不可重复读</th>
+<th>幻读</th>
+<th>第一类丢失更新</th>
+<th>第二类丢失更新</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>READ UNCOMMITED</td>
+<td>允许</td>
+<td>允许</td>
+<td>允许</td>
+<td>不允许</td>
+<td>允许</td>
+</tr>
+<tr>
+<td>READ COMMITTED</td>
+<td>不允许</td>
+<td>允许</td>
+<td>允许</td>
+<td>不允许</td>
+<td>允许</td>
+</tr>
+<tr>
+<td>REPEATABLE READ</td>
+<td>不允许</td>
+<td>不允许</td>
+<td>允许</td>
+<td>不允许</td>
+<td>不允许</td>
+</tr>
+<tr>
+<td>SERIALIZABLE</td>
+<td>不允许</td>
+<td>不允许</td>
+<td>不允许</td>
+<td>不允许</td>
+<td>不允许</td>
+</tr>
+</tbody>
+</table>
+<p>需要说明的是，事务隔离级别和数据访问的并发性是对立的，事务隔离级别越高并发性就越差。所以要根据具体的应用来确定合适的事务隔离级别，这个地方没有万能的原则。</p>
+<h3 id="JDBC中如何进行事务处理？"><a href="#JDBC中如何进行事务处理？" class="headerlink" title="JDBC中如何进行事务处理？"></a>JDBC中如何进行事务处理？</h3><p> 答：Connection提供了事务处理的方法，通过调用setAutoCommit(false)可以设置手动提交事务；当事务完成后用commit()显式提交事务；如果在事务处理过程中发生异常则通过rollback()进行事务回滚。除此之外，从JDBC 3.0中还引入了Savepoint（保存点）的概念，允许通过代码设置保存点并让事务回滚到指定的保存点。 </p>
+<h3 id="JDBC能否处理Blob和Clob？"><a href="#JDBC能否处理Blob和Clob？" class="headerlink" title="JDBC能否处理Blob和Clob？"></a>JDBC能否处理Blob和Clob？</h3><p>答： Blob是指二进制大对象（Binary Large Object），而Clob是指大字符对象（Character Large Objec），因此其中Blob是为存储大的二进制数据而设计的，而Clob是为存储大的文本数据而设计的。JDBC的PreparedStatement和ResultSet都提供了相应的方法来支持Blob和Clob操作。下面的代码展示了如何使用JDBC操作LOB：<br>下面以MySQL数据库为例，创建一个张有三个字段的用户表，包括编号（id）、姓名（name）和照片（photo），建表语句如下：</p>
+<p>create table tb_user</p>
+<p>(</p>
+<p>id int primary key auto_increment,</p>
+<p>name varchar(20) unique not null,</p>
+<p>photo longblob</p>
+<p>);</p>
+<p>下面的Java代码向数据库中插入一条记录：</p>
+<p>import java.io.FileInputStream;</p>
+<p>import java.io.IOException;</p>
+<p>import java.io.InputStream;</p>
+<p>import java.sql.Connection;</p>
+<p>import java.sql.DriverManager;</p>
+<p>import java.sql.PreparedStatement;</p>
+<p>import java.sql.SQLException;</p>
+<p>class JdbcLobTest {</p>
+<p>​    public static void main(String[] args) {</p>
+<p>​        Connection con = null;</p>
+<p>​        try {</p>
+<p>​            // 1. 加载驱动（Java6以上版本可以省略）</p>
+<p>​            Class.forName(“com.mysql.jdbc.Driver”);</p>
+<p>​            // 2. 建立连接</p>
+<p>​            con = DriverManager.getConnection(“jdbc:mysql://localhost:3306/test”, “root”, “123456”);</p>
+<p>​            // 3. 创建语句对象</p>
+<p>​            PreparedStatement ps = con.prepareStatement(“insert into tb_user values (default, ?, ?)”);</p>
+<p>​            ps.setString(1, “骆昊”);              // 将SQL语句中第一个占位符换成字符串</p>
+<p>​            try (InputStream in = new FileInputStream(“test.jpg”)) {    // Java 7的TWR</p>
+<p>​                ps.setBinaryStream(2, in);      // 将SQL语句中第二个占位符换成二进制流</p>
+<p>​                // 4. 发出SQL语句获得受影响行数</p>
+<p>​                System.out.println(ps.executeUpdate() == 1 ? “插入成功” : “插入失败”);</p>
+<p>​            } catch(IOException e) {</p>
+<p>​                System.out.println(“读取照片失败!”);</p>
+<p>​            }</p>
+<p>​        } catch (ClassNotFoundException | SQLException e) {     // Java 7的多异常捕获</p>
+<p>​            e.printStackTrace();</p>
+<p>​        } finally { // 释放外部资源的代码都应当放在finally中保证其能够得到执行</p>
+<p>​            try {</p>
+<p>​                if(con != null &amp;&amp; !con.isClosed()) {</p>
+<p>​                    con.close();    // 5. 释放数据库连接 </p>
+<p>​                    con = null;     // 指示垃圾回收器可以回收该对象</p>
+<p>​                }</p>
+<p>​            } catch (SQLException e) {</p>
+<p>​                e.printStackTrace();</p>
+<p>​            }</p>
+<p>​        }</p>
+<p>​    }</p>
+<p>}</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2018-12-25T07:27:58.296Z" itemprop="dateUpdated">2018-12-25 15:27:58</time>
+</span><br>
+
+
+        
+        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2018/10/20/Java-面试题系列篇-JDBC/" target="_blank" rel="external">https://www.ttxxly.top/2018/10/20/Java-面试题系列篇-JDBC/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="https://www.ttxxly.top">
+            <img src="/img/avatar.jpg" alt="Darklovy">
+            Darklovy
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://www.ttxxly.top/2018/10/20/Java-面试题系列篇-JDBC/&title=《Java 面试题系列篇-JDBC》 — Darklovy&pic=https://www.ttxxly.top/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://www.ttxxly.top/2018/10/20/Java-面试题系列篇-JDBC/&title=《Java 面试题系列篇-JDBC》 — Darklovy&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://www.ttxxly.top/2018/10/20/Java-面试题系列篇-JDBC/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Java 面试题系列篇-JDBC》 — Darklovy&url=https://www.ttxxly.top/2018/10/20/Java-面试题系列篇-JDBC/&via=https://www.ttxxly.top" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://www.ttxxly.top/2018/10/20/Java-面试题系列篇-JDBC/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2018/10/20/Java-面试题系列篇-正则表达式/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">Java 面试题系列篇-正则表达式</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2018/10/20/Java-面试题系列篇-数据库/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Java 面试题系列篇-数据库</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢大爷~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/wechat.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check" data-wechat="/img/wechat.jpg" data-alipay="/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style="display:none">
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style="display:none">
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>Darklovy &copy; 2015 - 2018</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://www.ttxxly.top/2018/10/20/Java-面试题系列篇-JDBC/&title=《Java 面试题系列篇-JDBC》 — Darklovy&pic=https://www.ttxxly.top/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://www.ttxxly.top/2018/10/20/Java-面试题系列篇-JDBC/&title=《Java 面试题系列篇-JDBC》 — Darklovy&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://www.ttxxly.top/2018/10/20/Java-面试题系列篇-JDBC/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Java 面试题系列篇-JDBC》 — Darklovy&url=https://www.ttxxly.top/2018/10/20/Java-面试题系列篇-JDBC/&via=https://www.ttxxly.top" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://www.ttxxly.top/2018/10/20/Java-面试题系列篇-JDBC/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACs0lEQVR42u3a0W7iQAwFUP7/p6m0T5VowrU9pl3p5AkhCHMSKTbX83jEx/Pf8f319+P1/ddvvZ7t6pPJ68MHHh4eXmvpV8c9KTnPPen+zPfU5Ax4eHh4e7xJMbgCzJ/hvZKDh4eH93d4k/b6vqXugfHw8PD+L161yc4Dhep68PDw8H6Ll0QJ1XC2R6oWnmNZCx4eHl7M6w3Afvf1+nwPDw8PrzVV7z2Uk4HWZBhW+F08PDy8Bd4kKq0uohpS9CKM6B8DHh4e3oBX3WI1J1VDkFFcgoeHh7fMmwev1Sh2UmyileDh4eGt8apLvyfNi02vDFwWBjw8PLyjvKTZ7eEnI655IXnkvTweHh5ekdd7TPce39VwNoEVNqri4eHhbe0aLRePPKJNCkkPdnhPGR4eHt4YcHZwlUcJeRAcFRs8PDy8o7zeInrDrXzr1TM+3twqPDw8vKO86rC/F+8mwUFv28Gb8+Ph4eEt8Kp/+HuXoxfgVhv3KLDAw8PDO8SrbpY6PHwqbuTK23E8PDy8z/Dyn+9dgupCJ5cDDw8Pb4M3GVxVw9ZTRSVfAx4eHt4Gb2OUVS0AvcBi1K3j4eHhHYJVG9y8eEwe8Qn7zTt4eHh4R3nJIGpSNqqxbK9Zv1wDHh4e3gKvt8VqjqxGCdXv4uHh4e3x8tFXb9BV3arVjGivbhIeHh7eR3i9iLa3eStvu5OCEe2JwMPDwxvzJiP8asB6/0CvloHqSvDw8PBO8Z7FI1/oxuXISw4eHh7eHu9sAeg10EnwUQ01Hhv1DQ8PD68YN0xC2+qZD98lPDw8vDXevP3NNxMk7/cikkLKgoeHh/cRXq8hrpaTSSv/wyfx8PDw/hhv0hznwUcOw8PDw/skbxIZVCPaPAJORlxv1oaHh4e3wJsPwM420/lDfzTTw8PDw+vwvgD8qNB1T9MqCwAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '死鬼去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>
