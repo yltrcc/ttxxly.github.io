@@ -14,25 +14,25 @@
     
     
     
-    <title>Java Class 类与 Java 反射 | Darklovy | Know more,Do more,Be more.</title>
+    <title>Java 枚举类型 | Darklovy | Know more,Do more,Be more.</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
     <meta name="keywords" content="Java">
-    <meta name="description" content="通过 java 反射机制，可以在程序中访问已经装载到 JVM 中的 Java 对象的描述，实现访问、检测和修改描述 Java 对象本身信息的功能。 java 反射机制的功能十分强大，在 java.lang.reflect 包中提供了对该功能的支持。 从所周知，所有 Java 类均继承了 Object 类，在 Object 类中定义了一个 getClass() 方法，该方法返回一个类型为 Class">
+    <meta name="description" content="使用枚举类型可以取代以往定义常量的方式，同时枚举类型还赋予程序在编译时进行检查的功能。 使用枚举类型设置常量以往设置常量，通常将常量放置在接口中，这样在程序中就可以直接使用，并且该常量不能被修改，因为在接口中定义常量时，该常量的修饰符为 final 与 static。">
 <meta name="keywords" content="Java">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Java Class 类与 Java 反射">
-<meta property="og:url" content="https://www.ttxxly.top/2019/02/20/Java-Class-类与-Java-反射/index.html">
+<meta property="og:title" content="Java 枚举类型">
+<meta property="og:url" content="https://www.ttxxly.top/2019/02/22/Java-枚举类型/index.html">
 <meta property="og:site_name" content="Darklovy">
-<meta property="og:description" content="通过 java 反射机制，可以在程序中访问已经装载到 JVM 中的 Java 对象的描述，实现访问、检测和修改描述 Java 对象本身信息的功能。 java 反射机制的功能十分强大，在 java.lang.reflect 包中提供了对该功能的支持。 从所周知，所有 Java 类均继承了 Object 类，在 Object 类中定义了一个 getClass() 方法，该方法返回一个类型为 Class">
+<meta property="og:description" content="使用枚举类型可以取代以往定义常量的方式，同时枚举类型还赋予程序在编译时进行检查的功能。 使用枚举类型设置常量以往设置常量，通常将常量放置在接口中，这样在程序中就可以直接使用，并且该常量不能被修改，因为在接口中定义常量时，该常量的修饰符为 final 与 static。">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-02-20T06:25:58.667Z">
+<meta property="og:updated_time" content="2019-02-25T05:41:20.272Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Java Class 类与 Java 反射">
-<meta name="twitter:description" content="通过 java 反射机制，可以在程序中访问已经装载到 JVM 中的 Java 对象的描述，实现访问、检测和修改描述 Java 对象本身信息的功能。 java 反射机制的功能十分强大，在 java.lang.reflect 包中提供了对该功能的支持。 从所周知，所有 Java 类均继承了 Object 类，在 Object 类中定义了一个 getClass() 方法，该方法返回一个类型为 Class">
+<meta name="twitter:title" content="Java 枚举类型">
+<meta name="twitter:description" content="使用枚举类型可以取代以往定义常量的方式，同时枚举类型还赋予程序在编译时进行检查的功能。 使用枚举类型设置常量以往设置常量，通常将常量放置在接口中，这样在程序中就可以直接使用，并且该常量不能被修改，因为在接口中定义常量时，该常量的修饰符为 final 与 static。">
     
         <link rel="alternate" type="application/atom+xml" title="Darklovy" href="/atom.xml">
     
@@ -127,7 +127,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">Java Class 类与 Java 反射</div>
+        <div class="flex-col header-title ellipsis">Java 枚举类型</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -149,11 +149,11 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">Java Class 类与 Java 反射</h1>
+        <h1 class="title">Java 枚举类型</h1>
         <h5 class="subtitle">
             
-                <time datetime="2019-02-20T06:25:29.000Z" itemprop="datePublished" class="page-time">
-  2019-02-20
+                <time datetime="2019-02-22T02:56:20.000Z" itemprop="datePublished" class="page-time">
+  2019-02-22
 </time>
 
 
@@ -169,13 +169,20 @@
 
 <div class="container body-wrap">
     
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#使用枚举类型设置常量"><span class="post-toc-number">1.</span> <span class="post-toc-text">使用枚举类型设置常量</span></a></li></ol>
+        </nav>
+    </aside>
 
-<article id="post-Java-Class-类与-Java-反射" class="post-article article-type-post fade" itemprop="blogPost">
+
+<article id="post-Java-枚举类型" class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">Java Class 类与 Java 反射</h1>
+        <h1 class="post-card-title">Java 枚举类型</h1>
         <div class="post-meta">
-            <time class="post-time" title="2019-02-20 14:25:29" datetime="2019-02-20T06:25:29.000Z" itemprop="datePublished">2019-02-20</time>
+            <time class="post-time" title="2019-02-22 10:56:20" datetime="2019-02-22T02:56:20.000Z" itemprop="datePublished">2019-02-22</time>
 
             
 
@@ -188,136 +195,8 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <p>通过 java 反射机制，可以在程序中访问已经装载到 JVM 中的 Java 对象的描述，实现访问、检测和修改描述 Java 对象本身信息的功能。 java 反射机制的功能十分强大，在 <code>java.lang.reflect</code> 包中提供了对该功能的支持。</p>
-<p>从所周知，所有 Java 类均继承了 Object 类，在 Object 类中定义了一个 getClass() 方法，该方法返回一个类型为 Class 的对象。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Class textFieldC = textField.getClass();</span><br></pre></td></tr></table></figure></p>
-<p>利用 Class 类的对象 textFieldC，可以访问用来返回该对象的 textField 对象的描述信息。</p>
-<p>描述信息如下表所示：</p>
-<table>
-<thead>
-<tr>
-<th>组成部分</th>
-<th>访问方法</th>
-<th>返回值类型</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>包路径</td>
-<td>getPackage()</td>
-<td>Package 对象</td>
-<td>获得该类的存放路径</td>
-</tr>
-<tr>
-<td>类名称</td>
-<td>getName()</td>
-<td>String 对象</td>
-<td>获得该类的名称</td>
-</tr>
-<tr>
-<td>继承类</td>
-<td>getSuperClass()</td>
-<td>Class 对象</td>
-<td>获得该类继承的类</td>
-</tr>
-<tr>
-<td>实现接口</td>
-<td>getInterfaces()</td>
-<td>Class 型数组</td>
-<td>获得该类实现的所有接口</td>
-</tr>
-<tr>
-<td>构造方法</td>
-<td>getConstructors()</td>
-<td>Constructor 型数组</td>
-<td>获得所有权限为 public 的构造方法</td>
-</tr>
-<tr>
-<td>构造方法</td>
-<td>getConstructor(Class&lt;?&gt;…parameterTypes)</td>
-<td>Constructor 对象</td>
-<td>获得权限为 public 的指定构造方法</td>
-</tr>
-<tr>
-<td>构造方法</td>
-<td>getDeclaredConstructors()</td>
-<td>Constructors 型数组</td>
-<td>获得所有构造方法，按声明顺序返回</td>
-</tr>
-<tr>
-<td>构造方法</td>
-<td>getDeclaredConstructor(Class&lt;?&gt;…parameterTypes)</td>
-<td>Constructor 对象</td>
-<td>获得指定构造方法</td>
-</tr>
-<tr>
-<td>方法</td>
-<td>getMethods()</td>
-<td>Method 型数组</td>
-<td>获得所有权限为 public 的方法</td>
-</tr>
-<tr>
-<td>方法</td>
-<td>getMethod(String name, Class&lt;?&gt;…parameterTypes)</td>
-<td>Method 对象</td>
-<td>获得权限为 public 的指定方法</td>
-</tr>
-<tr>
-<td>方法</td>
-<td>getDeclaredMethods()</td>
-<td>Method 数组</td>
-<td>获得所有方法，按声明顺序返回</td>
-</tr>
-<tr>
-<td>方法</td>
-<td>getDeclaredMethod(String name, Class&lt;?&gt;…parameterTypes)</td>
-<td>Method 对象</td>
-<td>获得指定方法</td>
-</tr>
-<tr>
-<td>成员变量</td>
-<td>getFields()</td>
-<td>Field 型数组</td>
-<td>获得所有权限为 public 的成员变量</td>
-</tr>
-<tr>
-<td>成员变量</td>
-<td>getField(String name)</td>
-<td>Field 对象</td>
-<td>获得权限为 public 的指定成员变量</td>
-</tr>
-<tr>
-<td>成员变量</td>
-<td>getDeclaredFields()</td>
-<td>Field 型数组</td>
-<td>获得所有成员变量，按声明顺序返回</td>
-</tr>
-<tr>
-<td>成员变量</td>
-<td>getDeclaredField(String name)</td>
-<td>Field 对象</td>
-<td>获得指定成员变量</td>
-</tr>
-<tr>
-<td>内部类</td>
-<td>getClasses()</td>
-<td>Class 型数组</td>
-<td>获得所有权限为public的内部类</td>
-</tr>
-<tr>
-<td>内部类</td>
-<td>getDeclaredClasses()</td>
-<td>Class 型数组</td>
-<td>获得所有内部类</td>
-</tr>
-<tr>
-<td>内部类的声明类</td>
-<td>getDeclaringClass()</td>
-<td>Class 对象</td>
-<td>如果该类为内部类，则返回它的成员类，否则返回 null</td>
-</tr>
-</tbody>
-</table>
+            <p>使用枚举类型可以取代以往定义常量的方式，同时枚举类型还赋予程序在编译时进行检查的功能。</p>
+<h3 id="使用枚举类型设置常量"><a href="#使用枚举类型设置常量" class="headerlink" title="使用枚举类型设置常量"></a>使用枚举类型设置常量</h3><p>以往设置常量，通常将常量放置在接口中，这样在程序中就可以直接使用，并且该常量不能被修改，因为在接口中定义常量时，该常量的修饰符为 final 与 static。</p>
 
         </div>
 
@@ -326,12 +205,12 @@
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2019-02-20T06:25:58.667Z" itemprop="dateUpdated">2019-02-20 14:25:58</time>
+    Last updated: <time datetime="2019-02-25T05:41:20.272Z" itemprop="dateUpdated">2019-02-25 13:41:20</time>
 </span><br>
 
 
         
-        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2019/02/20/Java-Class-类与-Java-反射/" target="_blank" rel="external">https://www.ttxxly.top/2019/02/20/Java-Class-类与-Java-反射/</a>
+        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2019/02/22/Java-枚举类型/" target="_blank" rel="external">https://www.ttxxly.top/2019/02/22/Java-枚举类型/</a>
         
     </div>
     
@@ -362,7 +241,7 @@
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://www.ttxxly.top/2019/02/20/Java-Class-类与-Java-反射/&title=《Java Class 类与 Java 反射》 — Darklovy&pic=https://www.ttxxly.top/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://www.ttxxly.top/2019/02/22/Java-枚举类型/&title=《Java 枚举类型》 — Darklovy&pic=https://www.ttxxly.top/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -372,22 +251,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://www.ttxxly.top/2019/02/20/Java-Class-类与-Java-反射/&title=《Java Class 类与 Java 反射》 — Darklovy&source=" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://www.ttxxly.top/2019/02/22/Java-枚举类型/&title=《Java 枚举类型》 — Darklovy&source=" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://www.ttxxly.top/2019/02/20/Java-Class-类与-Java-反射/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://www.ttxxly.top/2019/02/22/Java-枚举类型/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Java Class 类与 Java 反射》 — Darklovy&url=https://www.ttxxly.top/2019/02/20/Java-Class-类与-Java-反射/&via=https://www.ttxxly.top" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Java 枚举类型》 — Darklovy&url=https://www.ttxxly.top/2019/02/22/Java-枚举类型/&via=https://www.ttxxly.top" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://www.ttxxly.top/2019/02/20/Java-Class-类与-Java-反射/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://www.ttxxly.top/2019/02/22/Java-枚举类型/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -410,18 +289,18 @@
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/2019/02/21/Java-使用-Annotation-功能/" id="post-prev" class="post-nav-link">
+      <a href="/2019/02/25/Java-运行时异常/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">Java 使用 Annotation 功能</h4>
+        <h4 class="title">Java 运行时异常</h4>
       </a>
     </div>
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/2019/02/19/Java-日期与时间/" id="post-next" class="post-nav-link">
+      <a href="/2019/02/21/Java-使用-Annotation-功能/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">Java 日期与时间</h4>
+        <h4 class="title">Java 使用 Annotation 功能</h4>
       </a>
     </div>
   
@@ -517,7 +396,7 @@
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://www.ttxxly.top/2019/02/20/Java-Class-类与-Java-反射/&title=《Java Class 类与 Java 反射》 — Darklovy&pic=https://www.ttxxly.top/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://www.ttxxly.top/2019/02/22/Java-枚举类型/&title=《Java 枚举类型》 — Darklovy&pic=https://www.ttxxly.top/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -527,22 +406,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://www.ttxxly.top/2019/02/20/Java-Class-类与-Java-反射/&title=《Java Class 类与 Java 反射》 — Darklovy&source=" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://www.ttxxly.top/2019/02/22/Java-枚举类型/&title=《Java 枚举类型》 — Darklovy&source=" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://www.ttxxly.top/2019/02/20/Java-Class-类与-Java-反射/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://www.ttxxly.top/2019/02/22/Java-枚举类型/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Java Class 类与 Java 反射》 — Darklovy&url=https://www.ttxxly.top/2019/02/20/Java-Class-类与-Java-反射/&via=https://www.ttxxly.top" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Java 枚举类型》 — Darklovy&url=https://www.ttxxly.top/2019/02/22/Java-枚举类型/&via=https://www.ttxxly.top" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://www.ttxxly.top/2019/02/20/Java-Class-类与-Java-反射/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://www.ttxxly.top/2019/02/22/Java-枚举类型/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -553,7 +432,7 @@
 <div class="page-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACpElEQVR42u3awU7jUAwF0P7/T8OGBVLV9Np+LkE6XaGoE3wyUmyu3+MRf75+fZ6vP3/n+fu969e//dgHDw8Pb1B6UsT1v508oB74TQ14eHh4a7xXBV0X8ar0asNIHtZ1PS+v4+Hh4d2GV3315+3n+v54eHh4/5fXK3HysPDw8PDuxqsOvtUiqjFHQj2cteDh4eHFvHyLdJ+fV/Z7eHh4eOOterVJVIOJvTp/7o+Hh4e3wDsVDVSH6Xw4ro7LeHh4eNu8/FhV9YhA8giur08CCDw8PLw9XnKjaunVBVjvMEEhCMbDw8Nb5vWOTE2WW9Vy81EeDw8Pb4N36kBAdW2WtIQDOz08PDy8Nd5kqO3dodcw8nE82u/h4eHhLfDyaLUa++bXR4cV8PDw8BZ4veMC8zZQbULzYw14eHh4p3j5waZqTLABKN8fDw8Pb5nXO0SVDLXz5VmzTjw8PLw1Xu+P+bMDdzVWSJoZHh4e3gavN7zmJfYG92o0XDhqgIeHhzfmzYfp3og8/3+IKsfDw8Nb4M3DgnzBf11QPi7n8QQeHh7e53nzNVg15O2B31SCh4eHd5Q3OTK1EQoffkB4eHh4C7xqeNprFdXFf/7bo2/i4eHhLfCqsew8uu09vl5IgYeHh7fB6730q8HE2WVYHqDg4eHhbfMmS688PqhOvKNHjIeHh/cR3iR4zQfoPCDOK8HDw8Pb5s2PWyWv/iTYrQa+UcPAw8PDW+BVX77VxVW1JVQf66Sd4OHh4U141Vvn4WzyaPKWkzcGPDw8vM/wqrFCPvhWe1Qv/I2yFjw8PLw/4lWL6C3VenEDHh4e3p1586E5bzP56H9gpMbDw8OLecnruzc653eex7gvGwMeHh7eUV7viFXvSEEey1bXbAf2e3h4eHjved8PELtgflXj0gAAAABJRU5ErkJggg==" alt="微信分享二维码">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACLUlEQVR42u3a207EMAwFQP7/p5dXpKXh2A6gptOnqvSSCZLXif3xER+vt+P9+tcrV29Izq/esOHAwMC4LeO1PNYfXn9+Pazk/mRsGBgYz2EkITIPjuuguQZUwzcGBgbGJKTmKWaSRGJgYGBMlp3zcwwMDIyEkSxi87/2ksU/WotjYGDckJGndP8biLfVNzAwMG7FeA2OXeXJPLxejgQDA+NoRm8QSXKWJ3C9BPSb0IyBgXEooxpMq40Xe0ue5VU4BgbGoYx8tVgN0Am72uqBgYHxBEYeQPP0rvdUPgWXb8bAwDia0RtWL+1LUsBtGAwMjIMYScI3aXeYz3EhNcTAwDiOESlbfQ6TO9cjKf8fMDAwbs7IN/TX7L2/ANViAwYGxhMY5W2swVO9BXA0WRgYGIcyJg2jk5aLajtF1LqKgYFxKKNXztzVFpaE3ep0YGBgnMrIC5DV9G4SssvJKAYGxqGMXkCspo/VMkD+TgwMDIxJqSA5r05Zc/cOAwPj5oz5YrVXyOylg1GGi4GBcRwjT/7ye35joftD6MfAwDiakW97VRPHPKXL2zUKvxsYGBgHMXqbaBPGfJNuQ88IBgbGrRiTdtX5EKsNH9WSJwYGxkmM3ud7m3S9wkCUdGJgYDyAsTd+T4oK+aL3crsNAwPjwYw8pE4Kk81FLAYGBkZwT/VKUv7Mv4uBgfEExqTpoZoOVoNvtEjGwMA4mlFdOibtF72nqpPVrG9gYGDcifEJx271G9TBZrgAAAAASUVORK5CYII=" alt="微信分享二维码">
 </div>
 
 

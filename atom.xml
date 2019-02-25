@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.ttxxly.top/"/>
-  <updated>2019-02-20T06:25:58.667Z</updated>
+  <updated>2019-02-25T05:42:49.826Z</updated>
   <id>https://www.ttxxly.top/</id>
   
   <author>
@@ -15,6 +15,78 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Java 运行时异常</title>
+    <link href="https://www.ttxxly.top/2019/02/25/Java-%E8%BF%90%E8%A1%8C%E6%97%B6%E5%BC%82%E5%B8%B8/"/>
+    <id>https://www.ttxxly.top/2019/02/25/Java-运行时异常/</id>
+    <published>2019-02-25T05:42:35.000Z</published>
+    <updated>2019-02-25T05:42:49.826Z</updated>
+    
+    <content type="html"><![CDATA[<p>RunTimeException 异常是程序运行过程中产生的异常。Java类库的每个包中都定义了异常类，所有这些类都是 Throwable 类的子类。</p><p>Throwable 类派生了两个子类，分别是 Exception 和 Error 类。Error 类及其子类用来描述 Java 运行系统中的内部错误以及资源耗尽的错误，这类错误比较严重。Exception 类称为非致命性类，可以通过捕获处理使程序继续执行。Exception 类又根据错误发生的原因分为 RuntimeException 异常和除 RuntimeException 之外的异常。</p><h3 id="常见的-RuntimeException-异常"><a href="#常见的-RuntimeException-异常" class="headerlink" title="常见的 RuntimeException 异常"></a>常见的 RuntimeException 异常</h3><table><thead><tr><th>种类</th><th>说明</th></tr></thead><tbody><tr><td>NullPointerException</td><td>空指针异常</td></tr><tr><td>ArrayIndexOutOfBoundsException</td><td>数组下标越界异常</td></tr><tr><td>ArithmeticException</td><td>算术异常</td></tr><tr><td>ArrayStoreException</td><td>数组中包含不兼容的值抛出异常</td></tr><tr><td>IilegalArgumentException</td><td>非法参数异常</td></tr><tr><td>SecurityException</td><td>安全性异常</td></tr><tr><td>NegativeArraySizeException</td><td>数组长度为负异常</td></tr></tbody></table>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;RunTimeException 异常是程序运行过程中产生的异常。Java类库的每个包中都定义了异常类，所有这些类都是 Throwable 类的子类。&lt;/p&gt;
+&lt;p&gt;Throwable 类派生了两个子类，分别是 Exception 和 Error 类。Error 类及其子类
+      
+    
+    </summary>
+    
+    
+      <category term="Java" scheme="https://www.ttxxly.top/tags/Java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Java 枚举类型</title>
+    <link href="https://www.ttxxly.top/2019/02/22/Java-%E6%9E%9A%E4%B8%BE%E7%B1%BB%E5%9E%8B/"/>
+    <id>https://www.ttxxly.top/2019/02/22/Java-枚举类型/</id>
+    <published>2019-02-22T02:56:20.000Z</published>
+    <updated>2019-02-25T05:41:20.272Z</updated>
+    
+    <content type="html"><![CDATA[<p>使用枚举类型可以取代以往定义常量的方式，同时枚举类型还赋予程序在编译时进行检查的功能。</p><h3 id="使用枚举类型设置常量"><a href="#使用枚举类型设置常量" class="headerlink" title="使用枚举类型设置常量"></a>使用枚举类型设置常量</h3><p>以往设置常量，通常将常量放置在接口中，这样在程序中就可以直接使用，并且该常量不能被修改，因为在接口中定义常量时，该常量的修饰符为 final 与 static。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;使用枚举类型可以取代以往定义常量的方式，同时枚举类型还赋予程序在编译时进行检查的功能。&lt;/p&gt;
+&lt;h3 id=&quot;使用枚举类型设置常量&quot;&gt;&lt;a href=&quot;#使用枚举类型设置常量&quot; class=&quot;headerlink&quot; title=&quot;使用枚举类型设置常量&quot;&gt;&lt;/a&gt;使用枚举类
+      
+    
+    </summary>
+    
+    
+      <category term="Java" scheme="https://www.ttxxly.top/tags/Java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Java 使用 Annotation 功能</title>
+    <link href="https://www.ttxxly.top/2019/02/21/Java-%E4%BD%BF%E7%94%A8-Annotation-%E5%8A%9F%E8%83%BD/"/>
+    <id>https://www.ttxxly.top/2019/02/21/Java-使用-Annotation-功能/</id>
+    <published>2019-02-21T01:33:00.000Z</published>
+    <updated>2019-02-25T05:41:20.271Z</updated>
+    
+    <content type="html"><![CDATA[<p>Java 中提供了 Annotation 功能，该功能可用于类、构造方法、成员变量、方法、参数等的声明中。该功能并不影响程序的运行，但是会对编译器警告灯辅助工具产生影响。</p><h3 id="定义-Annotation-类型"><a href="#定义-Annotation-类型" class="headerlink" title="定义 Annotation 类型"></a>定义 Annotation 类型</h3><p>在定义 Annotation 类型时，也需要用到用来定义接口的 interface 关键字，但需要在 interface 关键字前加一个 <code>@</code>符号，即定义 Annotation 类型的关键字为 <code>@interface</code>，这个关键字的隐含意思是继承了 <code>ava.lang.annotation.Annotation</code>接口.<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="meta">@interface</span> NoMemberAnnotation &#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;Java 中提供了 Annotation 功能，该功能可用于类、构造方法、成员变量、方法、参数等的声明中。该功能并不影响程序的运行，但是会对编译器警告灯辅助工具产生影响。&lt;/p&gt;
+&lt;h3 id=&quot;定义-Annotation-类型&quot;&gt;&lt;a href=&quot;#定义-Annotati
+      
+    
+    </summary>
+    
+    
+      <category term="Java" scheme="https://www.ttxxly.top/tags/Java/"/>
+    
+  </entry>
   
   <entry>
     <title>Java Class 类与 Java 反射</title>

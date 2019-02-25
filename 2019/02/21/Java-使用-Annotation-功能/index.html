@@ -14,25 +14,25 @@
     
     
     
-    <title>Java Class 类与 Java 反射 | Darklovy | Know more,Do more,Be more.</title>
+    <title>Java 使用 Annotation 功能 | Darklovy | Know more,Do more,Be more.</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
     <meta name="keywords" content="Java">
-    <meta name="description" content="通过 java 反射机制，可以在程序中访问已经装载到 JVM 中的 Java 对象的描述，实现访问、检测和修改描述 Java 对象本身信息的功能。 java 反射机制的功能十分强大，在 java.lang.reflect 包中提供了对该功能的支持。 从所周知，所有 Java 类均继承了 Object 类，在 Object 类中定义了一个 getClass() 方法，该方法返回一个类型为 Class">
+    <meta name="description" content="Java 中提供了 Annotation 功能，该功能可用于类、构造方法、成员变量、方法、参数等的声明中。该功能并不影响程序的运行，但是会对编译器警告灯辅助工具产生影响。 定义 Annotation 类型在定义 Annotation 类型时，也需要用到用来定义接口的 interface 关键字，但需要在 interface 关键字前加一个 @符号，即定义 Annotation 类型的关键字为 @i">
 <meta name="keywords" content="Java">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Java Class 类与 Java 反射">
-<meta property="og:url" content="https://www.ttxxly.top/2019/02/20/Java-Class-类与-Java-反射/index.html">
+<meta property="og:title" content="Java 使用 Annotation 功能">
+<meta property="og:url" content="https://www.ttxxly.top/2019/02/21/Java-使用-Annotation-功能/index.html">
 <meta property="og:site_name" content="Darklovy">
-<meta property="og:description" content="通过 java 反射机制，可以在程序中访问已经装载到 JVM 中的 Java 对象的描述，实现访问、检测和修改描述 Java 对象本身信息的功能。 java 反射机制的功能十分强大，在 java.lang.reflect 包中提供了对该功能的支持。 从所周知，所有 Java 类均继承了 Object 类，在 Object 类中定义了一个 getClass() 方法，该方法返回一个类型为 Class">
+<meta property="og:description" content="Java 中提供了 Annotation 功能，该功能可用于类、构造方法、成员变量、方法、参数等的声明中。该功能并不影响程序的运行，但是会对编译器警告灯辅助工具产生影响。 定义 Annotation 类型在定义 Annotation 类型时，也需要用到用来定义接口的 interface 关键字，但需要在 interface 关键字前加一个 @符号，即定义 Annotation 类型的关键字为 @i">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-02-20T06:25:58.667Z">
+<meta property="og:updated_time" content="2019-02-25T05:41:20.271Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Java Class 类与 Java 反射">
-<meta name="twitter:description" content="通过 java 反射机制，可以在程序中访问已经装载到 JVM 中的 Java 对象的描述，实现访问、检测和修改描述 Java 对象本身信息的功能。 java 反射机制的功能十分强大，在 java.lang.reflect 包中提供了对该功能的支持。 从所周知，所有 Java 类均继承了 Object 类，在 Object 类中定义了一个 getClass() 方法，该方法返回一个类型为 Class">
+<meta name="twitter:title" content="Java 使用 Annotation 功能">
+<meta name="twitter:description" content="Java 中提供了 Annotation 功能，该功能可用于类、构造方法、成员变量、方法、参数等的声明中。该功能并不影响程序的运行，但是会对编译器警告灯辅助工具产生影响。 定义 Annotation 类型在定义 Annotation 类型时，也需要用到用来定义接口的 interface 关键字，但需要在 interface 关键字前加一个 @符号，即定义 Annotation 类型的关键字为 @i">
     
         <link rel="alternate" type="application/atom+xml" title="Darklovy" href="/atom.xml">
     
@@ -127,7 +127,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">Java Class 类与 Java 反射</div>
+        <div class="flex-col header-title ellipsis">Java 使用 Annotation 功能</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -149,11 +149,11 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">Java Class 类与 Java 反射</h1>
+        <h1 class="title">Java 使用 Annotation 功能</h1>
         <h5 class="subtitle">
             
-                <time datetime="2019-02-20T06:25:29.000Z" itemprop="datePublished" class="page-time">
-  2019-02-20
+                <time datetime="2019-02-21T01:33:00.000Z" itemprop="datePublished" class="page-time">
+  2019-02-21
 </time>
 
 
@@ -169,13 +169,20 @@
 
 <div class="container body-wrap">
     
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#定义-Annotation-类型"><span class="post-toc-number">1.</span> <span class="post-toc-text">定义 Annotation 类型</span></a></li></ol>
+        </nav>
+    </aside>
 
-<article id="post-Java-Class-类与-Java-反射" class="post-article article-type-post fade" itemprop="blogPost">
+
+<article id="post-Java-使用-Annotation-功能" class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">Java Class 类与 Java 反射</h1>
+        <h1 class="post-card-title">Java 使用 Annotation 功能</h1>
         <div class="post-meta">
-            <time class="post-time" title="2019-02-20 14:25:29" datetime="2019-02-20T06:25:29.000Z" itemprop="datePublished">2019-02-20</time>
+            <time class="post-time" title="2019-02-21 09:33:00" datetime="2019-02-21T01:33:00.000Z" itemprop="datePublished">2019-02-21</time>
 
             
 
@@ -188,136 +195,8 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <p>通过 java 反射机制，可以在程序中访问已经装载到 JVM 中的 Java 对象的描述，实现访问、检测和修改描述 Java 对象本身信息的功能。 java 反射机制的功能十分强大，在 <code>java.lang.reflect</code> 包中提供了对该功能的支持。</p>
-<p>从所周知，所有 Java 类均继承了 Object 类，在 Object 类中定义了一个 getClass() 方法，该方法返回一个类型为 Class 的对象。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Class textFieldC = textField.getClass();</span><br></pre></td></tr></table></figure></p>
-<p>利用 Class 类的对象 textFieldC，可以访问用来返回该对象的 textField 对象的描述信息。</p>
-<p>描述信息如下表所示：</p>
-<table>
-<thead>
-<tr>
-<th>组成部分</th>
-<th>访问方法</th>
-<th>返回值类型</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>包路径</td>
-<td>getPackage()</td>
-<td>Package 对象</td>
-<td>获得该类的存放路径</td>
-</tr>
-<tr>
-<td>类名称</td>
-<td>getName()</td>
-<td>String 对象</td>
-<td>获得该类的名称</td>
-</tr>
-<tr>
-<td>继承类</td>
-<td>getSuperClass()</td>
-<td>Class 对象</td>
-<td>获得该类继承的类</td>
-</tr>
-<tr>
-<td>实现接口</td>
-<td>getInterfaces()</td>
-<td>Class 型数组</td>
-<td>获得该类实现的所有接口</td>
-</tr>
-<tr>
-<td>构造方法</td>
-<td>getConstructors()</td>
-<td>Constructor 型数组</td>
-<td>获得所有权限为 public 的构造方法</td>
-</tr>
-<tr>
-<td>构造方法</td>
-<td>getConstructor(Class&lt;?&gt;…parameterTypes)</td>
-<td>Constructor 对象</td>
-<td>获得权限为 public 的指定构造方法</td>
-</tr>
-<tr>
-<td>构造方法</td>
-<td>getDeclaredConstructors()</td>
-<td>Constructors 型数组</td>
-<td>获得所有构造方法，按声明顺序返回</td>
-</tr>
-<tr>
-<td>构造方法</td>
-<td>getDeclaredConstructor(Class&lt;?&gt;…parameterTypes)</td>
-<td>Constructor 对象</td>
-<td>获得指定构造方法</td>
-</tr>
-<tr>
-<td>方法</td>
-<td>getMethods()</td>
-<td>Method 型数组</td>
-<td>获得所有权限为 public 的方法</td>
-</tr>
-<tr>
-<td>方法</td>
-<td>getMethod(String name, Class&lt;?&gt;…parameterTypes)</td>
-<td>Method 对象</td>
-<td>获得权限为 public 的指定方法</td>
-</tr>
-<tr>
-<td>方法</td>
-<td>getDeclaredMethods()</td>
-<td>Method 数组</td>
-<td>获得所有方法，按声明顺序返回</td>
-</tr>
-<tr>
-<td>方法</td>
-<td>getDeclaredMethod(String name, Class&lt;?&gt;…parameterTypes)</td>
-<td>Method 对象</td>
-<td>获得指定方法</td>
-</tr>
-<tr>
-<td>成员变量</td>
-<td>getFields()</td>
-<td>Field 型数组</td>
-<td>获得所有权限为 public 的成员变量</td>
-</tr>
-<tr>
-<td>成员变量</td>
-<td>getField(String name)</td>
-<td>Field 对象</td>
-<td>获得权限为 public 的指定成员变量</td>
-</tr>
-<tr>
-<td>成员变量</td>
-<td>getDeclaredFields()</td>
-<td>Field 型数组</td>
-<td>获得所有成员变量，按声明顺序返回</td>
-</tr>
-<tr>
-<td>成员变量</td>
-<td>getDeclaredField(String name)</td>
-<td>Field 对象</td>
-<td>获得指定成员变量</td>
-</tr>
-<tr>
-<td>内部类</td>
-<td>getClasses()</td>
-<td>Class 型数组</td>
-<td>获得所有权限为public的内部类</td>
-</tr>
-<tr>
-<td>内部类</td>
-<td>getDeclaredClasses()</td>
-<td>Class 型数组</td>
-<td>获得所有内部类</td>
-</tr>
-<tr>
-<td>内部类的声明类</td>
-<td>getDeclaringClass()</td>
-<td>Class 对象</td>
-<td>如果该类为内部类，则返回它的成员类，否则返回 null</td>
-</tr>
-</tbody>
-</table>
+            <p>Java 中提供了 Annotation 功能，该功能可用于类、构造方法、成员变量、方法、参数等的声明中。该功能并不影响程序的运行，但是会对编译器警告灯辅助工具产生影响。</p>
+<h3 id="定义-Annotation-类型"><a href="#定义-Annotation-类型" class="headerlink" title="定义 Annotation 类型"></a>定义 Annotation 类型</h3><p>在定义 Annotation 类型时，也需要用到用来定义接口的 interface 关键字，但需要在 interface 关键字前加一个 <code>@</code>符号，即定义 Annotation 类型的关键字为 <code>@interface</code>，这个关键字的隐含意思是继承了 <code>ava.lang.annotation.Annotation</code>接口.<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="meta">@interface</span> NoMemberAnnotation &#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 
         </div>
 
@@ -326,12 +205,12 @@
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2019-02-20T06:25:58.667Z" itemprop="dateUpdated">2019-02-20 14:25:58</time>
+    Last updated: <time datetime="2019-02-25T05:41:20.271Z" itemprop="dateUpdated">2019-02-25 13:41:20</time>
 </span><br>
 
 
         
-        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2019/02/20/Java-Class-类与-Java-反射/" target="_blank" rel="external">https://www.ttxxly.top/2019/02/20/Java-Class-类与-Java-反射/</a>
+        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2019/02/21/Java-使用-Annotation-功能/" target="_blank" rel="external">https://www.ttxxly.top/2019/02/21/Java-使用-Annotation-功能/</a>
         
     </div>
     
@@ -362,7 +241,7 @@
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://www.ttxxly.top/2019/02/20/Java-Class-类与-Java-反射/&title=《Java Class 类与 Java 反射》 — Darklovy&pic=https://www.ttxxly.top/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://www.ttxxly.top/2019/02/21/Java-使用-Annotation-功能/&title=《Java 使用 Annotation 功能》 — Darklovy&pic=https://www.ttxxly.top/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -372,22 +251,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://www.ttxxly.top/2019/02/20/Java-Class-类与-Java-反射/&title=《Java Class 类与 Java 反射》 — Darklovy&source=" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://www.ttxxly.top/2019/02/21/Java-使用-Annotation-功能/&title=《Java 使用 Annotation 功能》 — Darklovy&source=" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://www.ttxxly.top/2019/02/20/Java-Class-类与-Java-反射/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://www.ttxxly.top/2019/02/21/Java-使用-Annotation-功能/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Java Class 类与 Java 反射》 — Darklovy&url=https://www.ttxxly.top/2019/02/20/Java-Class-类与-Java-反射/&via=https://www.ttxxly.top" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Java 使用 Annotation 功能》 — Darklovy&url=https://www.ttxxly.top/2019/02/21/Java-使用-Annotation-功能/&via=https://www.ttxxly.top" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://www.ttxxly.top/2019/02/20/Java-Class-类与-Java-反射/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://www.ttxxly.top/2019/02/21/Java-使用-Annotation-功能/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -410,18 +289,18 @@
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/2019/02/21/Java-使用-Annotation-功能/" id="post-prev" class="post-nav-link">
+      <a href="/2019/02/22/Java-枚举类型/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">Java 使用 Annotation 功能</h4>
+        <h4 class="title">Java 枚举类型</h4>
       </a>
     </div>
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/2019/02/19/Java-日期与时间/" id="post-next" class="post-nav-link">
+      <a href="/2019/02/20/Java-Class-类与-Java-反射/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">Java 日期与时间</h4>
+        <h4 class="title">Java Class 类与 Java 反射</h4>
       </a>
     </div>
   
@@ -517,7 +396,7 @@
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://www.ttxxly.top/2019/02/20/Java-Class-类与-Java-反射/&title=《Java Class 类与 Java 反射》 — Darklovy&pic=https://www.ttxxly.top/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://www.ttxxly.top/2019/02/21/Java-使用-Annotation-功能/&title=《Java 使用 Annotation 功能》 — Darklovy&pic=https://www.ttxxly.top/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -527,22 +406,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://www.ttxxly.top/2019/02/20/Java-Class-类与-Java-反射/&title=《Java Class 类与 Java 反射》 — Darklovy&source=" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://www.ttxxly.top/2019/02/21/Java-使用-Annotation-功能/&title=《Java 使用 Annotation 功能》 — Darklovy&source=" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://www.ttxxly.top/2019/02/20/Java-Class-类与-Java-反射/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://www.ttxxly.top/2019/02/21/Java-使用-Annotation-功能/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Java Class 类与 Java 反射》 — Darklovy&url=https://www.ttxxly.top/2019/02/20/Java-Class-类与-Java-反射/&via=https://www.ttxxly.top" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Java 使用 Annotation 功能》 — Darklovy&url=https://www.ttxxly.top/2019/02/21/Java-使用-Annotation-功能/&via=https://www.ttxxly.top" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://www.ttxxly.top/2019/02/20/Java-Class-类与-Java-反射/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://www.ttxxly.top/2019/02/21/Java-使用-Annotation-功能/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -553,7 +432,7 @@
 <div class="page-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACpElEQVR42u3awU7jUAwF0P7/T8OGBVLV9Np+LkE6XaGoE3wyUmyu3+MRf75+fZ6vP3/n+fu969e//dgHDw8Pb1B6UsT1v508oB74TQ14eHh4a7xXBV0X8ar0asNIHtZ1PS+v4+Hh4d2GV3315+3n+v54eHh4/5fXK3HysPDw8PDuxqsOvtUiqjFHQj2cteDh4eHFvHyLdJ+fV/Z7eHh4eOOterVJVIOJvTp/7o+Hh4e3wDsVDVSH6Xw4ro7LeHh4eNu8/FhV9YhA8giur08CCDw8PLw9XnKjaunVBVjvMEEhCMbDw8Nb5vWOTE2WW9Vy81EeDw8Pb4N36kBAdW2WtIQDOz08PDy8Nd5kqO3dodcw8nE82u/h4eHhLfDyaLUa++bXR4cV8PDw8BZ4veMC8zZQbULzYw14eHh4p3j5waZqTLABKN8fDw8Pb5nXO0SVDLXz5VmzTjw8PLw1Xu+P+bMDdzVWSJoZHh4e3gavN7zmJfYG92o0XDhqgIeHhzfmzYfp3og8/3+IKsfDw8Nb4M3DgnzBf11QPi7n8QQeHh7e53nzNVg15O2B31SCh4eHd5Q3OTK1EQoffkB4eHh4C7xqeNprFdXFf/7bo2/i4eHhLfCqsew8uu09vl5IgYeHh7fB6730q8HE2WVYHqDg4eHhbfMmS688PqhOvKNHjIeHh/cR3iR4zQfoPCDOK8HDw8Pb5s2PWyWv/iTYrQa+UcPAw8PDW+BVX77VxVW1JVQf66Sd4OHh4U141Vvn4WzyaPKWkzcGPDw8vM/wqrFCPvhWe1Qv/I2yFjw8PLw/4lWL6C3VenEDHh4e3p1586E5bzP56H9gpMbDw8OLecnruzc653eex7gvGwMeHh7eUV7viFXvSEEey1bXbAf2e3h4eHjved8PELtgflXj0gAAAABJRU5ErkJggg==" alt="微信分享二维码">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACp0lEQVR42u3aUW4bMQwFwNz/0u4BCq/fI6XWCGa/AjuROQogyiR/fuLn9deT//7zCs+vv1vt8IOHh4e3Dv05iHbl5xXevZKDP2w9Hh4e3jVeEtzzoT8LIkkSz5/ywYKHh4f3ZbznVPGKn+dI8PDw8H4HL/nbIoi4nIGHh4f3PbzNkZ3AZq/nReEDtRY8PDy8mDcryP7fn6/09/Dw8PDWXfU8SezTRt48K6LFw8PDu8CblQZaXj6UUASdbx8eHh7eBd4zICnU5pfgtrCbjyzUxVw8PDy8Na9tPu2bW3naaCOs7/V4eHh4JS9vPuXtq1Olh7agHE1G4OHh4R3iJVfhDSZZc1MgHmY5PDw8vPVYQHusz8qvs4TRNsbw8PDw7vH2ja68mJu0wU5tNB4eHt49Xn74bg73HLn5SrCqteDh4eGVvNmH5aNUe8DsXTw8PLzbvFNF21nBot2g6OqPh4eHd5TXkmbt/3aAtU0n0XcFPDw8vAu8faBtm2ozxDAs4OLh4eGteW17aVNOPdv0qv+HeHh4eBd4+0N8M0yQr18nKjw8PLyjvOdjul26faX92zot4eHh4f0TXnu4J8WC2XBAvvLbOPHw8PAu8NoLbo7cbFNbzI2GrvDw8PCu8fKSRJIYNiWJll10+fDw8PCu8doW12wcIU8w+Wr1bR0PDw9vxMsP+vxQngWdxxNtOh4eHt5l3r5AsN+OTVEYDw8P7zbvVT7J8T3biFW54Xl0AA8PD+8orz1wZ6TZ5XtfAsbDw8O7x8uTQRJK28pqRwTaogkeHh7ePV47aJWkjQRQVE3KqSo8PDy8b+PlowMteLPdb6vUeHh4eF/DO9Ximq0ZJQ88PDy8a7y26bWhJu/mLa4PYDw8PLwLvM0X/ryh1V7N83UOPHh4eHgp7w8iqzXKnKfUcgAAAABJRU5ErkJggg==" alt="微信分享二维码">
 </div>
 
 
