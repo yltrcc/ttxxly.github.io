@@ -3,6 +3,23 @@
   
     
     <entry>
+      <title>Java 常见异常</title>
+      <link href="/2019/02/26/Java-%E5%B8%B8%E8%A7%81%E5%BC%82%E5%B8%B8/"/>
+      <url>/2019/02/26/Java-%E5%B8%B8%E8%A7%81%E5%BC%82%E5%B8%B8/</url>
+      
+        <content type="html"><![CDATA[<p>在 Java 中提供了一些异常用来描述经常发生的错误，其中，有点需要程序员进行捕获处理或声明抛出，有的是由 java 虚拟机自动进行捕获处理的。</p><table><thead><tr><th>异常类</th><th>说明</th></tr></thead><tbody><tr><td>ClassCastException</td><td>类型转换异常</td></tr><tr><td>ClassNotFoundException</td><td>未找到相应类异常</td></tr><tr><td>ArithmeticException</td><td>算术异常</td></tr><tr><td>ArrayIndexOutOfBoundsException</td><td>数组下标越界异常</td></tr><tr><td>ArrayStoreException</td><td>数组中包含不兼容的值抛出的异常</td></tr><tr><td>SQLException</td><td>操作数据库异常类</td></tr><tr><td>NullPointerException</td><td>空指针异常</td></tr><tr><td>NoSuchFieldException</td><td>字段未找到异常</td></tr><tr><td>NoSuchMethodException</td><td>方法未找到异常</td></tr><tr><td>NumberFormatException</td><td>字符串转换为数字抛出的异常</td></tr><tr><td>NegativeArraySizeException</td><td>数组元素个数为负数抛出的异常</td></tr><tr><td>StringIndexOutOfBoundsException</td><td>字符串索引超出范围抛出的异常</td></tr><tr><td>IOException</td><td>输入输出异常</td></tr><tr><td>IllegalAccessException</td><td>不允许访问某类异常</td></tr><tr><td>InstantiationException</td><td>当应用程序试图使用 Class 类中的 newInstance() 方法常见一个类的实例，而指定的类对象无法被实例化时，抛出异常</td></tr><tr><td>EOFException</td><td>文件已结束异常</td></tr><tr><td>FileNotFoundException</td><td>文件未找到异常</td></tr></tbody></table>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Java </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>Java 运行时异常</title>
       <link href="/2019/02/25/Java-%E8%BF%90%E8%A1%8C%E6%97%B6%E5%BC%82%E5%B8%B8/"/>
       <url>/2019/02/25/Java-%E8%BF%90%E8%A1%8C%E6%97%B6%E5%BC%82%E5%B8%B8/</url>
