@@ -14,25 +14,25 @@
     
     
     
-    <title>Java 常见异常 | Darklovy | Know more,Do more,Be more.</title>
+    <title>Java List 集合概述 | Darklovy | Know more,Do more,Be more.</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
     <meta name="keywords" content="Java">
-    <meta name="description" content="在 Java 中提供了一些异常用来描述经常发生的错误，其中，有点需要程序员进行捕获处理或声明抛出，有的是由 java 虚拟机自动进行捕获处理的。    异常类 说明     ClassCastException 类型转换异常   ClassNotFoundException 未找到相应类异常   ArithmeticException 算术异常   ArrayIndexOutOfBoundsExc">
+    <meta name="description" content="List 集合包括 List 接口以及 List 接口的所有实现类。List 集合中的元素允许重复，各元素的顺序就是对象插入的顺序。类似 Java 数组，用户可通过使用索引（元素在集合中的位置）来访问集合中的元素。 List 接口List 接口继承了 Collection 接口，因此包含了 Collection 中的所有方法。此外，List 接口还定义了两个非常重要的方法。 12get(int i">
 <meta name="keywords" content="Java">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Java 常见异常">
-<meta property="og:url" content="https://www.ttxxly.top/2019/02/26/Java-常见异常/index.html">
+<meta property="og:title" content="Java List 集合概述">
+<meta property="og:url" content="https://www.ttxxly.top/2019/03/01/Java-List-集合概述/index.html">
 <meta property="og:site_name" content="Darklovy">
-<meta property="og:description" content="在 Java 中提供了一些异常用来描述经常发生的错误，其中，有点需要程序员进行捕获处理或声明抛出，有的是由 java 虚拟机自动进行捕获处理的。    异常类 说明     ClassCastException 类型转换异常   ClassNotFoundException 未找到相应类异常   ArithmeticException 算术异常   ArrayIndexOutOfBoundsExc">
+<meta property="og:description" content="List 集合包括 List 接口以及 List 接口的所有实现类。List 集合中的元素允许重复，各元素的顺序就是对象插入的顺序。类似 Java 数组，用户可通过使用索引（元素在集合中的位置）来访问集合中的元素。 List 接口List 接口继承了 Collection 接口，因此包含了 Collection 中的所有方法。此外，List 接口还定义了两个非常重要的方法。 12get(int i">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-02-26T05:57:07.297Z">
+<meta property="og:updated_time" content="2019-03-02T07:40:20.643Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Java 常见异常">
-<meta name="twitter:description" content="在 Java 中提供了一些异常用来描述经常发生的错误，其中，有点需要程序员进行捕获处理或声明抛出，有的是由 java 虚拟机自动进行捕获处理的。    异常类 说明     ClassCastException 类型转换异常   ClassNotFoundException 未找到相应类异常   ArithmeticException 算术异常   ArrayIndexOutOfBoundsExc">
+<meta name="twitter:title" content="Java List 集合概述">
+<meta name="twitter:description" content="List 集合包括 List 接口以及 List 接口的所有实现类。List 集合中的元素允许重复，各元素的顺序就是对象插入的顺序。类似 Java 数组，用户可通过使用索引（元素在集合中的位置）来访问集合中的元素。 List 接口List 接口继承了 Collection 接口，因此包含了 Collection 中的所有方法。此外，List 接口还定义了两个非常重要的方法。 12get(int i">
     
         <link rel="alternate" type="application/atom+xml" title="Darklovy" href="/atom.xml">
     
@@ -127,7 +127,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">Java 常见异常</div>
+        <div class="flex-col header-title ellipsis">Java List 集合概述</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -149,11 +149,11 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">Java 常见异常</h1>
+        <h1 class="title">Java List 集合概述</h1>
         <h5 class="subtitle">
             
-                <time datetime="2019-02-26T05:56:32.000Z" itemprop="datePublished" class="page-time">
-  2019-02-26
+                <time datetime="2019-03-01T07:39:52.000Z" itemprop="datePublished" class="page-time">
+  2019-03-01
 </time>
 
 
@@ -169,13 +169,20 @@
 
 <div class="container body-wrap">
     
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#List-接口"><span class="post-toc-number">1.</span> <span class="post-toc-text">List 接口</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#List-接口的实现类"><span class="post-toc-number">2.</span> <span class="post-toc-text">List 接口的实现类</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#ArrayList"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">ArrayList</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#LinkedList"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">LinkedList</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
 
-<article id="post-Java-常见异常" class="post-article article-type-post fade" itemprop="blogPost">
+
+<article id="post-Java-List-集合概述" class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">Java 常见异常</h1>
+        <h1 class="post-card-title">Java List 集合概述</h1>
         <div class="post-meta">
-            <time class="post-time" title="2019-02-26 13:56:32" datetime="2019-02-26T05:56:32.000Z" itemprop="datePublished">2019-02-26</time>
+            <time class="post-time" title="2019-03-01 15:39:52" datetime="2019-03-01T07:39:52.000Z" itemprop="datePublished">2019-03-01</time>
 
             
 
@@ -188,85 +195,13 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <p>在 Java 中提供了一些异常用来描述经常发生的错误，其中，有点需要程序员进行捕获处理或声明抛出，有的是由 java 虚拟机自动进行捕获处理的。</p>
-<table>
-<thead>
-<tr>
-<th>异常类</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>ClassCastException</td>
-<td>类型转换异常</td>
-</tr>
-<tr>
-<td>ClassNotFoundException</td>
-<td>未找到相应类异常</td>
-</tr>
-<tr>
-<td>ArithmeticException</td>
-<td>算术异常</td>
-</tr>
-<tr>
-<td>ArrayIndexOutOfBoundsException</td>
-<td>数组下标越界异常</td>
-</tr>
-<tr>
-<td>ArrayStoreException</td>
-<td>数组中包含不兼容的值抛出的异常</td>
-</tr>
-<tr>
-<td>SQLException</td>
-<td>操作数据库异常类</td>
-</tr>
-<tr>
-<td>NullPointerException</td>
-<td>空指针异常</td>
-</tr>
-<tr>
-<td>NoSuchFieldException</td>
-<td>字段未找到异常</td>
-</tr>
-<tr>
-<td>NoSuchMethodException</td>
-<td>方法未找到异常</td>
-</tr>
-<tr>
-<td>NumberFormatException</td>
-<td>字符串转换为数字抛出的异常</td>
-</tr>
-<tr>
-<td>NegativeArraySizeException</td>
-<td>数组元素个数为负数抛出的异常</td>
-</tr>
-<tr>
-<td>StringIndexOutOfBoundsException</td>
-<td>字符串索引超出范围抛出的异常</td>
-</tr>
-<tr>
-<td>IOException</td>
-<td>输入输出异常</td>
-</tr>
-<tr>
-<td>IllegalAccessException</td>
-<td>不允许访问某类异常</td>
-</tr>
-<tr>
-<td>InstantiationException</td>
-<td>当应用程序试图使用 Class 类中的 newInstance() 方法常见一个类的实例，而指定的类对象无法被实例化时，抛出异常</td>
-</tr>
-<tr>
-<td>EOFException</td>
-<td>文件已结束异常</td>
-</tr>
-<tr>
-<td>FileNotFoundException</td>
-<td>文件未找到异常</td>
-</tr>
-</tbody>
-</table>
+            <p>List 集合包括 List 接口以及 List 接口的所有实现类。List 集合中的元素允许重复，各元素的顺序就是对象插入的顺序。类似 Java 数组，用户可通过使用索引（元素在集合中的位置）来访问集合中的元素。</p>
+<h3 id="List-接口"><a href="#List-接口" class="headerlink" title="List 接口"></a>List 接口</h3><p>List 接口继承了 Collection 接口，因此包含了 Collection 中的所有方法。此外，List 接口还定义了两个非常重要的方法。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">get(<span class="keyword">int</span> index):获得指定索引位置的元素</span><br><span class="line">set(<span class="keyword">int</span> index, Object obj):将集合中指定索引位置的对象修改为指定的对象</span><br></pre></td></tr></table></figure>
+<h3 id="List-接口的实现类"><a href="#List-接口的实现类" class="headerlink" title="List 接口的实现类"></a>List 接口的实现类</h3><p>List 接口的常用实现类有 ArrayList 与 LinkedList。</p>
+<h4 id="ArrayList"><a href="#ArrayList" class="headerlink" title="ArrayList"></a>ArrayList</h4><p>ArrayList 类实现了可变的数组，允许保存所有元素，包括 null，并可以根据索引位置对集合进行快速的随机访问；缺点是向指定的索引位置插入对象或删除对象的速度较慢。</p>
+<h4 id="LinkedList"><a href="#LinkedList" class="headerlink" title="LinkedList"></a>LinkedList</h4><p>LinkedList 类采用链表结构保存对象。这种结构的优点是便于向集合中插入和删除对象，需要向集合中插入、删除对象时，使用 LinkedList 类实现的 List 集合较高；但对于随机访问集合中的对象，使用 LinkedList 类实现 List 集合的效率较低。</p>
+<p><strong>与数组相同，集合的索引也是从 0 开始的</strong></p>
 
         </div>
 
@@ -275,12 +210,12 @@
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2019-02-26T05:57:07.297Z" itemprop="dateUpdated">2019-02-26 13:57:07</time>
+    Last updated: <time datetime="2019-03-02T07:40:20.643Z" itemprop="dateUpdated">2019-03-02 15:40:20</time>
 </span><br>
 
 
         
-        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2019/02/26/Java-常见异常/" target="_blank" rel="external">https://www.ttxxly.top/2019/02/26/Java-常见异常/</a>
+        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2019/03/01/Java-List-集合概述/" target="_blank" rel="external">https://www.ttxxly.top/2019/03/01/Java-List-集合概述/</a>
         
     </div>
     
@@ -311,7 +246,7 @@
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://www.ttxxly.top/2019/02/26/Java-常见异常/&title=《Java 常见异常》 — Darklovy&pic=https://www.ttxxly.top/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://www.ttxxly.top/2019/03/01/Java-List-集合概述/&title=《Java List 集合概述》 — Darklovy&pic=https://www.ttxxly.top/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -321,22 +256,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://www.ttxxly.top/2019/02/26/Java-常见异常/&title=《Java 常见异常》 — Darklovy&source=" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://www.ttxxly.top/2019/03/01/Java-List-集合概述/&title=《Java List 集合概述》 — Darklovy&source=" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://www.ttxxly.top/2019/02/26/Java-常见异常/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://www.ttxxly.top/2019/03/01/Java-List-集合概述/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Java 常见异常》 — Darklovy&url=https://www.ttxxly.top/2019/02/26/Java-常见异常/&via=https://www.ttxxly.top" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Java List 集合概述》 — Darklovy&url=https://www.ttxxly.top/2019/03/01/Java-List-集合概述/&via=https://www.ttxxly.top" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://www.ttxxly.top/2019/02/26/Java-常见异常/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://www.ttxxly.top/2019/03/01/Java-List-集合概述/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -359,18 +294,18 @@
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/2019/02/27/Java-集合类概述/" id="post-prev" class="post-nav-link">
+      <a href="/2019/03/02/Java-ArrayList/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">Java 集合类概述</h4>
+        <h4 class="title">Java ArrayList</h4>
       </a>
     </div>
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/2019/02/25/Java-运行时异常/" id="post-next" class="post-nav-link">
+      <a href="/2019/02/28/Java-Collection-接口概述/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">Java 运行时异常</h4>
+        <h4 class="title">Java Collection 接口概述</h4>
       </a>
     </div>
   
@@ -466,7 +401,7 @@
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://www.ttxxly.top/2019/02/26/Java-常见异常/&title=《Java 常见异常》 — Darklovy&pic=https://www.ttxxly.top/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://www.ttxxly.top/2019/03/01/Java-List-集合概述/&title=《Java List 集合概述》 — Darklovy&pic=https://www.ttxxly.top/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -476,22 +411,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://www.ttxxly.top/2019/02/26/Java-常见异常/&title=《Java 常见异常》 — Darklovy&source=" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://www.ttxxly.top/2019/03/01/Java-List-集合概述/&title=《Java List 集合概述》 — Darklovy&source=" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://www.ttxxly.top/2019/02/26/Java-常见异常/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://www.ttxxly.top/2019/03/01/Java-List-集合概述/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Java 常见异常》 — Darklovy&url=https://www.ttxxly.top/2019/02/26/Java-常见异常/&via=https://www.ttxxly.top" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Java List 集合概述》 — Darklovy&url=https://www.ttxxly.top/2019/03/01/Java-List-集合概述/&via=https://www.ttxxly.top" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://www.ttxxly.top/2019/02/26/Java-常见异常/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://www.ttxxly.top/2019/03/01/Java-List-集合概述/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -502,7 +437,7 @@
 <div class="page-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACL0lEQVR42u3a3arCQAxFYd//peutIJ2unVShmdWrg0hnPg+E/L1e+Dk+nu9PPj9ffz895eZHhgwZj2Ucy2d96fWRZ2/gYHI3GTJk7MMglyDBsY8kb5AhQ4aM9YXW4ThNK8lZMmTIkFELuOvkMgXIkCFDBmGQIrZ2cO3n+GEtLkOGjAcyeNf9/3//ZL4hQ4aMRzGO8OGNez6S5OH19CwZMmSMZvTXIMgn/dUNdB8ZMmQMZaTBrpObpTle8GPJkCFjNIO00jqjzdp3imfJkCFjKIMfWTuGDDhrMfMit5UhQ8YgBiks+QiTt+o6w8iLEYIMGTLGMdK1rU6brBNMi/8BGTJkbMOopXocXFsUiwOuDBkyhjLS4rOWDqbB+rTdJkOGjKGMWtKWjjP55W5IEGXIkDGOUUv4eNLGxwC8xRbUxzJkyBjB6CxAdFa+SKoXDzhlyJAxlMHXKUgIriV/N7xZhgwZGzBqBSQJoLXCOC6SZciQMZpBwly67MXrys7IAXUNZciQMZRBePxavM1XG1vGCaIMGTIGMUi7vxZw02WLIJTLkCFjA0anicbHA3xpIy53ZciQMZRxhE9amqYLHGmJGxwsQ4aMxzJqwa6WxvGBQW0pTYYMGbMZaYgkQTYN6J3mnQwZMvZh1AYD6eJXOh7gt5UhQ4aMDokEYpL8XVBlyJAhIzygmN6Fo4gbdkZkyJDxKEatHCUHE3AaZGXIkLEbIw15/TRxDeAjTxkyZGzAeAP0qJNhzkpPRgAAAABJRU5ErkJggg==" alt="微信分享二维码">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACL0lEQVR42u3aQW7kMAwEwPz/097rAhs73ZQ3wEil08AzsVQ6MKTEr694XH+N5NvrZvz7V/ksLwwMDIyPZVyPI1nW8/N26cm831AxMDAOYNxFsOdXPwfK59A524jb5xgYGBhBUpiEznxTMDAwMN4KuO2Us2IYAwMDIy9ik9J0dtDWHtthYGCcxshP3X//83+538DAwPgoxlWOder6Gr5ZFQYGxtaMPMDlqV5epq40W2BgYJzDaA/UkinzMJ0zfniCgYGxNSMPiPkFZNtUkWxWPS8GBsZGjPUkLw/EKxcMP2wQBgbGMYz20jFZxMvtFHfrxMDA2Jrx1j3gSkKZlLLFBScGBsbWjDz8raSMKxcJBQkDA2NrxuxCcXbx2f5muDYMDIwPZ7wb5pICNX9nUSRjYGBszWgbHZKJk4J2FrjrGI+BgbEFY3asNksiE+SsaQMDA2NvxixQrjRyJalkuykYGBh7M1aatJJv23K3LZUxMDBOYLRJW9tskZTH+XYMG8IwMDAOYOSHcSvp4ywlLQIuBgbGRozZMVlbyuYXBkUTBgYGxmGM/CCsSN3Ktoy6gQwDA2NTxlWO9mAueUNeEt9SMTAwtma0jVkrgXL9921zBgYGxk6MWYicHdIl6WOeYhb/PTAwMLZgzAJlcRwWt3HMVouBgYGRTzw7tlu/QsDAwMBo08Tn97c1dNT8gYGBcQAjKWJnlwd5GG2bOTAwMM5htCEvT+xWLgnyTcHAwNia8QfF4JNhZy67IQAAAABJRU5ErkJggg==" alt="微信分享二维码">
 </div>
 
 
