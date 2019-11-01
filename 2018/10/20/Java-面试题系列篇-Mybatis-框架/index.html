@@ -1,27 +1,18 @@
 <!DOCTYPE html>
 <html>
-<head><meta name="generator" content="Hexo 3.8.0">
-    
-
-    
-
-    
-
-
-
-    <meta charset="utf-8">
-    
-    
-    
-    
-    <title>Java 面试题系列篇-Mybatis 框架 | Darklovy | Know more,Do more,Be more.</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    
-    <meta name="theme-color" content="#3F51B5">
-    
-    
-    <meta name="keywords" content="Java">
-    <meta name="description" content="Mybatis 框架【MyBatis】MyBatis中使用#和$书写占位符有什么区别？答：#将传入的数据都当成一个字符串，会对传入的数据自动加上引号；将传入的数据直接显示生成在SQL中。注意：使用​占位符可能会导致SQL注射攻击，能用#的地方就不要使用，写order by子句的时候应该用​而不是#。 {}是预编译处理，${}是字符串替换。 Mybatis在处理#{}时，会将sql中的#{}替换为?">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  <title>Java 面试题系列篇-Mybatis 框架 | Darklovy</title>
+  <meta name="description" content>
+  <meta name="keywords" content>
+  <meta name="HandheldFriendly" content="True">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <link rel="shortcut icon" href="/">
+  <link rel="alternate" href="/atom.xml" title="Darklovy">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Mybatis 框架【MyBatis】MyBatis中使用#和$书写占位符有什么区别？答：#将传入的数据都当成一个字符串，会对传入的数据自动加上引号；将传入的数据直接显示生成在SQL中。注意：使用​占位符可能会导致SQL注射攻击，能用#的地方就不要使用，写order by子句的时候应该用​而不是#。 {}是预编译处理，${}是字符串替换。 Mybatis在处理#{}时，会将sql中的#{}替换为?">
 <meta name="keywords" content="Java">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java 面试题系列篇-Mybatis 框架">
@@ -34,168 +25,135 @@
 <meta name="twitter:title" content="Java 面试题系列篇-Mybatis 框架">
 <meta name="twitter:description" content="Mybatis 框架【MyBatis】MyBatis中使用#和$书写占位符有什么区别？答：#将传入的数据都当成一个字符串，会对传入的数据自动加上引号；将传入的数据直接显示生成在SQL中。注意：使用​占位符可能会导致SQL注射攻击，能用#的地方就不要使用，写order by子句的时候应该用​而不是#。 {}是预编译处理，${}是字符串替换。 Mybatis在处理#{}时，会将sql中的#{}替换为?">
     
-        <link rel="alternate" type="application/atom+xml" title="Darklovy" href="/atom.xml">
-    
-    <link rel="shortcut icon" href="/favicon.ico">
-    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
-    <script>window.lazyScripts=[]</script>
-
-    <!-- custom head -->
-    
-
+  <link href="https://fonts.googleapis.com/css?family=Inconsolata|Titillium+Web" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
+  <link href="//cdn.bootcss.com/node-waves/0.7.5/waves.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+  <script>
+    function setLoadingBarProgress(num) {
+      document.getElementById('loading-bar').style.width=num+"%";
+    }
+  </script>
 </head>
-
+</html>
 <body>
-    <div id="loading" class="active"></div>
+  <div id="loading-bar-wrapper">
+  <div id="loading-bar"></div>
+</div>
 
-    <aside id="menu" class="hide">
-  <div class="inner flex-row-vertical">
-    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
-        <i class="icon icon-lg icon-close"></i>
-    </a>
-    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
-      <div class="brand">
-        <a href="/" class="avatar waves-effect waves-circle waves-light">
-          <img src="/img/avatar.jpg">
-        </a>
-        <hgroup class="introduce">
-          <h5 class="nickname">Darklovy</h5>
-          <a href="mailto:634206017@qq.com" title="634206017@qq.com" class="mail">634206017@qq.com</a>
-        </hgroup>
-      </div>
-    </div>
-    <div class="scroll-wrap flex-col">
-      <ul class="nav">
-        
-            <li class="waves-block waves-effect">
-              <a href="/">
-                <i class="icon icon-lg icon-home"></i>
-                主页
-              </a>
-            </li>
-        
-            <li class="waves-block waves-effect">
-              <a href="/archives">
-                <i class="icon icon-lg icon-archives"></i>
-                Archives
-              </a>
-            </li>
-        
-            <li class="waves-block waves-effect">
-              <a href="/tags">
-                <i class="icon icon-lg icon-tags"></i>
-                Tags
-              </a>
-            </li>
-        
-            <li class="waves-block waves-effect">
-              <a href="/categories">
-                <i class="icon icon-lg icon-th-list"></i>
-                Categories
-              </a>
-            </li>
-        
-            <li class="waves-block waves-effect">
-              <a href="https://github.com/yscoder" target="_blank">
-                <i class="icon icon-lg icon-github"></i>
-                Github
-              </a>
-            </li>
-        
-            <li class="waves-block waves-effect">
-              <a href="http://www.weibo.com/ysweb" target="_blank">
-                <i class="icon icon-lg icon-weibo"></i>
-                Weibo
-              </a>
-            </li>
-        
-            <li class="waves-block waves-effect">
-              <a href="/custom">
-                <i class="icon icon-lg icon-link"></i>
-                测试
-              </a>
-            </li>
-        
-      </ul>
-    </div>
-  </div>
+
+  <script>setLoadingBarProgress(20)</script> 
+  <header class="l_header">
+	<div class='wrapper'>
+		<div class="nav-main container container--flex">
+			<a class="logo flat-box" href='/' >
+				Darklovy
+			</a>
+			<div class='menu'>
+				<ul class='h-list'>
+					
+						<li>
+							<a class='flat-box nav-home' href='/'>
+								Home
+							</a>
+						</li>
+					
+						<li>
+							<a class='flat-box nav-archives' href='/archives'>
+								Archives
+							</a>
+						</li>
+					
+						<li>
+							<a class='flat-box nav-gallery' href='https://photos.google.com/album/AF1QipNoqKYgspQo5O1YhlFXGCQ7p575KBH3Yxf8WHL4?hl=zh-CN'>
+								Gallery
+							</a>
+						</li>
+					
+						<li>
+							<a class='flat-box nav-about' href='/about'>
+								About
+							</a>
+						</li>
+					
+				</ul>
+				<div class='underline'></div>
+			</div>
+			
+				<div class="m_search">
+					<form name="searchform" class="form u-search-form">
+						<input type="text" class="input u-search-input" placeholder="Search" />
+						<span class="icon icon-search"></span>
+					</form>
+				</div>
+			
+			<ul class='switcher h-list'>
+				
+					<li class='s-search'><a href='javascript:void(0)'><span class="icon icon-search flat-box"></span></a></li>
+				
+				<li class='s-menu'><a href='javascript:void(0)'><span class="icon icon-menu flat-box"></span></a></li>
+			</ul>
+		</div>
+		
+		<div class='nav-sub container container--flex'>
+			<a class="logo" class="flat-box" href='javascript:void(0)'>
+				Word of Forks
+			</a>
+
+			<ul class='switcher h-list'>
+				<li class='s-comment'><a href='javascript:void(0)'><span class="icon icon-chat_bubble_outline flat-box"></span></a></li>
+				<li class='s-top'><a href='javascript:void(0)'><span class="icon icon-arrow_upward flat-box"></span></a></li>
+				<li class='s-toc'><a href='javascript:void(0)'><span class="icon icon-format_list_numbered flat-box"></span></a></li>
+			</ul>
+		</div>
+	</div>
+</header>
+<aside class="menu-phone">
+	<nav>
+		
+			<a href="/" class="nav-home nav">
+				Home
+			</a>
+		
+			<a href="/archives" class="nav-archives nav">
+				Archives
+			</a>
+		
+			<a href="https://photos.google.com/album/AF1QipNoqKYgspQo5O1YhlFXGCQ7p575KBH3Yxf8WHL4?hl=zh-CN" class="nav-gallery nav">
+				Gallery
+			</a>
+		
+			<a href="/about" class="nav-about nav">
+				About
+			</a>
+		
+	</nav>
 </aside>
 
-    <main id="main">
-        <header class="top-header" id="header">
-    <div class="flex-row">
-        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
-          <i class="icon icon-lg icon-navicon"></i>
-        </a>
-        <div class="flex-col header-title ellipsis">Java 面试题系列篇-Mybatis 框架</div>
-        
-        <div class="search-wrap" id="search-wrap">
-            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
-                <i class="icon icon-lg icon-chevron-left"></i>
-            </a>
-            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
-            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
-                <i class="icon icon-lg icon-search"></i>
-            </a>
-        </div>
-        
-        
-        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
-            <i class="icon icon-lg icon-share-alt"></i>
-        </a>
-        
-    </div>
-</header>
-<header class="content-header post-header">
-
-    <div class="container fade-scale">
-        <h1 class="title">Java 面试题系列篇-Mybatis 框架</h1>
-        <h5 class="subtitle">
-            
-                <time datetime="2018-10-20T10:14:27.000Z" itemprop="datePublished" class="page-time">
-  2018-10-20
-</time>
-
-
-            
-        </h5>
-    </div>
-
-    
-
-
-</header>
-
-
-<div class="container body-wrap">
-    
-    <aside class="post-widget">
-        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
-            <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Mybatis-框架"><span class="post-toc-number">1.</span> <span class="post-toc-text">Mybatis 框架</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#【MyBatis】MyBatis中使用-和-书写占位符有什么区别？"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">【MyBatis】MyBatis中使用#和$书写占位符有什么区别？</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#【MyBatis】解释一下MyBatis中命名空间（namespace）的作用。"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">【MyBatis】解释一下MyBatis中命名空间（namespace）的作用。</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#【MyBatis】动态SQL是什么意思？"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">【MyBatis】动态SQL是什么意思？</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Mybatis当实体类中的属性名和表中的字段名不一样-，怎么办-？"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">Mybatis当实体类中的属性名和表中的字段名不一样 ，怎么办 ？</span></a></li></ol></li></ol>
-        </nav>
-    </aside>
-
-
-<article id="post-Java-面试题系列篇-Mybatis-框架" class="post-article article-type-post fade" itemprop="blogPost">
-
-    <div class="post-card">
-        <h1 class="post-card-title">Java 面试题系列篇-Mybatis 框架</h1>
-        <div class="post-meta">
-            <time class="post-time" title="2018-10-20 18:14:27" datetime="2018-10-20T10:14:27.000Z" itemprop="datePublished">2018-10-20</time>
-
-            
-
-
-            
-<span id="busuanzi_container_page_pv" title="文章总阅读量" style="display:none">
-    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
-</span>
-
-
-        </div>
-        <div class="post-content" id="post-content" itemprop="postContent">
-            <h2 id="Mybatis-框架"><a href="#Mybatis-框架" class="headerlink" title="Mybatis 框架"></a>Mybatis 框架</h2><h3 id="【MyBatis】MyBatis中使用-和-书写占位符有什么区别？"><a href="#【MyBatis】MyBatis中使用-和-书写占位符有什么区别？" class="headerlink" title="【MyBatis】MyBatis中使用#和$书写占位符有什么区别？"></a>【MyBatis】MyBatis中使用#和$书写占位符有什么区别？</h3><p>答：#将传入的数据都当成一个字符串，会对传入的数据自动加上引号；将传入的数据直接显示生成在SQL中。注意：使用​占位符可能会导致SQL注射攻击，能用#的地方就不要使用，写order by子句的时候应该用​而不是#。</p>
+    <script>setLoadingBarProgress(40);</script>
+  <div class="l_body">
+    <div class='container clearfix'>
+      <div class='l_main'>
+        <article id="post-Java-面试题系列篇-Mybatis-框架"
+  class="post white-box article-type-post"
+  itemscope itemprop="blogPost">
+	<section class='meta'>
+	<h2 class="title">
+  	<a href="/2018/10/20/Java-面试题系列篇-Mybatis-框架/">
+    	Java 面试题系列篇-Mybatis 框架
+    </a>
+  </h2>
+	<time>
+	  Oct 20, 2018
+	</time>
+	
+	</section>
+	
+		<section class="toc-wrapper"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Mybatis-框架"><span class="toc-number">1.</span> <span class="toc-text">Mybatis 框架</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#【MyBatis】MyBatis中使用-和-书写占位符有什么区别？"><span class="toc-number">1.1.</span> <span class="toc-text">【MyBatis】MyBatis中使用#和$书写占位符有什么区别？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#【MyBatis】解释一下MyBatis中命名空间（namespace）的作用。"><span class="toc-number">1.2.</span> <span class="toc-text">【MyBatis】解释一下MyBatis中命名空间（namespace）的作用。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#【MyBatis】动态SQL是什么意思？"><span class="toc-number">1.3.</span> <span class="toc-text">【MyBatis】动态SQL是什么意思？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Mybatis当实体类中的属性名和表中的字段名不一样-，怎么办-？"><span class="toc-number">1.4.</span> <span class="toc-text">Mybatis当实体类中的属性名和表中的字段名不一样 ，怎么办 ？</span></a></li></ol></li></ol></section>
+	
+	<section class="article typo">
+  	<div class="article-entry" itemprop="articleBody">
+    	<h2 id="Mybatis-框架"><a href="#Mybatis-框架" class="headerlink" title="Mybatis 框架"></a>Mybatis 框架</h2><h3 id="【MyBatis】MyBatis中使用-和-书写占位符有什么区别？"><a href="#【MyBatis】MyBatis中使用-和-书写占位符有什么区别？" class="headerlink" title="【MyBatis】MyBatis中使用#和$书写占位符有什么区别？"></a>【MyBatis】MyBatis中使用#和$书写占位符有什么区别？</h3><p>答：#将传入的数据都当成一个字符串，会对传入的数据自动加上引号；将传入的数据直接显示生成在SQL中。注意：使用​占位符可能会导致SQL注射攻击，能用#的地方就不要使用，写order by子句的时候应该用​而不是#。</p>
 <p>{}是预编译处理，${}是字符串替换。</p>
 <p>Mybatis在处理#{}时，会将sql中的#{}替换为?号，调用PreparedStatement的set方法来赋值；</p>
 <p>Mybatis在处理{}时，就是把​{}替换成变量的值。</p>
@@ -254,7 +212,7 @@
 <p>​    <select id="getOrder" parametertype="int" resultmap="orderresultmap"></select></p>
 <p>​        select * from orders where order_id=#{id}</p>
 <p>​    </p>
-   <resultmap type="me.gacl.domain.order" id="orderresultmap"><br><br>​        &lt;!–用id属性来映射主键字段–&gt;<br><br>​        <id property="id" column="order_id"><br><br>​        &lt;!–用result属性来映射非主键字段，property为实体类属性名，column为数据表中的属性–&gt;<br><br>​        <result property="“orderno" "="" column="”order_no"><br><br>​        <result property="price" column="order_price"><br><br>​    <br><br><br><br>### Mybatis 模糊查询like语句该怎么写?<br><br>第1种：在Java代码中添加sql通配符。<br><br>​    string wildcardname = “%smi%”;<br><br>​    list<name> names = mapper.selectlike(wildcardname);<br><br><br><br>​    <select id="selectlike"><br><br>​     select <em> from foo where bar like #{value}<br><br>​    </em></select><br><br><br><br>第2种：在sql语句中拼接通配符，会引起sql注入<br><br>​    string wildcardname = “smi”;<br><br>​    list<name> names = mapper.selectlike(wildcardname);<br><br><br><br>​    <select id="selectlike"><br><br>​     select  from foo where bar like “%”#{value}”%”<br><br></select><br><br><br><br>### Mybatis 通常一个Xml映射文件，都会写一个Dao接口与之对应，请问，这个Dao接口的工作原理是什么？Dao接口里的方法，参数不同时，方法能重载吗？<br><br>Dao接口，就是人们常说的Mapper接口，接口的全限名，就是映射文件中的namespace的值，接口的方法名，就是映射文件中MappedStatement的id值，接口方法内的参数，就是传递给sql的参数。Mapper接口是没有实现类的，当调用接口方法时，接口全限名+方法名拼接字符串作为key值，可唯一定位一个MappedStatement，举例：com.mybatis3.mappers.StudentDao.findStudentById，可以唯一找到namespace为com.mybatis3.mappers.StudentDao下面id = findStudentById的MappedStatement。在Mybatis中，每一个<select>、<insert>、<update>、<delete>标签，都会被解析为一个MappedStatement对象。<br><br><br><br>Dao接口里的方法，是不能重载的，因为是全限名+方法名的保存和寻找策略。<br><br><br><br>Dao接口的工作原理是JDK动态代理，Mybatis运行时会使用JDK动态代理为Dao接口生成代理proxy对象，代理对象proxy会拦截接口方法，转而执行MappedStatement所代表的sql，然后将sql执行结果返回。<br><br><br><br>### Mybatis是如何进行分页的？分页插件的原理是什么？<br><br>Mybatis使用RowBounds对象进行分页，它是针对ResultSet结果集执行的内存分页，而非物理分页，可以在sql内直接书写带有物理分页的参数来完成物理分页功能，也可以使用分页插件来完成物理分页。<br><br><br><br>分页插件的基本原理是使用Mybatis提供的插件接口，实现自定义插件，在插件的拦截方法内拦截待执行的sql，然后重写sql，根据dialect方言，添加对应的物理分页语句和物理分页参数。<br><br><br><br>### Mybatis是如何将sql执行结果封装为目标对象并返回的？都有哪些映射形式？<br><br>答：第一种是使用<resultmap>标签，逐一定义列名和对象属性名之间的映射关系。第二种是使用sql列的别名功能，将列别名书写为对象属性名，比如T_NAME AS NAME，对象属性名一般是name，小写，但是列名不区分大小写，Mybatis会忽略列名大小写，智能找到与之对应对象属性名，你甚至可以写成T_NAME AS NaMe，Mybatis一样可以正常工作。<br><br><br><br>有了列名与属性名的映射关系后，Mybatis通过反射创建对象，同时使用反射给对象的属性逐一赋值并返回，那些找不到映射关系的属性，是无法完成赋值的。<br><br><br><br>### Mybatis 如何执行批量插入?<br><br>首先,创建一个简单的insert语句:<br><br>​    <insert id="insertname"><br><br>​     insert into names (name) values (#{value})<br><br>​    </insert><br><br>然后在java代码中像下面这样执行批处理插入:<br><br>​    list<string> names = new arraylist();<br><br>​    names.add(“fred”);<br><br>​    names.add(“barney”);<br><br>​    names.add(“betty”);<br><br>​    names.add(“wilma”);<br><br><br><br>​    // 注意这里 executortype.batch<br><br>​    sqlsession sqlsession = sqlsessionfactory.opensession(executortype.batch);<br><br>​    try {<br><br>​     namemapper mapper = sqlsession.getmapper(namemapper.class);<br><br>​     for (string name : names) {<br><br>​     mapper.insertname(name);<br><br>​     }<br><br>​     sqlsession.commit();<br><br>​    } finally {<br><br>​     sqlsession.close();<br><br>}<br><br><br><br>### Mybatis 如何获取自动生成的(主)键值?<br><br>insert 方法总是返回一个int值 - 这个值代表的是插入的行数。<br><br>而自动生成的键值在 insert 方法执行完后可以被设置到传入的参数对象中。<br><br>示例:<br><br>​    <insert id="insertname" usegeneratedkeys="true" keyproperty="id"><br><br>​     insert into names (name) values (#{name})<br><br>​    </insert><br><br><br><br>​    name name = new name();<br><br>​    name.setname(“fred”);<br><br><br><br>​    int rows = mapper.insertname(name);<br><br>​    // 完成后,id已经被设置到对象中<br><br>​    system.out.println(“rows inserted = ” + rows);<br><br>system.out.println(“generated key value = ” + name.getid());<br><br><br><br>### Mybatis在mapper中如何传递多个参数?<br><br>第1种：<br><br>//DAO层的函数<br><br><br><br>Public UserselectUser(String name,String area);<br><br>//对应的xml,#{0}代表接收的是dao层中的第一个参数，#{1}代表dao层中第二参数，更多参数一致往后加即可。<br><br><br><br>&lt;select id=”selectUser”resultMap=”BaseResultMap”&gt;<br><br>​    select <em>  fromuser_user_t   whereuser_name = #{0} anduser_area=#{1}<br><br></em></string></resultmap></delete></update></insert></select><br><br>第2种：    使用 @param 注解:<br><br>​    import org.apache.ibatis.annotations.param;<br><br>​        public interface usermapper {<br><br>​         user selectuser(@param(“username”) string username,<br><br>​         @param(“hashedpassword”) string hashedpassword);<br><br>​        }<br><br>然后,就可以在xml像下面这样使用(推荐封装为一个map,作为单个参数传递给mapper):<br><br>​    <select id="selectuser" resulttype="user"><br><br>​         select id, username, hashedpassword<br><br>​         from some_table<br><br>​         where username = #{username}<br><br>​         and hashedpassword = #{hashedpassword}<br><br></select><br><br><br><br>### Mybatis动态sql是做什么的？都有哪些动态sql？能简述一下动态sql的执行原理不？<br><br>Mybatis动态sql可以让我们在Xml映射文件内，以标签的形式编写动态sql，完成逻辑判断和动态拼接sql的功能。<br><br>Mybatis提供了9种动态sql标签：trim|where|set|foreach|if|choose|when|otherwise|bind。<br><br>其执行原理为，使用OGNL从sql参数对象中计算表达式的值，根据表达式的值动态拼接sql，以此来完成动态sql的功能。<br><br><br><br>### Mybatis的Xml映射文件中，不同的Xml映射文件，id是否可以重复？<br><br>不同的Xml映射文件，如果配置了namespace，那么id可以重复；如果没有配置namespace，那么id不能重复；毕竟namespace不是必须的，只是最佳实践而已。<br><br><br><br>原因就是namespace+id是作为Map&lt;String, MappedStatement&gt;的key使用的，如果没有namespace，就剩下id，那么，id重复会导致数据互相覆盖。有了namespace，自然id就可以重复，namespace不同，namespace+id自然也就不同。<br><br><br><br>### Mybatis 为什么说是半自动ORM映射工具？它与全自动的区别在哪里？<br><br>Hibernate属于全自动ORM映射工具，使用Hibernate查询关联对象或者关联集合对象时，可以根据对象关系模型直接获取，所以它是全自动的。而Mybatis在查询关联对象或关联集合对象时，需要手动编写sql来完成，所以，称之为半自动ORM映射工具。<br><br><br><br>### Mybatis 一对一、一对多的关联查询 ？<br><br><mapper namespace="com.lcb.mapping.userMapper"><br><br>​    <!--association  一对一关联查询 --><br><br>​    <select id="getClass" parametertype="int" resultmap="ClassesResultMap"><br><br>​        select  from class c,teacher t where c.teacher_id=t.t_id and c.c_id=#{id}<br><br>​    </select><br><br>​    <resultmap type="com.lcb.user.Classes" id="ClassesResultMap"><br><br>​        <!-- 实体类的字段名和数据表的字段名映射 --><br><br>​        <id property="id" column="c_id"><br><br>​        <result property="name" column="c_name"><br><br>​        <association property="teacher" javatype="com.lcb.user.Teacher"><br><br>​            <id property="id" column="t_id"><br><br>​            <result property="name" column="t_name"><br><br>​        </result></id></association><br><br>​    </result></id></resultmap>  
+   <resultmap type="me.gacl.domain.order" id="orderresultmap"><br><br>​        &lt;!–用id属性来映射主键字段–&gt;<br><br>​        <id property="id" column="order_id"><br><br>​        &lt;!–用result属性来映射非主键字段，property为实体类属性名，column为数据表中的属性–&gt;<br><br>​        <result property="“orderno"" column="”order_no"/"><br><br>​        <result property="price" column="order_price"><br><br>​    <br><br><br><br>### Mybatis 模糊查询like语句该怎么写?<br><br>第1种：在Java代码中添加sql通配符。<br><br>​    string wildcardname = “%smi%”;<br><br>​    list<name> names = mapper.selectlike(wildcardname);<br><br><br><br>​    <select id="selectlike"><br><br>​     select <em> from foo where bar like #{value}<br><br>​    </em></select><br><br><br><br>第2种：在sql语句中拼接通配符，会引起sql注入<br><br>​    string wildcardname = “smi”;<br><br>​    list<name> names = mapper.selectlike(wildcardname);<br><br><br><br>​    <select id="selectlike"><br><br>​     select  from foo where bar like “%”#{value}”%”<br><br></select><br><br><br><br>### Mybatis 通常一个Xml映射文件，都会写一个Dao接口与之对应，请问，这个Dao接口的工作原理是什么？Dao接口里的方法，参数不同时，方法能重载吗？<br><br>Dao接口，就是人们常说的Mapper接口，接口的全限名，就是映射文件中的namespace的值，接口的方法名，就是映射文件中MappedStatement的id值，接口方法内的参数，就是传递给sql的参数。Mapper接口是没有实现类的，当调用接口方法时，接口全限名+方法名拼接字符串作为key值，可唯一定位一个MappedStatement，举例：com.mybatis3.mappers.StudentDao.findStudentById，可以唯一找到namespace为com.mybatis3.mappers.StudentDao下面id = findStudentById的MappedStatement。在Mybatis中，每一个<select>、<insert>、<update>、<delete>标签，都会被解析为一个MappedStatement对象。<br><br><br><br>Dao接口里的方法，是不能重载的，因为是全限名+方法名的保存和寻找策略。<br><br><br><br>Dao接口的工作原理是JDK动态代理，Mybatis运行时会使用JDK动态代理为Dao接口生成代理proxy对象，代理对象proxy会拦截接口方法，转而执行MappedStatement所代表的sql，然后将sql执行结果返回。<br><br><br><br>### Mybatis是如何进行分页的？分页插件的原理是什么？<br><br>Mybatis使用RowBounds对象进行分页，它是针对ResultSet结果集执行的内存分页，而非物理分页，可以在sql内直接书写带有物理分页的参数来完成物理分页功能，也可以使用分页插件来完成物理分页。<br><br><br><br>分页插件的基本原理是使用Mybatis提供的插件接口，实现自定义插件，在插件的拦截方法内拦截待执行的sql，然后重写sql，根据dialect方言，添加对应的物理分页语句和物理分页参数。<br><br><br><br>### Mybatis是如何将sql执行结果封装为目标对象并返回的？都有哪些映射形式？<br><br>答：第一种是使用<resultmap>标签，逐一定义列名和对象属性名之间的映射关系。第二种是使用sql列的别名功能，将列别名书写为对象属性名，比如T_NAME AS NAME，对象属性名一般是name，小写，但是列名不区分大小写，Mybatis会忽略列名大小写，智能找到与之对应对象属性名，你甚至可以写成T_NAME AS NaMe，Mybatis一样可以正常工作。<br><br><br><br>有了列名与属性名的映射关系后，Mybatis通过反射创建对象，同时使用反射给对象的属性逐一赋值并返回，那些找不到映射关系的属性，是无法完成赋值的。<br><br><br><br>### Mybatis 如何执行批量插入?<br><br>首先,创建一个简单的insert语句:<br><br>​    <insert id="insertname"><br><br>​     insert into names (name) values (#{value})<br><br>​    </insert><br><br>然后在java代码中像下面这样执行批处理插入:<br><br>​    list<string> names = new arraylist();<br><br>​    names.add(“fred”);<br><br>​    names.add(“barney”);<br><br>​    names.add(“betty”);<br><br>​    names.add(“wilma”);<br><br><br><br>​    // 注意这里 executortype.batch<br><br>​    sqlsession sqlsession = sqlsessionfactory.opensession(executortype.batch);<br><br>​    try {<br><br>​     namemapper mapper = sqlsession.getmapper(namemapper.class);<br><br>​     for (string name : names) {<br><br>​     mapper.insertname(name);<br><br>​     }<br><br>​     sqlsession.commit();<br><br>​    } finally {<br><br>​     sqlsession.close();<br><br>}<br><br><br><br>### Mybatis 如何获取自动生成的(主)键值?<br><br>insert 方法总是返回一个int值 - 这个值代表的是插入的行数。<br><br>而自动生成的键值在 insert 方法执行完后可以被设置到传入的参数对象中。<br><br>示例:<br><br>​    <insert id="insertname" usegeneratedkeys="true" keyproperty="id"><br><br>​     insert into names (name) values (#{name})<br><br>​    </insert><br><br><br><br>​    name name = new name();<br><br>​    name.setname(“fred”);<br><br><br><br>​    int rows = mapper.insertname(name);<br><br>​    // 完成后,id已经被设置到对象中<br><br>​    system.out.println(“rows inserted = ” + rows);<br><br>system.out.println(“generated key value = ” + name.getid());<br><br><br><br>### Mybatis在mapper中如何传递多个参数?<br><br>第1种：<br><br>//DAO层的函数<br><br><br><br>Public UserselectUser(String name,String area);<br><br>//对应的xml,#{0}代表接收的是dao层中的第一个参数，#{1}代表dao层中第二参数，更多参数一致往后加即可。<br><br><br><br>&lt;select id=”selectUser”resultMap=”BaseResultMap”&gt;<br><br>​    select <em>  fromuser_user_t   whereuser_name = #{0} anduser_area=#{1}<br><br></em></string></resultmap></delete></update></insert></select><br><br>第2种：    使用 @param 注解:<br><br>​    import org.apache.ibatis.annotations.param;<br><br>​        public interface usermapper {<br><br>​         user selectuser(@param(“username”) string username,<br><br>​         @param(“hashedpassword”) string hashedpassword);<br><br>​        }<br><br>然后,就可以在xml像下面这样使用(推荐封装为一个map,作为单个参数传递给mapper):<br><br>​    <select id="selectuser" resulttype="user"><br><br>​         select id, username, hashedpassword<br><br>​         from some_table<br><br>​         where username = #{username}<br><br>​         and hashedpassword = #{hashedpassword}<br><br></select><br><br><br><br>### Mybatis动态sql是做什么的？都有哪些动态sql？能简述一下动态sql的执行原理不？<br><br>Mybatis动态sql可以让我们在Xml映射文件内，以标签的形式编写动态sql，完成逻辑判断和动态拼接sql的功能。<br><br>Mybatis提供了9种动态sql标签：trim|where|set|foreach|if|choose|when|otherwise|bind。<br><br>其执行原理为，使用OGNL从sql参数对象中计算表达式的值，根据表达式的值动态拼接sql，以此来完成动态sql的功能。<br><br><br><br>### Mybatis的Xml映射文件中，不同的Xml映射文件，id是否可以重复？<br><br>不同的Xml映射文件，如果配置了namespace，那么id可以重复；如果没有配置namespace，那么id不能重复；毕竟namespace不是必须的，只是最佳实践而已。<br><br><br><br>原因就是namespace+id是作为Map&lt;String, MappedStatement&gt;的key使用的，如果没有namespace，就剩下id，那么，id重复会导致数据互相覆盖。有了namespace，自然id就可以重复，namespace不同，namespace+id自然也就不同。<br><br><br><br>### Mybatis 为什么说是半自动ORM映射工具？它与全自动的区别在哪里？<br><br>Hibernate属于全自动ORM映射工具，使用Hibernate查询关联对象或者关联集合对象时，可以根据对象关系模型直接获取，所以它是全自动的。而Mybatis在查询关联对象或关联集合对象时，需要手动编写sql来完成，所以，称之为半自动ORM映射工具。<br><br><br><br>### Mybatis 一对一、一对多的关联查询 ？<br><br><mapper namespace="com.lcb.mapping.userMapper"><br><br>​    <!--association  一对一关联查询 --><br><br>​    <select id="getClass" parametertype="int" resultmap="ClassesResultMap"><br><br>​        select  from class c,teacher t where c.teacher_id=t.t_id and c.c_id=#{id}<br><br>​    </select><br><br>​    <resultmap type="com.lcb.user.Classes" id="ClassesResultMap"><br><br>​        <!-- 实体类的字段名和数据表的字段名映射 --><br><br>​        <id property="id" column="c_id"><br><br>​        <result property="name" column="c_name"><br><br>​        <association property="teacher" javatype="com.lcb.user.Teacher"><br><br>​            <id property="id" column="t_id"><br><br>​            <result property="name" column="t_name"><br><br>​        </result></id></association><br><br>​    </result></id></resultmap>  
 
 
 
@@ -276,302 +234,149 @@
 <p>​    </p></mapper></name></name></result></result></id></resultmap>  <p></p>
 <p>  </p>
 
-        </div>
-
-        <blockquote class="post-copyright">
+  	</div>
+	  
+	  <div class="article-tags tags">
+      
+        <a href="/tags/Java/">Java</a>
+      
+	  </div>
     
-    <div class="content">
-        
-<span class="post-time">
-    Last updated: <time datetime="2018-12-25T07:27:58.297Z" itemprop="dateUpdated">2018-12-25 15:27:58</time>
-</span><br>
-
-
-        
-        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2018/10/20/Java-面试题系列篇-Mybatis-框架/" target="_blank" rel="external">https://www.ttxxly.top/2018/10/20/Java-面试题系列篇-Mybatis-框架/</a>
-        
-    </div>
-    
-    <footer>
-        <a href="https://www.ttxxly.top">
-            <img src="/img/avatar.jpg" alt="Darklovy">
-            Darklovy
-        </a>
-    </footer>
-</blockquote>
-
-        
-<div class="page-reward">
-    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
-</div>
-
-
-
-        <div class="post-footer">
-            
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li></ul>
-
-
-            
-<div class="page-share-wrap">
-    
-
-<div class="page-share" id="pageShare">
-    <ul class="reset share-icons">
-      <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://www.ttxxly.top/2018/10/20/Java-面试题系列篇-Mybatis-框架/&title=《Java 面试题系列篇-Mybatis 框架》 — Darklovy&pic=https://www.ttxxly.top/img/avatar.jpg" data-title="微博">
-          <i class="icon icon-weibo"></i>
-        </a>
-      </li>
-      <li>
-        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
-          <i class="icon icon-weixin"></i>
-        </a>
-      </li>
-      <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://www.ttxxly.top/2018/10/20/Java-面试题系列篇-Mybatis-框架/&title=《Java 面试题系列篇-Mybatis 框架》 — Darklovy&source=" data-title=" QQ">
-          <i class="icon icon-qq"></i>
-        </a>
-      </li>
-      <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://www.ttxxly.top/2018/10/20/Java-面试题系列篇-Mybatis-框架/" data-title=" Facebook">
-          <i class="icon icon-facebook"></i>
-        </a>
-      </li>
-      <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Java 面试题系列篇-Mybatis 框架》 — Darklovy&url=https://www.ttxxly.top/2018/10/20/Java-面试题系列篇-Mybatis-框架/&via=https://www.ttxxly.top" data-title=" Twitter">
-          <i class="icon icon-twitter"></i>
-        </a>
-      </li>
-      <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://www.ttxxly.top/2018/10/20/Java-面试题系列篇-Mybatis-框架/" data-title=" Google+">
-          <i class="icon icon-google-plus"></i>
-        </a>
-      </li>
-    </ul>
- </div>
-
-
-
-    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
-        <i class="icon icon-share-alt icon-lg"></i>
-    </a>
-</div>
-
-
-
-        </div>
-    </div>
-
-    
-<nav class="post-nav flex-row flex-justify-between">
-  
-    <div class="waves-block waves-effect prev">
-      <a href="/2018/10/20/Java-面试题系列篇-Spring-框架/" id="post-prev" class="post-nav-link">
-        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">Java 面试题系列篇-Spring 框架</h4>
-      </a>
-    </div>
-  
-
-  
-    <div class="waves-block waves-effect next">
-      <a href="/2018/10/20/Java-面试题系列篇-Hibernate-框架/" id="post-next" class="post-nav-link">
-        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">Java 面试题系列篇-Hibernate 框架</h4>
-      </a>
-    </div>
-  
-</nav>
-
-
-
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+		
+	
+		<div class="art-item-footer">
+				
+					<span class="art-item-left"><i class="icon icon-chevron-thin-left"></i>prev：<a href="/2018/10/20/Java-面试题系列篇-Spring-框架/" rel="prev"  title="Java 面试题系列篇-Spring 框架">
+						Java 面试题系列篇-Spring 框架 
+					</a></span>
+				
+				
+					<span class="art-item-right">next：<a href="/2018/10/20/Java-面试题系列篇-Hibernate-框架/" rel="next"  title="Java 面试题系列篇-Hibernate 框架">
+						Java 面试题系列篇-Hibernate 框架
+					</a><i class="icon icon-chevron-thin-right"></i></span>
+				
+		</div>
+	
+	</section>
+	
 </article>
+<script>
+	window.subData = {
+		title: 'Java 面试题系列篇-Mybatis 框架',
+		tools: true
+	}
+</script>
 
-<div id="reward" class="page-modal reward-lay">
-    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <h3 class="reward-title">
-        <i class="icon icon-quote-left"></i>
-        谢谢大爷~
-        <i class="icon icon-quote-right"></i>
-    </h3>
-    <div class="reward-content">
+      </div>
+      <aside class='l_side'>
         
-        <div class="reward-code">
-            <img id="rewardCode" src="/img/wechat.jpg" alt="打赏二维码">
-        </div>
-        
-        <label class="reward-toggle">
-            <input id="rewardToggle" type="checkbox" class="reward-toggle-check" data-wechat="/img/wechat.jpg" data-alipay="/img/alipay.jpg">
-            <div class="reward-toggle-ctrol">
-                <span class="reward-toggle-item wechat">微信</span>
-                <span class="reward-toggle-label"></span>
-                <span class="reward-toggle-item alipay">支付宝</span>
-            </div>
-        </label>
-        
+  <section class='m_widget about'>
+
+<div class='header'>Darklovy</div>
+<div class='content'>
+<div class='desc'>Tempora mutantur, nos et mutamur in illis ...</div>
+</div>
+</section>
+
+  <section class='m_widget links'>
+<div class='header'>Links</div>
+<div class='content'>
+    <ul class="entry">
+    
+        <li><a class="flat-box" target="_blank" href="https://ccoooss.com">
+            <div class='name'>ClassicOldSong</div>
+        </a></li>
+    
+        <li><a class="flat-box" target="_blank" href="https://frantic1048.logdown.com/">
+            <div class='name'>Frantic1048</div>
+        </a></li>
+    
+        <li><a class="flat-box" target="_blank" href="https://hclmaster.github.io/">
+            <div class='name'>Hclmaster</div>
+        </a></li>
+    
+        <li><a class="flat-box" target="_blank" href="https://whst.github.io/">
+            <div class='name'>WANG Hsü-Tung</div>
+        </a></li>
+    
+    </ul>
+</div>
+</section>
+
+  <section class='m_widget categories'>
+<div class='header'>Categories</div>
+<div class='content'>
+    
+</div>
+</section>
+
+  
+<div class="m_widget tagcloud">
+    <div class="header">Tags</div>
+    <div class='content'>
+        <a href="/tags/Android/" style="font-size: 14px; color: #808080">Android</a> <a href="/tags/HTML/" style="font-size: 14px; color: #808080">HTML</a> <a href="/tags/Java/" style="font-size: 20px; color: #000">Java</a> <a href="/tags/Python/" style="font-size: 14px; color: #808080">Python</a>
     </div>
 </div>
 
 
 
-</div>
-
-        <footer class="footer">
-    <div class="top">
-        
-<p>
-    <span id="busuanzi_container_site_uv" style="display:none">
-        站点总访客数：<span id="busuanzi_value_site_uv"></span>
-    </span>
-    <span id="busuanzi_container_site_pv" style="display:none">
-        站点总访问量：<span id="busuanzi_value_site_pv"></span>
-    </span>
-</p>
-
-
-        <p>
-            
-                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
-            
-            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
-        </p>
+      </aside>
+      <script>setLoadingBarProgress(60);</script>
     </div>
-    <div class="bottom">
-        <p><span>Darklovy &copy; 2015 - 2019</span>
-            <span>
-                
-                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
-            </span>
-        </p>
-    </div>
+  </div>
+  <footer id="footer" class="clearfix">
+
+	<div class="social-wrapper">
+  	
+      
+        <a href="https://github.com/stkevintan" class="social github"
+          target="_blank" rel="external">
+          <span class="icon icon-github"></span>
+        </a>
+      
+        <a href="https://twitter.com/kevinsfork" class="social twitter"
+          target="_blank" rel="external">
+          <span class="icon icon-twitter"></span>
+        </a>
+      
+        <a href="/atom.xml" class="social rss"
+          target="_blank" rel="external">
+          <span class="icon icon-rss"></span>
+        </a>
+      
+    
+  </div>
+  
+  <div>Theme <a href='https://github.com/stkevintan/hexo-theme-material-flow' class="codename">MaterialFlow</a> designed by <a href="http://keyin.me/" target="_blank">Kevin Tan</a>.</div>
+  
 </footer>
 
-    </main>
-    <div class="mask" id="mask"></div>
-<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
 
+  <script>setLoadingBarProgress(80);</script>
+  
 
-
-<div class="global-share" id="globalShare">
-    <ul class="reset share-icons">
-      <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://www.ttxxly.top/2018/10/20/Java-面试题系列篇-Mybatis-框架/&title=《Java 面试题系列篇-Mybatis 框架》 — Darklovy&pic=https://www.ttxxly.top/img/avatar.jpg" data-title="微博">
-          <i class="icon icon-weibo"></i>
-        </a>
-      </li>
-      <li>
-        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
-          <i class="icon icon-weixin"></i>
-        </a>
-      </li>
-      <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://www.ttxxly.top/2018/10/20/Java-面试题系列篇-Mybatis-框架/&title=《Java 面试题系列篇-Mybatis 框架》 — Darklovy&source=" data-title=" QQ">
-          <i class="icon icon-qq"></i>
-        </a>
-      </li>
-      <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://www.ttxxly.top/2018/10/20/Java-面试题系列篇-Mybatis-框架/" data-title=" Facebook">
-          <i class="icon icon-facebook"></i>
-        </a>
-      </li>
-      <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Java 面试题系列篇-Mybatis 框架》 — Darklovy&url=https://www.ttxxly.top/2018/10/20/Java-面试题系列篇-Mybatis-框架/&via=https://www.ttxxly.top" data-title=" Twitter">
-          <i class="icon icon-twitter"></i>
-        </a>
-      </li>
-      <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://www.ttxxly.top/2018/10/20/Java-面试题系列篇-Mybatis-框架/" data-title=" Google+">
-          <i class="icon icon-google-plus"></i>
-        </a>
-      </li>
-    </ul>
- </div>
-
-
-<div class="page-modal wx-share" id="wxShare">
-    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACtklEQVR42u3awW7cMAwE0Pz/T7dATy1auzOklLTA82mx2bX19iAqQ358xNe3H9fT65/f+f39p78m939/yrELDw8Pb7T0p+ud9L6s9yUmi87X8Hg3PDw8vGu8/a3znXlffpI14+Hh4f0LvPfNvT1YJ2UDDw8P73/nJYFCfsjeFyc8PDy8r+UlYUS+Wb8//r1UJPe8krXg4eHhxbx9A+zzX39qfw8PDw8vLgnJtjtrld1b2y/PwsPDw7vAm400tYtuP9MOYP3l/nh4eHhHefnWn0eubZzRBsdFmIuHh4d3gZdv+smY6T4Onv3QRaHCw8PDW/Nm41b56FW7oPz9qFzh4eHhXeDlwetsi998d3MHPDw8vNu8fBNvW1xt3JAstC4MeHh4eEd5eQy6OTRvjultU+0PkxF4eHh4F3jt1cYWpwatWiQeHh7ePV47GpVT88Z/frciksDDw8O7xtuHp/kY6+wQP2vR4eHh4d3gbW7XfmsWMeyHFfDw8PBu8PJG/n6zPhY05E01PDw8vAu8TQSQRwyzT+ZxcPR5PDw8vDWvHQXYhxSntv7oWXh4eHjXeG00sD92t4MFeTl5HB3Aw8PDO8rbDAHkDbAWsxne+sgrEh4eHt6I17LbgYO2AdaWlsdDNh4eHt4F3qxZ1ZaTWRTb7vCPa8PDw8O7wJsdptsHnC0zwyM7Hh4e3iFeG7kmr2dH89lYVVEM8PDw8I7y2u04D3NPIfOD+ON/DHh4eHhr3ix6aEvFbARhVqjw8PDwbvPOduHbRW8O07MfCA8PD+8Ur23Gt4ueBcfJERwPDw/va3lnHzxra80OxH+peHh4eHj/GK+NKjaDCLOwGA8PD+9ree9bdrKhJ5Hr7MiOh4eH9/m8diPOf5p8WKotDNGPi4eHh3eBN2uAtcFuHvXOkMPOHh4eHl7H+w4LVe9kfIeHPwAAAABJRU5ErkJggg==" alt="微信分享二维码">
-</div>
-
-
-
-
-    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script src="//apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src='//cdn.bootcss.com/node-waves/0.7.5/waves.min.js'></script>
+<script src="//cdn.bootcss.com/scrollReveal.js/3.3.2/scrollreveal.min.js"></script>
+<script src="/js/jquery.fitvids.js"></script>
 <script>
-var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
-
-
+	var GOOGLE_CUSTOM_SEARCH_API_KEY = "";
+	var GOOGLE_CUSTOM_SEARCH_ENGINE_ID = "";
+	var ALGOLIA_API_KEY = "";
+	var ALGOLIA_APP_ID = "";
+	var ALGOLIA_INDEX_NAME = "";
+  var AZURE_SERVICE_NAME = "";
+  var AZURE_INDEX_NAME = "";
+  var AZURE_QUERY_KEY = "";
+  var BAIDU_API_ID = "";
+  var SEARCH_SERVICE = "hexo";
+  var ROOT = "/"||"/";
+  if(!ROOT.endsWith('/'))ROOT += '/';
 </script>
-
-<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
-
-
-<div class="search-panel" id="search-panel">
-    <ul class="search-result" id="search-result"></ul>
-</div>
-<template id="search-tpl">
-<li class="item">
-    <a href="{path}" class="waves-block waves-effect">
-        <div class="title ellipsis" title="{title}">{title}</div>
-        <div class="flex-row flex-middle">
-            <div class="tags ellipsis">
-                {tags}
-            </div>
-            <time class="flex-col time">{date}</time>
-        </div>
-    </a>
-</li>
-</template>
-
-<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+<script src="/js/search.js"></script>
+<script src="/js/app.js"></script>
 
 
-
-
-
-
-<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-
-
-
-<script>
-(function() {
-    var OriginTitile = document.title, titleTime;
-    document.addEventListener('visibilitychange', function() {
-        if (document.hidden) {
-            document.title = '死鬼去哪里了！';
-            clearTimeout(titleTime);
-        } else {
-            document.title = '(つェ⊂)咦!又好了!';
-            titleTime = setTimeout(function() {
-                document.title = OriginTitile;
-            },2000);
-        }
-    });
-})();
-</script>
-
-
-
+  <script>setLoadingBarProgress(100);</script>
 </body>
 </html>
