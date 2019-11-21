@@ -1,18 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head><meta name="generator" content="Hexo 3.9.0">
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  
-  <title>Java 使用 Annotation 功能 | Darklovy</title>
-  <meta name="description" content>
-  <meta name="keywords" content>
-  <meta name="HandheldFriendly" content="True">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <link rel="shortcut icon" href="/">
-  <link rel="alternate" href="/atom.xml" title="Darklovy">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Java 中提供了 Annotation 功能，该功能可用于类、构造方法、成员变量、方法、参数等的声明中。该功能并不影响程序的运行，但是会对编译器警告灯辅助工具产生影响。 定义 Annotation 类型在定义 Annotation 类型时，也需要用到用来定义接口的 interface 关键字，但需要在 interface 关键字前加一个 @符号，即定义 Annotation 类型的关键字为 @i">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <title>
+        Java 使用 Annotation 功能 |
+        
+        Darklovy</title>
+    <meta name="description" content>
+    <meta name="keywords" content>
+    <meta name="HandheldFriendly" content="True">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <link rel="shortcut icon" href="/">
+    <link rel="alternate" href="/atom.xml" title="Darklovy">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="Java 中提供了 Annotation 功能，该功能可用于类、构造方法、成员变量、方法、参数等的声明中。该功能并不影响程序的运行，但是会对编译器警告灯辅助工具产生影响。 定义 Annotation 类型在定义 Annotation 类型时，也需要用到用来定义接口的 interface 关键字，但需要在 interface 关键字前加一个 @符号，即定义 Annotation 类型的关键字为 @i">
 <meta name="keywords" content="Java">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java 使用 Annotation 功能">
@@ -24,16 +27,16 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java 使用 Annotation 功能">
 <meta name="twitter:description" content="Java 中提供了 Annotation 功能，该功能可用于类、构造方法、成员变量、方法、参数等的声明中。该功能并不影响程序的运行，但是会对编译器警告灯辅助工具产生影响。 定义 Annotation 类型在定义 Annotation 类型时，也需要用到用来定义接口的 interface 关键字，但需要在 interface 关键字前加一个 @符号，即定义 Annotation 类型的关键字为 @i">
-    
-  <link href="https://fonts.googleapis.com/css?family=Inconsolata|Titillium+Web" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
-  <link href="//cdn.bootcss.com/node-waves/0.7.5/waves.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="/style.css">
-  <script>
-    function setLoadingBarProgress(num) {
-      document.getElementById('loading-bar').style.width=num+"%";
-    }
-  </script>
+
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata|Titillium+Web" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
+    <link href="//cdn.bootcss.com/node-waves/0.7.5/waves.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/style.css">
+    <script>
+        function setLoadingBarProgress(num) {
+            document.getElementById('loading-bar').style.width = num + "%";
+        }
+    </script>
 </head>
 </html>
 <body>
@@ -61,6 +64,30 @@
 						<li>
 							<a class='flat-box nav-archives' href='/archives'>
 								归档
+							</a>
+						</li>
+					
+						<li>
+							<a class='flat-box nav-categories' href='/categories'>
+								分类
+							</a>
+						</li>
+					
+						<li>
+							<a class='flat-box nav-tags' href='/tags'>
+								标签
+							</a>
+						</li>
+					
+						<li>
+							<a class='flat-box nav-algorithm' href='https://book.algorithm.ttxxly.top/'>
+								算法
+							</a>
+						</li>
+					
+						<li>
+							<a class='flat-box nav-python' href='https://book.python.ttxxly.top/'>
+								python
 							</a>
 						</li>
 					
@@ -111,6 +138,22 @@
 		
 			<a href="/archives" class="nav-archives nav">
 				归档
+			</a>
+		
+			<a href="/categories" class="nav-categories nav">
+				分类
+			</a>
+		
+			<a href="/tags" class="nav-tags nav">
+				标签
+			</a>
+		
+			<a href="https://book.algorithm.ttxxly.top/" class="nav-algorithm nav">
+				算法
+			</a>
+		
+			<a href="https://book.python.ttxxly.top/" class="nav-python nav">
+				python
 			</a>
 		
 			<a href="/about" class="nav-about nav">
