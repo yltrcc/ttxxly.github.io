@@ -848,7 +848,7 @@
     <link href="https://www.ttxxly.top/2018/10/28/Android-%E7%AE%80%E4%BB%8B/"/>
     <id>https://www.ttxxly.top/2018/10/28/Android-简介/</id>
     <published>2018-10-28T15:03:54.000Z</published>
-    <updated>2018-12-25T07:27:58.291Z</updated>
+    <updated>2019-11-06T09:43:21.851Z</updated>
     
     <content type="html"><![CDATA[<p>Android 从面世以来到现在已经发布了二十几个版本了。在这几年的发展过程中，谷歌为Android 王国建立了一个完整的生态系统。手机厂商、开发者、用户之间相互依存，共同推进着Android的蓬勃发展。</p><h3 id="Android-系统架构"><a href="#Android-系统架构" class="headerlink" title="Android 系统架构"></a>Android 系统架构</h3><p>为了更好的理解 Android 系统是怎么工作的，我们先来看一下它的系统架构。Android 大致可以分为四层架构：Linux 内核层、系统运行库层、应用框架层和应用层。</p><h4 id="Linux-内核层"><a href="#Linux-内核层" class="headerlink" title="Linux 内核层"></a>Linux 内核层</h4><p>Android 系统是基于 Linux内核的，这一层为 Android 设备的各种硬件提供了底层的驱动，如显示驱动、音频驱动、照相机驱动、蓝牙驱动、Wi-Fi驱动、电源管理等。</p><h4 id="系统运行库层"><a href="#系统运行库层" class="headerlink" title="系统运行库层"></a>系统运行库层</h4><p>这一层通过一些 C/C++ 库来为 Android 系统提供了主要的特性支持。如SQLite 库提供了数据库的支持，OpenGL/ES 库提供了 3D 绘图的支持，WebKit 库提供了浏览器内核的支持等。</p><p>同样在这一层还有 Android 运行时库，它主要提供了一些核心库，能够允许开发者使用 Java 语言来编写 Android 应用。另外，Android 运行时库中还包含了 Dalvik 虚拟机（5.0 系统之后改为 ART 运行环境），它使得每一个 Android 应用都能运行在独立的进程当中，并且拥有一个自己的 Dalvik 虚拟机实例。相较于 Java 虚拟机，Dalvik 时专门为移动设备定制的，它针对手机内存、CPU性能有限等情况做了优化处理。</p><h4 id="应用框架层"><a href="#应用框架层" class="headerlink" title="应用框架层"></a>应用框架层</h4><p>这一层主要提供了构建应用程序时可能用到的各种 API， Android 自带的一些核心应用就是使用这些 APi 完成的，开发者也可以通过使用这些 API 来构建自己的应用城固县。</p><h4 id="应用层"><a href="#应用层" class="headerlink" title="应用层"></a>应用层</h4><p>所有安装在手机上的应用程序都是属于这一层的，比如系统自带的联系人、短信等程序，或者是你从 GooGle Play 上下载的小游戏，当然还包括你自己开发的程序等。</p><h3 id="Android-已发布的版本"><a href="#Android-已发布的版本" class="headerlink" title="Android 已发布的版本"></a>Android 已发布的版本</h3><p>2008 年 9 月，谷歌正式发布了 Android 1.0 系统，这也是 Android 系统最早的版本。随后的几年，谷歌以惊人的速度不断地更新 Android 系统。<br>具体如下图所示：</p><p>数据来源：<a href="https://developer.android.com/about/dashboards/" target="_blank" rel="noopener">戳我</a></p><p><img src="/images/2018-10-28/2.png" alt></p><h3 id="Android-应用开发特色"><a href="#Android-应用开发特色" class="headerlink" title="Android 应用开发特色"></a>Android 应用开发特色</h3><ul><li>四大组件：活动（Activity）、服务（Service）、广播接收器（Broadcast Receiver）和内容提供器（Content Provider）。</li><li>丰富的系统控件</li><li>SQLite 数据库</li><li>强大的多媒体</li><li>地理位置定位</li></ul>]]></content>
     
@@ -861,6 +861,8 @@
       
     
     </summary>
+    
+      <category term="Android基础" scheme="https://www.ttxxly.top/categories/Android%E5%9F%BA%E7%A1%80/"/>
     
     
       <category term="Android" scheme="https://www.ttxxly.top/tags/Android/"/>
